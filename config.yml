@@ -1,5 +1,5 @@
 baseURL: "https://jereme.me"
-title: Jereme
+title: Jereme Causing
 paginate: 5
 theme: PaperMod
 
@@ -21,7 +21,16 @@ params:
     title: ExampleSite
     description: "ExampleSite description"
     keywords: [Blog, Portfolio, PaperMod]
-    # author: Me
+    author: Jereme
+    fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 1000
+        threshold: 0.4
+        minMatchCharLength: 0
+        keys: ["title", "permalink", "summary", "content"]
+
     # author: ["Me", "You"] # multiple authors
     images: ["<link or path of image for opengraph, twitter-cards>"]
     DateFormat: "January 2, 2006"
@@ -40,8 +49,38 @@ params:
     hideSummary: false
     showtoc: false
     tocopen: false
+    homeInfoParams:
+        Title: About
+        Content: >
+            I'm just somebody who likes **programming**. 
 
-# markup:
-#   goldmark:
-#     renderer:
-#       unsafe: true
+    socialIcons: 
+        - name: github
+          url: "https://github.com/jeremejazz"
+        - name: linkedin
+          url: "https://ph.linkedin.com/in/jeremecausing"
+        - name: telegram
+          url: "https://telegram.me/@jeremecausing"       
+    cover:
+        # hidden: true # hide everywhere but not in structured data
+        hiddenInList: true # hide on list pages and home
+    #     hiddenInSingle: true # hide on single page     
+menu:
+    main:
+        - identifier: archive
+          name: Archive
+          url: /archives/
+          weight: 1   
+        - identifier: categories
+          name: Categories
+          url: /categories/
+          weight: 2
+        - identifier: search
+          name: Search
+          url: /search/
+          weight: 3         
+       
+outputs:
+    home:
+        - HTML
+        - JSON

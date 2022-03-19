@@ -7,9 +7,9 @@ tags:
 lastmod: 2022-01-30
  
  
-# cover: 
-#   image: /images/version-control/branching-git.png
-# TODO add option to hide cover image from frontpage 
+cover: 
+  image: /images/version-control/branching-git.png
+ 
 tags:
   - best practices
   - development
