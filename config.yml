@@ -18,10 +18,11 @@ minify:
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    title: ExampleSite
-    description: "ExampleSite description"
-    keywords: [Blog, Portfolio, PaperMod]
+    title: Jereme Causing
+    description: "Software Developer"
+    keywords: [Blog, Portfolio, Personal Website]
     author: Jereme
+ 
     fuseOpts:
         isCaseSensitive: false
         shouldSort: true
