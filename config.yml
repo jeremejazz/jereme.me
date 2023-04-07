@@ -10,78 +10,93 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 
-
-
 minify:
-    disableXML: true
-    minifyOutput: true
+  disableXML: true
+  minifyOutput: true
 
 params:
-    env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    title: Jereme Causing
-    description: "Software Developer"
-    keywords: [Blog, Portfolio, Personal Website]
-    author: Jereme
- 
-    fuseOpts:
-        isCaseSensitive: false
-        shouldSort: true
-        location: 0
-        distance: 1000
-        threshold: 0.4
-        minMatchCharLength: 0
-        keys: ["title", "permalink", "summary", "content"]
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Jereme Causing
+  description: "Software Developer"
+  keywords: [Blog, Portfolio, Personal Website]
+  author: Jereme
 
-    # author: ["Me", "You"] # multiple authors
-    images: ["<link or path of image for opengraph, twitter-cards>"]
-    DateFormat: "January 2, 2006"
-    defaultTheme: auto # dark, light
-    disableThemeToggle: false
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
 
-    ShowReadingTime: true
-    ShowShareButtons: true
-    ShowPostNavLinks: true
-    ShowBreadCrumbs: true
-    ShowCodeCopyButtons: false
-    disableSpecial1stPost: false
-    disableScrollToTop: false
-    comments: false
-    hidemeta: false
-    hideSummary: false
-    showtoc: false
-    tocopen: false
-    homeInfoParams:
-        Title: About
-        Content: >
-            I'm just somebody who likes **programming**. 
+  # author: ["Me", "You"] # multiple authors
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
 
-    socialIcons: 
-        - name: github
-          url: "https://github.com/jeremejazz"
-        - name: linkedin
-          url: "https://ph.linkedin.com/in/jeremecausing"
-        - name: telegram
-          url: "https://telegram.me/@jeremecausing"       
-    cover:
-        # hidden: true # hide everywhere but not in structured data
-        hiddenInList: true # hide on list pages and home
-    #     hiddenInSingle: true # hide on single page     
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+  profileMode:
+    enabled: true
+    title: "<Title>" # optional default will be site title
+    subtitle: "Software Developer"
+    imageUrl: "/images/avatar_200.jpg" # optional
+    # imageTitle: "<title of image as alt>" # optional
+    # imageWidth: 120 # custom size
+    # imageHeight: 120 # custom size
+    buttons:
+      - name: Posts
+        url: "/post"
+        # - name: Github
+        # url: "https://github.com/"
+  # homeInfoParams:
+  #   Title: About
+  #   Content: >
+  #     A software developer.
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/jeremejazz"
+    - name: linkedin
+      url: "https://ph.linkedin.com/in/jeremecausing"
+    - name: telegram
+      url: "https://telegram.me/@jeremecausing"
+  cover:
+    # hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+  #     hiddenInSingle: true # hide on single page
 menu:
-    main:
-        - identifier: archive
-          name: Archive
-          url: /archives/
-          weight: 1   
-        - identifier: categories
-          name: Categories
-          url: /categories/
-          weight: 2
-        - identifier: search
-          name: Search
-          url: /search/
-          weight: 3         
-       
+  main:
+    - identifier: posts
+      name: Posts
+      url: /post/
+      weight: 1
+    - identifier: archive
+      name: Archive
+      url: /archives/
+      weight: 3
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 2
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 9
+
 outputs:
-    home:
-        - HTML
-        - JSON
+  home:
+    - HTML
+    - JSON
