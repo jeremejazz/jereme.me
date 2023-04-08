@@ -117,6 +117,7 @@ Now whenever we need to start fluidsynth we will have to enter
 
 ### Adding an LCD Touchscreen (Optional)
 
+![lcd screen](raspberry_touch.jpg)
 To eliminate the need of a monitor and keyboard/mouse I have added a 3.5 touchscreen I got from Alibaba. For generic touch screens, more information can be found on this [repository](https://github.com/goodtft/LCD-show). I suggest checking this first before purchasing one to check for compatibility.
 
 With this setup, I have placed the start_synth file I've created on the desktop and in order to start FluidSynth I just have to double tap the script then execute to make it play. The driver also allow you to rotate the screen which also comes in handy.
