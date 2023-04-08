@@ -48,23 +48,23 @@ params:
   hideSummary: false
   showtoc: false
   tocopen: false
-  profileMode:
-    enabled: true
-    title: "<Title>" # optional default will be site title
-    subtitle: "Software Developer"
-    imageUrl: "/images/avatar_200.jpg" # optional
-    # imageTitle: "<title of image as alt>" # optional
-    # imageWidth: 120 # custom size
-    # imageHeight: 120 # custom size
-    buttons:
-      - name: Posts
-        url: "/post"
-        # - name: Github
-        # url: "https://github.com/"
-  # homeInfoParams:
-  #   Title: About
-  #   Content: >
-  #     A software developer.
+  # profileMode:
+  #   enabled: true
+  #   title: "<Title>" # optional default will be site title
+  #   subtitle: "Software Developer"
+  #   imageUrl: "/images/avatar_200.jpg" # optional
+  # imageTitle: "<title of image as alt>" # optional
+  # imageWidth: 120 # custom size
+  # imageHeight: 120 # custom size
+  # buttons:
+  #   - name: Posts
+  #     url: "/post"
+  # - name: Github
+  # url: "https://github.com/"
+  homeInfoParams:
+    Title: Hello!
+    Content: >
+      I'm a software developer.
 
   socialIcons:
     - name: github
