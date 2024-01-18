@@ -31,7 +31,7 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 
   # author: ["Me", "You"] # multiple authors
-  images: ["/images/avatar.jpg"]
+  images: ["/images/nice_avatar.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
@@ -52,7 +52,7 @@ params:
     enabled: true
     title: "Jereme Causing" # optional default will be site title
     subtitle: "Hi there, I'm a Software Developer. Let's build something incredible."
-    imageUrl: "/images/avatar.jpg" # optional
+    imageUrl: "/images/nice_avatar.png" # optional
   imageTitle: "<title of image as alt>" # optional
   imageWidth: 120 # custom size
   imageHeight: 120 # custom size
@@ -67,6 +67,8 @@ params:
   #     I'm a software developer.
 
   socialIcons:
+    - name: facebook
+      url: "https://facebook.com/jeremejazz"
     - name: github
       url: "https://github.com/jeremejazz"
     - name: linkedin
@@ -80,8 +82,8 @@ params:
 menu:
   main:
     - identifier: posts
-      name: Posts
-      url: /post/
+      name: Blog
+      url: https://blog.jereme.me
       weight: 1
     - identifier: archive
       name: Archive
