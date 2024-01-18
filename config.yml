@@ -17,7 +17,7 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Jereme Causing
-  description: "Software Developer"
+  description: "I'm Software Developer. Let's build something incredible."
   keywords: [Homepage, Blog, Portfolio, Personal Website]
   author: Jereme
 
@@ -31,7 +31,7 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 
   # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  images: ["/images/avatar.jpg"]
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
@@ -51,7 +51,7 @@ params:
   profileMode:
     enabled: true
     title: "Jereme Causing" # optional default will be site title
-    subtitle: "I'm a Software Developer. Let's make something incredible."
+    subtitle: "Hi there, I'm a Software Developer. Let's build something incredible."
     imageUrl: "/images/avatar.jpg" # optional
   imageTitle: "<title of image as alt>" # optional
   imageWidth: 120 # custom size
