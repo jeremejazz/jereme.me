@@ -18,7 +18,7 @@ params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Jereme Causing
   description: "Software Developer"
-  keywords: [Blog, Portfolio, Personal Website]
+  keywords: [Homepage, Blog, Portfolio, Personal Website]
   author: Jereme
 
   fuseOpts:
@@ -48,23 +48,23 @@ params:
   hideSummary: false
   showtoc: false
   tocopen: false
-  # profileMode:
-  #   enabled: true
-  #   title: "<Title>" # optional default will be site title
-  #   subtitle: "Software Developer"
-  #   imageUrl: "/images/avatar_200.jpg" # optional
-  # imageTitle: "<title of image as alt>" # optional
-  # imageWidth: 120 # custom size
-  # imageHeight: 120 # custom size
-  # buttons:
+  profileMode:
+    enabled: true
+    title: "Jereme Causing" # optional default will be site title
+    subtitle: "I'm a Software Developer. Let's make something incredible."
+    imageUrl: "/images/avatar.jpg" # optional
+  imageTitle: "<title of image as alt>" # optional
+  imageWidth: 120 # custom size
+  imageHeight: 120 # custom size
+  # socialIcons:
   #   - name: Posts
   #     url: "/post"
-  # - name: Github
-  # url: "https://github.com/"
-  homeInfoParams:
-    Title: Hello!
-    Content: >
-      I'm a software developer.
+  #   - name: Github
+  #     url: "https://github.com/"
+  # homeInfoParams:
+  #   Title: Hello!
+  #   Content: >
+  #     I'm a software developer.
 
   socialIcons:
     - name: github
@@ -87,10 +87,6 @@ menu:
       name: Archive
       url: /archives/
       weight: 3
-    - identifier: categories
-      name: Categories
-      url: /categories/
-      weight: 2
     - identifier: search
       name: Search
       url: /search/
