@@ -40,6 +40,10 @@ externalIcon = true
   link = "/posts"
   avatar = "/images/nice_avatar.png"
 
+# back to top with progress percent
+[backToTop]
+  enable = true
+  scrollpercent = true
 
 # Footer config
 # 页面底部信息配置
@@ -283,7 +287,16 @@ externalIcon = true
   [page.related]
     enable = true
     count = 2
-    
+
+[readingProgress]
+  enable = true
+  start = "left"
+  position = "top"
+  reversed = false
+  light = "#2376b7"
+  dark = "#b1b1ba"
+  height = "2px"
+
 [search]
   enable = true
   # type of search engine ("algolia", "fuse", "pagefind")
