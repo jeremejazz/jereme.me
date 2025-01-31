@@ -117,7 +117,7 @@ bundle = false
     title = ""
     # subtitle shown in home page
 
-    subtitle = "Hello World!"
+    subtitle = "Hello World! :)"
     # whether to use typeit animation for subtitle
 
     typeit = true
