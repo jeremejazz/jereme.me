@@ -11,22 +11,25 @@ dateFormat = "2006-01-02"
 keywords = ["Jereme Causing", "Developer"]
 enablePWA = false
 bundle = false
+
+# show an external icon on external links 
+externalIcon = true
 # App icon config
 [app]
   # optional site title override for the app when added to an iOS home screen or Android launcher
-  # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
+
   title = "Jereme Causing"
   # whether to omit favicon resource links
-  # 是否隐藏网站图标资源链接
+ 
   noFavicon = false
   # modern SVG favicon to use in place of older style .png and .ico files
-  # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
+ 
   svgFavicon = ""
   # Safari mask icon color
-  # Safari 图标颜色
+ 
   iconColor = "#5bbad5"
   # Windows v8-10 tile color
-  # Windows v8-10 磁贴颜色
+ 
   tileColor = "#da532c"
 # Search config
 # 搜索配置
