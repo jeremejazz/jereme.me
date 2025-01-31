@@ -15,12 +15,8 @@ ShowToc: true
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-cover:
-    image: "featured.jpg"
-image:
-  caption: "Photo by [Philipp Katzenberger](https://unsplash.com/photos/iIJrUoeRoCQ) on [Unsplash](https://unsplash.com)"
-  focal_point: ""
-  preview_only: false
+featuredImage: "featured.jpg"
+ 
 
 ---
 
@@ -80,3 +76,4 @@ In conclusion, these are all just suggestions to keep your online life secure. I
 In addition, you might want to check this website, "[Have I been pwned](https://haveibeenpwned.com/)". Not all websites are perfect and some popular websites like Dropbox or Tumblr still suffer from data breaches. You can also use this tool as an indicator if you need to update your passwords. That's why it's always a good idea to use a password manager. 
 
 
+>  Cover Photo by [Philipp Katzenberger](https://unsplash.com/photos/iIJrUoeRoCQ) on [Unsplash](https://unsplash.com)

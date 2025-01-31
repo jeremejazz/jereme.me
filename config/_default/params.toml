@@ -1,0 +1,451 @@
+
+title = "Jereme Causing"
+version = "0.3.X"
+
+# site description
+description = "Software Developer based in the Philippines"
+defaultTheme = "auto"
+# site keywords
+
+dateFormat = "2006-01-02"
+keywords = ["Jereme Causing", "Developer"]
+enablePWA = false
+bundle = false
+# App icon config
+[app]
+  # optional site title override for the app when added to an iOS home screen or Android launcher
+  # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
+  title = "Jereme Causing"
+  # whether to omit favicon resource links
+  # 是否隐藏网站图标资源链接
+  noFavicon = false
+  # modern SVG favicon to use in place of older style .png and .ico files
+  # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
+  svgFavicon = ""
+  # Safari mask icon color
+  # Safari 图标颜色
+  iconColor = "#5bbad5"
+  # Windows v8-10 tile color
+  # Windows v8-10 磁贴颜色
+  tileColor = "#da532c"
+# Search config
+# 搜索配置
+
+[author]
+  name = "Jereme"
+  email = ""
+  link = "/posts"
+  avatar = "/images/nice_avatar.png"
+
+
+# Footer config
+# 页面底部信息配置
+[footer]
+  enable = true
+  # Custom content (HTML format is supported)
+ 
+  custom = ''
+  # whether to show Hugo and theme info
+ 
+  hugo = true
+  # Hosted on (HTML format is supported)
+ 
+  # <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a>
+  hostedOn = 'netlify'
+  # whether to show copyright info
+ 
+  copyright = true
+  # whether to show the author
+ 
+  author = false
+  # site creation time
+ 
+  since = 2015
+  # ICP info only in China (HTML format is supported)
+ 
+  icp = ""
+  # license info (HTML format is supported)
+ 
+  license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+
+[header]
+  # theme change mode ("switch", "select")
+ 
+  themeChangeMode = "switch"
+  # Header title config
+  # 页面头部导航栏标题配置
+  [header.title]
+    # URL of the LOGO
+    # LOGO 的 URL
+    logo = ""
+    # title name
+    # 标题名称
+    name = "Jereme Causing"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+    pre = '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 96c0-35.3 28.7-64 64-64l384 0c35.3 0 64 28.7 64 64l0 256-64 0 0-256L128 96l0 256-64 0L64 96zM0 403.2C0 392.6 8.6 384 19.2 384l601.6 0c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8L76.8 480C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"/></svg>'
+    # pre = '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>'
+    # you can add extra information after the name (HTML format is supported), such as icons
+    # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+    post = ""
+    # whether to use typeit animation for title name
+    # 是否为标题显示打字机动画
+    typeit = false
+
+# Home page config
+# 主页信息设置
+[home]
+  # amount of RSS pages
+  # RSS 文章数目
+  rss = 10
+  # Home page profile
+  # 主页个人信息
+  [home.profile]
+    enable = true
+    # Gravatar Email for preferred avatar in home page
+    gravatarEmail = ""
+
+    # URL of avatar shown in home page
+    # 主页显示头像的 URL
+    avatarURL = "/images/nice_avatar.png"
+
+    # URL the avatar links to
+    avatarMenu = "posts"
+
+    # title shown in home page (HTML format is supported)
+    title = ""
+    # subtitle shown in home page
+
+    subtitle = "Hello World!"
+    # whether to use typeit animation for subtitle
+
+    typeit = true
+
+    # whether to show social links
+    social = true
+    
+    # disclaimer (HTML format is supported)
+    disclaimer = ""
+
+  # Home page posts
+
+  [home.posts]
+    enable = true
+    # special amount of posts in each home posts page
+
+    paginate = 7
+# Social config in home page
+[image]
+  # cache remote images for better optimisations
+  # 缓存图片链接到本地
+  cacheRemote = true
+  # Image resizing and optimisation
+  # 图片缩放和优化
+  optimise = true
+
+# List (category or tag) page config
+# List (目录或标签) 页面配置
+[list]
+  # special amount of posts in each list page
+  # list 页面每页显示文章数量
+  paginate = 20
+  # date format (month and day)
+  # 日期格式 (月和日)
+  dateFormat = "01-02"
+  # amount of RSS pages
+  # RSS 文章数目
+  rss = 10
+
+[page]
+  # whether to hide a page from home page
+  # 是否在主页隐藏一篇文章
+  hiddenFromHomePage = false
+  # whether to hide a page from search results
+  # 是否在搜索结果中隐藏一篇文章
+  hiddenFromSearch = false
+  # whether to enable twemoji
+  # 是否使用 twemoji
+  twemoji = false
+  # whether to enable lightgallery
+  # 是否使用 lightgallery
+  lightgallery = false
+  # whether to enable the ruby extended syntax
+  # 是否使用 ruby 扩展语法
+  ruby = true
+  # whether to enable the fraction extended syntax
+  # 是否使用 fraction 扩展语法
+  fraction = true
+
+  # whether to show link to Raw Markdown content of the content
+  # 是否显示原始 Markdown 文档内容的链接
+  linkToMarkdown = false
+  # configure the link to view source the post
+  # 配置文章原始文件的链接
+  linkToSource = ""
+  # "https://github.com/user/repo/blob/main/{path}"
+  # configure the link to edit the post
+  # 配置编辑文章的链接
+  linkToEdit = ""
+  # https://github.com/user/repo/edit/main/{path}
+  # https://gitlab.com/user/repo/-/edit/main/{path}
+  # https://bitbucket.org/user/repo/src/main/{path}?mode=edit
+  # configure the link to report issue for the post
+  # 配置提交错误的链接
+  linkToReport = ""
+  # https://github.com/user/repo/issues/new?title=[bug]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|Url|{url}|%0A|Filename|https://github.com/user/repo/blob/main/{path}|"
+  # https://gitlab.com/user/repo/-/issues/new?issue[title]=[bug]%20{title}&issue[description]=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|Url|{url}|%0A|Filename|https://gitlab.com/user/repo/-/edit/main/{path}|
+  # whether to show the full text content in RSS
+  # 是否在 RSS 中显示全文内容
+  rssFullText = false
+  # whether to enable series navigation
+  # 是否使用系列导航
+  seriesNavigation = true
+  # whether to enable last modified time
+  # 是否启用最后修改时间
+  enableLastMod = true
+  # whether to enable word count
+  # 是否启用字数统计
+  enableWordCount = true
+  # whether to enable reading time estimation
+  # 是否启用阅读时间估计
+  enableReadingTime = true
+  # Display a message at the beginning of an article to warn the reader that its content might be outdated.
+  # 在文章开头显示提示信息，提醒读者文章内容可能过时。
+  # instant.page config
+  [page.instantpage]
+    enable = true
+  [page.outdatedArticleReminder]
+    enable = false
+    # Display the reminder if the last modified time is more than 90 days ago.
+    # 如果文章最后更新于这天数之前，显示提醒
+    reminder = 90
+    # Display warning if the last modified time is more than 180 days ago.
+    # 如果文章最后更新于这天数之前，显示警告
+    warning = 180
+  # Table of the contents config
+  # 目录配置
+
+  [page.toc]
+    # whether to enable the table of the contents
+    enable = true
+    # DoIt NEW | 0.2.9 whether to keep the static table of the contents in front of the post
+    keepStatic = false
+    # whether to make the table of the contents in the sidebar automatically collapsed
+    auto = false
+
+  [page.code]
+    # the maximum number of lines of displayed code by default
+    # 默认展开显示的代码行数
+    maxShownLines = 10
+    # whether to enable line numbers in the code block
+    # 是否显示代码行号
+    lineNos = true
+    # whether to enable line wrapping in the code block
+    # 是否开启代码换行
+    wrap = false
+    # whether to display the header in the code block
+    # 是否显示代码块标题
+    header = true
+  # Table config
+  # 表格配置
+  [page.table]
+    # whether to enable sorting in the tables
+    # 是否开启表格排序
+    sort = true
+  [page.header]
+    # whether to enable auto header numbering
+    # 是否开启标题自动编号
+    [page.header.number]
+      enable = false
+      [page.header.number.format]
+        h2 = "{h2} {title}"
+        h3 = "{h2}.{h3} {title}"
+        h4 = "{h2}.{h3}.{h4} {title}"
+        h5 = "{h2}.{h3}.{h4}.{h5} {title}"
+        h6 = "{h2}.{h3}.{h4}.{h5}.{h6} {title}"
+  # KaTeX mathematical formulas config (KaTeX https://katex.org/)
+  # KaTeX 数学公式配置 (KaTeX https://katex.org/)
+  [page.seo]
+    # image URL
+    # 图片 URL
+    images = []
+    # Publisher info
+    # 出版者信息
+    [page.seo.publisher]
+      name = "xxxx"
+      logoUrl = "/images/avatar.webp"
+  # Related content config
+  # 相关文章推荐配置
+  [page.related]
+    enable = true
+    count = 2
+    
+[search]
+  enable = true
+  # type of search engine ("algolia", "fuse", "pagefind")
+  # 搜索引擎的类型 ("algolia", "fuse", "pagefind")
+  type = "fuse"
+  # max index length of the chunked content
+  # 文章内容最长索引长度
+  contentLength = 4000
+  # placeholder of the search bar
+  # 搜索框的占位提示语
+  placeholder = ""
+  # max number of results length
+  # 最大结果数目
+  maxResultLength = 10
+  # snippet length of the result
+  # 结果内容片段长度
+  snippetLength = 40
+  # HTML tag name of the highlight part in results
+  # 搜索结果中高亮部分的 HTML 标签
+  highlightTag = "em"
+  # whether to use the absolute URL based on the baseURL in search index
+  # 是否在搜索索引中使用基于 baseURL 的绝对路径
+  absoluteURL = false
+  [search.algolia]
+    index = "en_index"
+    appID = ""
+    searchKey = ""
+  [search.fuse]
+    # https://fusejs.io/api/options.html
+    isCaseSensitive = false
+    minMatchCharLength = 2
+    findAllMatches = false
+    location = 0
+    threshold = 0.1
+    distance = 100
+    ignoreLocation = true
+    useExtendedSearch = false
+    ignoreFieldNorm = false
+  [search.pagefind]
+    # https://pagefind.app/docs/search-config/#available-options
+    # run `npx pagefind --site $YOUR_PUBLIC_DIR` after site build to create pagefind index
+    termFrequency = 1.0
+    pageLength = 0.75
+    termSimilarity = 1.0
+    termSaturation = 1.4
+
+[social]
+  # Angellist = ""
+  # Bandcamp = ""
+  # Behance = ""
+  # Bilibili = ""
+  # Bitbucket = ""
+  # BuyMeACoffee = ""
+  # Codepen = ""
+  # Deviantart = ""
+  # Devto = ""
+  # Douban = ""
+  # Dribbble = ""
+  # Email = "xxxx@xxxx.com"
+  # Facebook = "xxxx"
+  # Fivehundredpx = ""
+  # Flickr = ""
+  # Foursquare = ""
+  # FreeCodeCamp = ""
+  # Gitea = ""
+  GitHub = "https://github.com/jeremejazz"
+  # Gitlab = ""
+  # Goodreads = ""
+  # Googlescholar = ""
+  # Hackernews = ""
+  # Instagram = ""
+  # Jsfiddle = ""
+  # Keybase = ""
+  # Kickstarter = ""
+  # Ko-Fi = "xxx"
+  # Lastfm = ""
+  # Liberapay = "xxx"
+  Linkedin = "https://ph.linkedin.com/in/jeremecausing"
+  # Linktree = ""
+  # Matrix = ""
+  # Medium = ""
+  # Mix = ""
+  # Odnoklassniki = ""
+  # ORCID = ""
+  # Patreon = ""
+  # Paypal = ""
+  # Pinterest = ""
+  # QQ = ""
+  # QQGroup = ""
+  # Quora = ""
+  # Reddit = ""
+  # Researchgate = ""
+  # RSS = true
+  # Skype = ""
+  # Slidershare = ""
+  # Snapchat = ""
+  # Soundcloud = ""
+  # Spotify = ""
+  # Stackoverflow = ""
+  # Steam = ""
+  # Strava = ""
+  Telegram = "JeremeCausing"
+  # Thingiverse = ""
+  # Tumblr = ""
+  # Twitch = ""
+  # Twitter = "xxxx"
+  # Vine = ""
+  # VK = ""
+  # Weibo = ""
+  # Whatsapp = ""
+  # Wordpress = ""
+  # Xing = ""
+  # XMPP = ""
+  # Youtubechannel = ""
+  # Youtubecustom = ""
+  # Youtubelegacy = "xxxx"
+  # Zhihu = ""
+  # Bluesky = "did:plc:z72i7hdynmk6r22z27h6tvur"
+  # [social.Mastodon]
+  #   id = "@xxxx"
+  #   prefix = "https://mastodon.technology/"
+  # [social.Diaspora]
+  #   id = "@xxxx"
+  #   prefix = "https://yyyy/"
+# Sponsor config
+# 赞助设置
+[sponsor]
+  enable = false
+  bio = "If you find this post helpful, please consider sponsoring."
+  link = "https://github.com/sponsors/HEIGE-PCloud"
+  # custom = "<a href=\"https://www.buymeacoffee.com/PCloud\" target=\"_blank\"><img src=\"https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png\" alt=\"Buy Me A Coffee\" style=\"height: 40px !important;width: 145 !important;\" ></a>"
+
+
+[section]
+  # special amount of posts in each section page
+  paginate = 20
+  # date format (month and day)
+  dateFormat = "01-02"
+  # amount of RSS pages
+  rss = 10
+  # DoIt NEW | 0.2.13 recently updated posts settings
+  [section.recentlyUpdated]
+    enable = false
+    rss = false
+    days = 30
+    maxCount = 10
+
+
+
+[seo]
+  # image URL
+  image = ""
+  # thumbnail URL
+  thumbnailUrl = ""
+  # DoIt NEW | 0.4.1
+  # alternate site name in Google search result
+  alternateName = ["Jereme's Personal Website"]
+
+
+  
+[verification]
+  google = ""
+  bing = ""
+  yandex = ""
+  pinterest = ""
+  baidu = ""
+  so = "" # 360 search
+  sogou = ""

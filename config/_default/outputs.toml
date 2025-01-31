@@ -1,0 +1,8 @@
+# Options to make hugo output files
+# 用于 Hugo 输出文档的设置
+
+home = ["html", "rss", "archives", "offline", "search"]
+page = ["html", "markdown"]
+section = ["html", "rss"]
+taxonomy = ["html"]
+term = ["html", "rss"]

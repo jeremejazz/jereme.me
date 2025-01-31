@@ -1,12 +1,13 @@
 ---
+weight: 1
 title: "Creating a MIDI Sound Module with Raspberry Pi and FluidSynth"
 date: 2023-04-08
 draft: false
-ShowToc: true
-cover:
-  alt: "Raspberry PI"
-  caption: 'Photo by <a href="https://unsplash.com/@praveentcom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Praveen Thirumurugan</a> on <a href="https://unsplash.com/photos/VHTVtYTNr8M?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
-  image: "cover.jpg"
+
+authors: [Jereme]
+
+featuredImage: "cover.jpg"
+
 ---
 
 In this tutorial, I will explain how I created a MIDI sound module using a Raspberry Pi.

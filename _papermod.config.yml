@@ -1,7 +1,7 @@
 baseURL: "https://jereme.me"
 title: Jereme Causing
 paginate: 5
-theme: PaperMod
+theme: DoIt
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
@@ -81,9 +81,9 @@ params:
   #     hiddenInSingle: true # hide on single page
 menu:
   main:
-    - identifier: posts
-      name: Blog
-      url: https://blog.jereme.me
+    - identifier: post
+      name: Posts
+      url: /post/
       weight: 1
     - identifier: archive
       name: Archive

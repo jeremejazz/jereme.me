@@ -5,11 +5,10 @@ tags:
   - version control
   - git
 lastmod: 2022-01-30
- 
- 
-cover: 
-  image: /images/version-control/branching-git.png
- 
+authors: [Jereme]
+
+featuredImage: /images/version-control/branching-git.png
+featuredImagePreview: /images/version-control/branching-git.png
 tags:
   - best practices
   - development

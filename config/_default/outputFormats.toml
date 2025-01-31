@@ -1,0 +1,45 @@
+# Options to make output .md files
+# 用于输出 Markdown 格式文档的设置
+
+[mediaTypes."text/markdown"]
+  suffixes = ["md"]
+# [MarkDown]
+#   mediaType = "text/plain"
+#   isPlainText = true
+#   isHTML = false
+
+# [JsonFeed]
+#   mediaType = "application/feed+json"
+#   isPlainText = true
+#   notAlternative = true
+
+[archives]
+  path = "archives"
+  baseName = "index"
+  mediaType = "text/html"
+  isPlainText = false
+  isHTML = true
+  permalinkable = true
+# FixIt 0.3.0 | NEW Options to make output /offline/index.html file
+[offline]
+  path = "offline"
+  baseName = "index"
+  mediaType = "text/html"
+  isPlainText = false
+  isHTML = true
+  permalinkable = true
+# FixIt 0.3.0 | NEW Options to make output readme.md file
+[readme]
+  baseName = "readme"
+  mediaType = "text/markdown"
+  isPlainText = true
+  isHTML = false
+
+# FixIt 0.3.10 | NEW Options to make output search.json file
+[search]
+  baseName = "search"
+  mediaType = "application/json"
+  rel = "search"
+  isPlainText = true
+  isHTML = false
+  permalinkable = true
