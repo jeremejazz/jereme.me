@@ -11,18 +11,12 @@ tags: []
 categories: []
 posts: []
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
+hiddenFromHomePage: true
+hiddenFromSearch: true
 
 featuredImage: ""
 featuredImagePreview: ""
 
-toc:
-  enable: true
-math:
-  enable: false
-lightgallery: false
-license: ""
 ---
 
 <!--more-->
