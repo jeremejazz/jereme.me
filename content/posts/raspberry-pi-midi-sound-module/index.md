@@ -2,7 +2,7 @@
 title: "Creating a MIDI Sound Module with Raspberry Pi and FluidSynth"
 date: 2023-04-08
 draft: false
-
+tags: tutorial
 authors: [Jereme]
 
 featuredImage: "cover.jpg"
