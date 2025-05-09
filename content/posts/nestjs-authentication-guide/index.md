@@ -55,15 +55,15 @@ For our data persistence layer, we'll be utilizing MikroORM. We've chosen MikroO
 ### Configuration
 
 Before we start building our authentication logic, we need to configure our application to handle environment variables and data validation effectively. To achieve this, we'll install the following essential NestJS packages.
-- `@nestjs/config`
-- `class-transformer`
-- `class-validator`
+- `@nestjs/config`: NestJS configuration module for environment variables
+- `class-transformer`: useful for Data Transfer Objects (DTOs)
+- `class-validator`: library for valudation rules
 
-``` 
+```sh 
 npm i -S @nestjs/config class-transformer class-validator
 ```
 
-Update the App Module file in `src/app.module.ts` to initialize the configuration:
+Next, we'll update the `AppModule` file (`src/app.module.ts`) to initialize the `ConfigModule`. This will make our environment variables accessible throughout the entire application.
 
 ```tsx { title=app.module.ts hl_lines=["8-10"] }
 import { Module } from '@nestjs/common';
@@ -83,9 +83,9 @@ import { ConfigModule } from '@nestjs/config';
 export class AppModule {}
 ```
 
-Then update  `src/main.ts` file to be able to use the `PORT` environment variable. Since we installed `class-validator`  we should add the `ValidationPipe` to check for validations later:
+Then, we'll modify the `src/main.ts file`, the entry point of our application. Here, we'll register the ValidationPipe globally. 
 
-```tsx { title=app.module.ts hl_lines=[6,7]}
+```tsx { title=main.ts hl_lines=[6,7]}
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
@@ -97,30 +97,33 @@ async function bootstrap() {
 bootstrap();
 
 ```
+This middleware will automatically validate incoming request payloads based on the validation rules we define in our Data Transfer Objects (DTOs) using decorators from the class-validator library.  
 
-We should now be able to create a `.env` file containing the following: 
+With the `ConfigModule` initialized, NestJS automatically loads environment variables from a `.env` file located in the root of your project. Create this file as well for our future configurations: 
 
-``` 
+```text {title=".env"} 
 PORT=3000
 ```
-
-We should be able to change the running port when needed. Importing ConfigModule also allows the initialization of the `dotenv` package so we’ll be able to use `.env` files.
-
+This also allows us to use the `PORT` variable throughout or application globally.
+ 
 ### Database Setup
 
-To set up the database, we need to install the following packages: 
+To set up our database integration using MikroORM, we need to install the following core packages: 
 
-```bash
-npm i -S passport @mikro-orm/core @mikro-orm/nestjs @mikro-orm/sqlite 
+- `@mikro-orm/core`: core MikroOrm Library
+- `@mikro-orm/nestjs`: NestJS integration for MikroORM
+- `@mikro-orm/sqlite`: SQLite database driver
+
+```sh
+npm i -S @mikro-orm/core @mikro-orm/nestjs @mikro-orm/sqlite 
 ```
 
-Also, the following dev dependencies for our migration scripts: 
-
-```bash
+We also need the following commandline-interface (CLI) tool for managing database migrations:
+```sh
 npm i -D @mikro-orm/cli
 ```
 
-In the root directory, create a file named `mikro-orm.config.ts` . This would handle our database configuration for the migration and application as well.
+In the root directory, create a file named `mikro-orm.config.ts`. This file serves as the central configuration for our MikroORM setup, used both by the MikroORM CLI for migrations and by our application to connect to the database.
 
 ```tsx {title=mikro-orm.config.ts}
 import { defineConfig } from '@mikro-orm/sqlite';
@@ -139,9 +142,13 @@ export default defineConfig({
 
 ```
 
-Since this file is also called externally, we need to call `dotenv.config()` to ensure that our `.env` file is being read. Also, update our `.env` to include the `DATABASE_NAME` variable
+{{< admonition type=info title="Info" open=false >}}
+Since the `mikro-orm.config.ts` file is also executed directly by the MikroORM CLI (which runs outside the NestJS application context), we need to explicitly call `dotenv.config()` at the top to ensure that our environment variables from the `.env` file are loaded and accessible when the CLI runs migration commands.
+{{< /admonition >}}
 
-```
+Remember to update your `.env` file to include the `DATABASE_NAME` variable. This will specify the name of the SQLite database file that MikroORM will use.
+
+```text {title=".env"}
 PORT=3000
 DATABASE_NAME=auth.sqlite
 ```
