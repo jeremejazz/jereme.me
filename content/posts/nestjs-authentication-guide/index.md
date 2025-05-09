@@ -153,7 +153,7 @@ PORT=3000
 DATABASE_NAME=auth.sqlite
 ```
 
-In the `app.module.ts` file, import the MikroOrm module. It should look something similar to this:
+In the `app.module.ts` file, we import and configure the `MikroOrmModule` using the `forRoot()` static method. This method takes our `mikroOrmConfig` as an argument, establishing the database connection and making the MikroORM services available throughout our NestJS application.
 
 ```tsx { hl_lines=[13] }
 import { Module } from '@nestjs/common';
@@ -177,25 +177,24 @@ export class AppModule {}
 
 ```
 
-In our `package.json` , add the following  `scripts` entry to run our migration scripts later.
+Finally, we'll add the following useful scripts to the `scripts` section of our `package.json` file. These scripts allow us to easily manage our database migrations using the MikroORM CLI:
 
-```
-    "migration:up": "mikro-orm migration:up",
-    "migration:down": "mikro-orm migration:down",
-    "migration:list": "mikro-orm migration:list",
-    "migration:create": "mikro-orm migration:create"
-```
+- `"migration:up": "mikro-orm migration:up"`: apply any pending database migration
+- `"migration:down": "mikro-orm migration:down"`: reverts the last applied database migration
+- `"migration:list": "mikro-orm migration:list"`: display a list of all migrations and their status
+- `"migration:create": "mikro-orm migration:create"`: generate a new empty migration file
+ 
 
-Now that we have our initial project setup, we should now be able to start working on our modules. 
+With our core project dependencies and database configured, we are now ready to start working on our authentication application.
 
 ## Planning our API
 
 First, let’s plan our REST API Endpoints. 
 
 `POST` **Sign Up User**
-
-| Description | Create a new user |
+|  Detail  | Information  |
 | --- | --- |
+| Description | Sign up a new user. Should return basic information on success. |
 | URL | `/auth/signup` |
 | Auth Required | No |
 
@@ -219,9 +218,10 @@ First, let’s plan our REST API Endpoints.
 
 `POST` **Sign In User**
 
-| Description | Login the user |
+|  Detail  | Information  |
 | --- | --- |
-| URL | `/auth/signup` |
+| Description | Login the user. On success should return an `accessToken` that the client should use for authenticated requests. It might also include basic user information. |
+| URL | `/auth/signin` |
 | Auth Required | No |
 
 **Request Body**
@@ -244,8 +244,9 @@ First, let’s plan our REST API Endpoints.
 
 `GET` User **Profile**
 
-| Description | Get User Information |
+|  Detail  | Information  |
 | --- | --- |
+| Description | Get User Information. To acccess this endpoint, a valid `accessToken` must be included in the `Authorization` header as a Bearer token. |
 | URL | `/user/profile` |
 | Auth Required | Yes |
 
