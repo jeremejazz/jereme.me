@@ -165,6 +165,9 @@ externalIcon = true
   rss = 10
 
 [page]
+  collectionList = true
+  # FixIt 0.3.0 | NEW whether to enable collection navigation at the end of the post
+  collectionNavigation = true
   # whether to hide a page from home page
   # 是否在主页隐藏一篇文章
   hiddenFromHomePage = false
@@ -244,7 +247,7 @@ externalIcon = true
   [page.code]
     # the maximum number of lines of displayed code by default
     # 默认展开显示的代码行数
-    maxShownLines = 10
+    maxShownLines = 100
     # whether to enable line numbers in the code block
     # 是否显示代码行号
     lineNos = true
