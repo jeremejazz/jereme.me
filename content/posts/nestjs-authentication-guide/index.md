@@ -1,9 +1,9 @@
 ---
 title: "The Art of NestJS Authentication: A Step-by-Step Guide for Beginners"
 subtitle:
-date: 2025-05-09T22:12:29+08:00
-slug: b7d24cd
-draft: true
+date: 2025-05-10T12:40:29+08:00
+slug: nest-js-authentication-guide
+draft: false
 authors: [Jereme]
 description: A step-by-step implementation of an authentication system in NestJS
 keywords: NestJS, tutorial, authentication, node.js
@@ -26,7 +26,7 @@ resources:
     src: images/featured-image-preview.jpg
 toc: true
 math: false
-lightgallery: false
+lightgallery: true
 password:
 message:
 repost:
@@ -595,7 +595,7 @@ export class AuthController {
 
 You can test this using any tool such as Postman or EchoAPI. It should follow the Sign Up API we defined earlier. 
 
-{{< figure src="images/signup-request.png" caption="Signup Request using EchoAPI"  >}}
+{{< image src="images/signup-request.png" caption="Signup Request using EchoAPI" loading="lazy" >}}
 
 
 ### Sign In
@@ -1003,7 +1003,7 @@ To test this new protected endpoint, you'll need a valid access token. Follow th
 *Alternatively, under auth, you can select Bearer tokens and just paste the access token without needing to add the `Bearer` prefix.*
 
 
-{{< figure src="images/test_profile.png" caption="Example testing on profile endpoint" loading="lazy"  >}}
+{{< image src="images/test_profile.png" caption="Example testing on profile endpoint" loading="lazy"  >}}
 
 
 
