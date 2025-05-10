@@ -1007,15 +1007,17 @@ To test this new protected endpoint, you'll need a valid access token. Follow th
 
 
 
-# Conclusion
+## Conclusion
 
 In this guide, we implemented a basic authentication system using NestJS and MikroORM. We covered setting up the environment, configuring the database, creating a user model, and implementing sign-up, sign-in, and profile endpoints. While the system is simple and doesn't include advanced features like email verification or token refresh, it's a solid foundation for building more complex auth workflows.
 
 Feel free to expand on this by adding features such as role-based access control, refresh tokens, or integration with external identity providers.
+{{< admonition type=info title="Source Code" open=true >}}
+You can find the complete source code for this project at the [Github Repository](https://github.com/jeremejazz/nestjs-auth-example)
+{{< /admonition >}}
 
-You can find the complete source code for this project here: [NestJS Auth Example](https://github.com/jeremejazz/nestjs-auth-example)
 
-{{< admonition type=note title="Resource" open=true >}}
+{{< admonition type=quote title="Credits" open=false >}}
 Cover Photo by [Jason Dent](https://unsplash.com/@jdent?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/black-and-silver-door-knob-3wPJxh-piRw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
  
 {{< /admonition >}}
