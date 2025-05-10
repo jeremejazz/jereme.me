@@ -1,7 +1,7 @@
 ---
 title: "The Art of NestJS Authentication: A Step-by-Step Guide for Beginners"
 subtitle:
-date: 2025-04-11T22:12:29+08:00
+date: 2025-05-09T22:12:29+08:00
 slug: b7d24cd
 draft: true
 authors: [Jereme]
@@ -266,16 +266,16 @@ We won’t implement features like email verification or token refresh since it 
 
 We’ll need to create the following modules
 
-- users
-- auth
+- **users** 
+- **auth**
 
 In the terminal, run the following command to create the users module: 
 
-```
+```bash
 nest g res users --no-spec
 ```
 
-```
+```bash
 nest g res auth --no-spec
 ```
 
@@ -290,11 +290,10 @@ If successful, the following directories should be created under `src`
 
 ## Creating Our User Model
 
-We’ll create our `User` model. Create the `entities` folder under `src/users`  then create a file named `user.entity.ts` 
+We'll begin by defining our `User` data model. In NestJS with MikroORM, entities represent the structure of our database tables. To organize our entity files, create an `entities` folder under the `src/users` directory, and then create a file named `user.entity.ts` within this folder.
 
-```tsx
+```tsx {title="user.entity.ts"}
 import { BeforeCreate, Entity, PrimaryKey, Property } from '@mikro-orm/core';
-import * as bcrypt from 'bcrypt';
 
 @Entity()
 export class User {
@@ -328,24 +327,32 @@ export class User {
 
 ```
 
-Now let’s create a new migration script based on the model. In the terminal, enter the following 
+Now let's generate a database migration based on our User entity. In your terminal, run the following command:
 
-```
+```sh 
 npm run migration:create -- -n create_users
 ```
 
+{{< admonition type=info title="Info" open=true >}}
+The `-n create_users` flag provides a name (`create_users`) for the migration, which helps in organizing and identifying your migration files.
+{{< /admonition >}}
+
+
 If successful, a new migration script in the `src/migrations` directory should be created with the following code similar to this:
 
-```tsx
+```tsx {title="Migration20250404051249_create_users.ts"}
 import { Migration } from '@mikro-orm/migrations';
 
-export class Migration20250404051249_users extends Migration {
+export class Migration20250404051249_create_users extends Migration {
 
   override async up(): Promise<void> {
-    this.addSql(`create table \`user\` (\`id\` integer not null primary key autoincrement, 
+    this.addSql(`create table \`user\` 
+    (\`id\` integer not null primary key autoincrement, 
     \`username\` text not null, \`password\` text not null, 
-    \`full_name\` text null, \`created_at\` datetime not null, \`updated_at\` datetime not null);`);
-    this.addSql(`create unique index \`user_username_unique\` on \`user\` (\`username\`);`);
+    \`full_name\` text null, \`created_at\` datetime not null, 
+    \`updated_at\` datetime not null);`);
+    this.addSql(`create unique index 
+    \`user_username_unique\` on \`user\` (\`username\`);`);
   }
 
 }
@@ -362,13 +369,19 @@ Optionally, you can override the `down` method in case you need to revert your m
 
 Now we have our migration script, run the following in the terminal:
 
-```
+```bash 
 npm run migration:up
 ```
 
-If successful, an `auth.sqlite` file should be visible in the root directory. To open this, you can use the [SQLite cli tools](https://sqlite.org/cli.html) or the [SQLite browser](https://sqlitebrowser.org/). 
+If the migration is successful, you should see an `auth.sqlite` file in your project's root directory. 
 
-With these tools, you should be able to see the newly made table
+{{< admonition type=info title="Info" open=true >}}
+
+To inspect the database, you can use the [SQLite cli tools](https://sqlite.org/cli.html) or the [SQLite browser](https://sqlitebrowser.org/). 
+
+{{< /admonition >}}
+
+With our `User` entity defined and the database schema created, we're now ready to implement the user registration and login functionalities.
 
 ## Implementing the API
 
