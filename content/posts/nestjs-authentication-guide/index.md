@@ -65,7 +65,7 @@ npm i -S @nestjs/config class-transformer class-validator
 
 Next, we'll update the `AppModule` file (`src/app.module.ts`) to initialize the `ConfigModule`. This will make our environment variables accessible throughout the entire application.
 
-```tsx { title=app.module.ts hl_lines=["8-10"] }
+```tsx { title=app.module.ts hl_lines=[4,"8-10"] }
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -155,7 +155,7 @@ DATABASE_NAME=auth.sqlite
 
 In the `app.module.ts` file, we import and configure the `MikroOrmModule` using the `forRoot()` static method. This method takes our `mikroOrmConfig` as an argument, establishing the database connection and making the MikroORM services available throughout our NestJS application.
 
-```tsx { hl_lines=[13] }
+```tsx { hl_lines=[6,13] title="app.module.ts" }
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -188,7 +188,7 @@ Finally, we'll add the following useful scripts to the `scripts` section of our 
 With our core project dependencies and database configured, we are now ready to start working on our authentication application.
 
 ## Planning our API
-
+{{< figure src="images/planning.jpg" caption="Photo by [Eugenia Ai](https://unsplash.com/@eugeniia?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/blue-pen-on-white-printer-paper-AWTbR67Al18?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"  >}}
 First, let’s plan our REST API Endpoints. 
 
 `POST` **Sign Up User**
@@ -293,7 +293,8 @@ If successful, the following directories should be created under `src`
 We'll begin by defining our `User` data model. In NestJS with MikroORM, entities represent the structure of our database tables. To organize our entity files, create an `entities` folder under the `src/users` directory, and then create a file named `user.entity.ts` within this folder.
 
 ```tsx {title="user.entity.ts"}
-import { BeforeCreate, Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import { BeforeCreate, Entity, 
+        PrimaryKey, Property } from '@mikro-orm/core';
 
 @Entity()
 export class User {
@@ -309,7 +310,8 @@ export class User {
   @Property({ type: 'string', name: 'full_name', nullable: true })
   fullName: string;
 
-  @Property({ type: 'Date', onCreate: () => new Date(), name: 'created_at' })
+  @Property({ type: 'Date', 
+            onCreate: () => new Date(), name: 'created_at' })
   public createdAt: Date | null;
 
   @Property({
@@ -375,7 +377,7 @@ npm run migration:up
 
 If the migration is successful, you should see an `auth.sqlite` file in your project's root directory. 
 
-{{< admonition type=info title="Info" open=true >}}
+{{< admonition type=tip title="Tip" open=true >}}
 
 To inspect the database, you can use the [SQLite cli tools](https://sqlite.org/cli.html) or the [SQLite browser](https://sqlitebrowser.org/). 
 
@@ -385,11 +387,15 @@ With our `User` entity defined and the database schema created, we're now ready 
 
 ## Implementing the API
 
+{{< figure src="images/coding.jpg" caption="Photo by [Christopher Gower](https://unsplash.com/@cgower?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-macbook-with-lines-of-code-on-its-screen-on-a-busy-desk-m_HRfLhgABo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"  >}}
+
 ### Creating the Create user DTO
 
-We create a Data Transfer Object (DTO), which will be used to describe the data that will be validated. Create a file in `src/users/dto/create-user.dto.ts` and enter the following: 
+In NestJS, Data Transfer Objects (DTOs) play a crucial role in defining the structure of data being transferred between different layers of our application, especially for incoming requests. They provide a type-safe way to define the expected data and enable us to use validation pipes to ensure the integrity of the data before it reaches our service layer. For our user registration (`Sign Up`) endpoint, we'll create a `CreateUserDto` to define the expected request body.
 
-```tsx
+Create a file in `src/users/dto/create-user.dto.ts` and enter the following: 
+
+```tsx { title="create-user.dto.ts" }
 import { IsNotEmpty, IsString, MinLength } from 'class-validator';
 
 export class CreateUserDto {
@@ -413,9 +419,9 @@ export class CreateUserDto {
 
 We’ll need to update the `users` module so that it interacts with the database. We’ll then integrate this with the `auth` module. This is to keep the authentication logic separate. 
 
-In our `users.module.ts` , import the MikroOrm module we created earlier in our App Module.
+In our `users.module.ts` , import the MikroOrm module we created earlier in our App Module. To enable our `UsersService` to interact with the `User` entity in the database, we need to import the `MikroOrmModule` and use its `forFeature()` static method
 
-```tsx
+```tsx { hl_lines=[5,10] title="users.module.ts" }
 import { Module } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { UsersController } from './users.controller';
@@ -425,7 +431,7 @@ import { MikroOrmModule } from '@mikro-orm/nestjs';
 @Module({
   controllers: [UsersController],
   providers: [UsersService],
-  imports: [MikroOrmModule.forFeature([User])], // <--
+  imports: [MikroOrmModule.forFeature([User])],
   exports: [UsersService],
 })
 export class UsersModule {}
@@ -436,7 +442,7 @@ This should allow us to inject the User Repository into our `UsersService` provi
 
 In `users.service.ts`, copy the following content:
 
-```tsx
+```tsx { title="users.service.ts" }
 import { InjectRepository } from '@mikro-orm/nestjs';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { User } from './entities/user.entity';
@@ -476,14 +482,15 @@ export class UsersService {
 }
 
 ```
+In our `UsersService`, we use the `@InjectRepository(User)` decorator to inject the `EntityRepository` for our `User` entity.
 
 We’ll be needing these methods later when we implement the authentication. Note that we are using `CreateUserDto` to provide type annotations.  
 
 ### Sign Up
 
-Before we use our `UsersService` in our `auth` module, we’ll need to import the `users` module first. Update the `src/auth/auth.module.ts` file, then import `UsersModule`: 
+Before we use our `UsersService` in our `auth` module, we’ll need to import the `UsersModule` module first. Update the `src/auth/auth.module.ts` file, then import `UsersModule`: 
 
-```tsx
+```tsx {hl_lines=[4,9] title="auth.module.ts" }
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
@@ -492,15 +499,15 @@ import { UsersModule } from 'src/users/users.module';
 @Module({
   controllers: [AuthController],
   providers: [AuthService],
-  imports: [UsersModule],  // <-- 
+  imports: [UsersModule],
 })
 export class AuthModule {}
 
 ```
 
-We then create our service. Under  `src/auth/auth.service.ts` ,  inject the UsersService and add the method for Sign Up as well. 
+We then create our service. Under  `src/auth/auth.service.ts` ,  inject the `UsersService` using NestJS's dependency injection mechanism. We then add the `signUp` method. 
 
-```tsx
+```tsx { title = "auth.service.ts" hl_lines=[19]}
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreateUserDto } from '../users/dto/create-user.dto';
 import { User } from '../users/entities/user.entity';
@@ -530,23 +537,25 @@ export class AuthService {
   
   }
 ```
+ 
 
-This code is not ready yet, as you might notice that we are calling a method called `hashPassword` . We’ll add this on the next step.
+While it's nearly complete, our code is not ready yet, as you might notice that we are calling a method called `hashPassword`. which we will be adding on the next step.
 
 #### Password Encryption
+For securely storing user passwords, we'll use the [bcrypt](https://www.npmjs.com/package/bcrypt) library. `bcrypt` is a widely adopted and robust hashing algorithm that makes it hard to reverse the hashing process which would protect the user credentials even if the database is compromised. 
 
-For our password encryption, install the [bcrypt](https://www.npmjs.com/package/bcrypt) package
+Install it using the following commands:
 
-```
+```sh
 npm i -S bcrypt
 ```
 
 Back in our `auth.service.ts` file, add the hashPassword function. 
 
-```tsx
+```tsx { hl_lines=[3] title="auth.service.ts" }
 ...
 import { User } from '../users/entities/user.entity';
-import * as bcrypt from 'bcrypt'; /// <--
+import * as bcrypt from 'bcrypt'; 
 
 @Injectable()
 export class AuthService {
@@ -561,9 +570,9 @@ export class AuthService {
 }
 ```
 
-We now have a service that contains the `signUp` method. Next, we’ll need to call this from the `AuthController`. We’ll also add the CreateUserDto to add some validation.
+Now that our `AuthService` contains the `signUp` method, we’ll need to call this from the `AuthController`. We’ll also add the `CreateUserDto` for validation and data extraction from the request body.
 
-```tsx
+```tsx { title="auth.controller.ts" hl_lines=[2,"11-16"]}
 import { Body, Controller, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { User } from 'src/users/entities/user.entity';
@@ -586,15 +595,14 @@ export class AuthController {
 
 You can test this using any tool such as Postman or EchoAPI. It should follow the Sign Up API we defined earlier. 
 
-<!-- TODO add screenshot -->
+{{< figure src="images/signup-request.png" caption="Signup Request using EchoAPI"  >}}
+
 
 ### Sign In
 
-For our User Sign in API, we need to create the DTO first for our validation.
+For our User Sign in API, we first need to define a Data Transfer Object (DTO) to specify the expected request body for the login credentials. Create a file `src/auth/dto/signin.dto.ts` with the following content:
 
-`src/auth/dto/signin.dto.ts`
-
-```tsx
+```tsx { title="signin.dto.ts" }
 import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 
 export class SignInDTO {
@@ -613,7 +621,7 @@ Next, we need to update our `auth.service.ts` file by adding the following code 
 
 ```tsx
 // ... 
-// imports 
+// imports go here
 
   export class AuthService {
   constructor(
@@ -625,31 +633,37 @@ Next, we need to update our `auth.service.ts` file by adding the following code 
   async signIn(signInDTO: SignInDTO): Promise<User> {
     const { username, password } = signInDTO;
 
-    const user = await this.usersService.findByUsername(username);
+    const user 
+      = await this.usersService.findByUsername(username);
     if (!user) {
-      throw new BadRequestException('Invalid Login Credentials');
+      throw new 
+        BadRequestException('Invalid Login Credentials');
     }
 
-    const isPasswordValid = await this.comparePassword(password, user.password);
+    const isPasswordValid 
+      = await this.comparePassword(password, user.password);
 
     if (!isPasswordValid) {
-      throw new BadRequestException('Invalid Login Credentials');
+      throw new 
+        BadRequestException('Invalid Login Credentials');
     }
 
     return user;
   }
   
-    async comparePassword(password: string, hashed: string): Promise<boolean> {
+    async comparePassword(password: string, 
+        hashed: string): Promise<boolean> {
     const result = await bcrypt.compare(password, hashed);
     return result;
   }
   
   }
 ```
+The `comparePassword` method utilizes the `bcrypt.compare` function to securely compare the plain text `password` provided by the user with the `hashed` password retrieved from the database. `bcrypt.compare` handles the salt internally, ensuring a secure comparison.
 
-Then, in our controller, call the sign in method we created. 
+Then, in our `AuthController`, we create a new `POST` route at `/auth/signin`. This route takes the `SignInDTO` as the request body and calls the `signIn` method of our `AuthService`. The result, which includes the user information and the `accessToken`, is then returned to the client.
 
-```tsx
+```tsx { title="auth.controller.ts" hl_lines=["6-9"]}
 
 @Controller('auth')
 export class AuthController {
@@ -660,7 +674,7 @@ export class AuthController {
     return await this.authService.signIn(signInDTO);
   }
   
-  // @Post('signup')
+  // @Post('signup') code here
   // ...
    
   
@@ -671,15 +685,15 @@ At this point, we should test the sign-in API by using the same username and pas
 
 #### Generating Access Tokens
 
-As stated in our API specification for Sign In, this should return a Token. To implement this, we need to install the `@nestjs/jwt` package to support JWT manipulation:
+To implement the generation of access tokens, as specified in our API design for Sign In, we need to install the `@nestjs/jwt` package. This module provides the necessary tools for working with JSON Web Tokens (JWTs) in our NestJS application:
 
-```
+```sh 
 npm i -S @nestjs/jwt
 ```
 
-Next, in our `auth.module.ts`, import and initialize the module:
+Next, we import and initialize the `JwtModule` in our `auth.module.ts`. We use `registerAsync` to configure the module asynchronously, allowing us to inject the `ConfigService` to retrieve our JWT secret from the environment variables. This ensures that our JWT signing key is not hardcoded.
 
-```tsx
+```tsx { title="auth.module.ts" hl_lines=["12-20"]}
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
@@ -690,38 +704,41 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 @Module({
   controllers: [AuthController],
   providers: [AuthService],
-  imports: [UsersModule, JwtModule.registerAsync({ // <--
-    imports: [ConfigModule],
-    inject: [ConfigService],
-    useFactory: (configService: ConfigService)=>{
-      return {
-        secret: configService.getOrThrow('JWT_SECRET')
-      };
-    }
-  })],  // <--
+  imports: [UsersModule, 
+    JwtModule.registerAsync({ 
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService)=>{
+        return {
+          secret: configService.getOrThrow('JWT_SECRET')
+        };
+      }
+    })
+  ],  
 })
 export class AuthModule {}
 
 ```
 
-Also, you might notice that we are using an environment variable called `JWT_SECRET`, so be sure to update our `.env` file: 
+Remember to update update our `.env` file and include the `JWT_SECRET` environment variable: 
 
-```
+```text {title=".env"}
 JWT_SECRET=yoursecretvalue
 ```
 
-You should be able to inject `JWTService` in our `AuthService` provider. 
+
+With the `JwtModule` configured, we can now inject the `JwtService` into our `AuthService`. 
 
 In the `auth.service.ts` file, update the following : 
 
-```tsx
+```tsx { title="auth.service.ts" hl_lines=[1, 7, 30, "32-35"] }
 import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
   constructor(
     private readonly usersService: UsersService,
-    private readonly jwtService: JwtService, // <-- 
+    private readonly jwtService: JwtService, 
   ) {}
 
 // ...
@@ -744,9 +761,9 @@ export class AuthService {
       sub: user.id,
       username: user.username,
     };
-    const accessToken = await this.jwtService.signAsync(payload); // <--
+    const accessToken = await this.jwtService.signAsync(payload);
 
-    return { // <--
+    return { 
       ...user,
       accessToken, 
     };
@@ -756,6 +773,7 @@ export class AuthService {
 ```
 
 ### Implementing an Authentication Guard
+{{< figure src="images/key.jpg" caption="Photo by [Dima Solomin](https://unsplash.com/@solomin_d?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-close-up-of-a-key-on-a-door-LkoDqb5E3zg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"   >}}
 
 Now that users can successfully log in, the crucial next step is to secure our API endpoints by implementing an authentication guard. This will ensure that only authenticated users can access protected resources. A widely adopted and effective method for verifying the authenticity of API requests and securely transmitting user information is through the use of JSON Web Tokens (JWT).
 
@@ -985,7 +1003,7 @@ To test this new protected endpoint, you'll need a valid access token. Follow th
 *Alternatively, under auth, you can select Bearer tokens and just paste the access token without needing to add the `Bearer` prefix.*
 
 
-{{< image src="test_profile.png" caption="Example testing on profile endpoint"  >}}
+{{< figure src="images/test_profile.png" caption="Example testing on profile endpoint" loading="lazy"  >}}
 
 
 
