@@ -32,8 +32,12 @@ externalIcon = true
  
   tileColor = "#da532c"
 # Search config
-# 搜索配置
 
+[analytics]
+  enable = true
+  [analytics.google]
+    id = "G-2XZX6QDD30"
+    anonymizeIP = true
 [author]
   name = "Jereme"
   email = ""
