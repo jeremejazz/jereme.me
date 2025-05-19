@@ -42,7 +42,7 @@ externalIcon = true
   name = "Jereme"
   email = ""
   link = "/posts"
-  avatar = "/images/nice_avatar.png"
+  avatar = "/images/avatar2.jpg"
 
 # back to top with progress percent
 [backToTop]
@@ -119,7 +119,7 @@ externalIcon = true
 
     # URL of avatar shown in home page
     # 主页显示头像的 URL
-    avatarURL = "/images/nice_avatar.png"
+    avatarURL = "/images/avatar2.jpg"
 
     # URL the avatar links to
     avatarMenu = "posts"
@@ -128,7 +128,7 @@ externalIcon = true
     title = ""
     # subtitle shown in home page
 
-    subtitle = "Hello World! :)"
+    subtitle = "Hello World! (and Beyond)."
     # whether to use typeit animation for subtitle
 
     typeit = true
@@ -369,7 +369,7 @@ externalIcon = true
   # Foursquare = ""
   # FreeCodeCamp = ""
   # Gitea = ""
-  GitHub = "https://github.com/jeremejazz"
+  GitHub = "jeremejazz"
   # Gitlab = ""
   # Goodreads = ""
   # Googlescholar = ""
@@ -381,7 +381,7 @@ externalIcon = true
   # Ko-Fi = "xxx"
   # Lastfm = ""
   # Liberapay = "xxx"
-  Linkedin = "https://ph.linkedin.com/in/jeremecausing"
+  Linkedin = "jeremecausing"
   # Linktree = ""
   # Matrix = ""
   # Medium = ""
