@@ -771,7 +771,7 @@ We will be leveraging [Passport.js](http://www.passportjs.org/), a well-establis
 
 We’ll then have to create a strategy first. This is needed in order to configure our authentication scheme.
 
-```tsx
+```tsx { title="jwt.strategy.ts" }
 import { ExtractJwt, Strategy } from "passport-jwt";
 import { PassportStrategy } from "@nestjs/passport";
 import { Injectable } from "@nestjs/common";
@@ -799,16 +799,14 @@ Save this under `src/auth/strategies/jwt.strategy.ts`
 
 Next create the authentication guard: `src/auth/guards/jwt-auth.guard.ts`
 
-```
-import { ExecutionContext, Injectable } from '@nestjs/common';
-import { Reflector } from '@nestjs/core';
-import { AuthGuard } from '@nestjs/passport';
-import { IS_PUBLIC_KEY } from '../decorators/public.decorator';
+```tsx { title="jwt-auth.guard.ts" }
+import { ExecutionContext, Injectable } from "@nestjs/common";
+import { Reflector } from "@nestjs/core";
+import { AuthGuard } from "@nestjs/passport";
+import { IS_PUBLIC_KEY } from "../decorators/public.decorator";
 
 @Injectable()
-export class JwtAuthGuard extends AuthGuard('jwt') {
-}
-
+export class JwtAuthGuard extends AuthGuard("jwt") {}
 ```
 
 #### Making the authentication guard global
@@ -817,7 +815,7 @@ To establish a robust security baseline for our application, we'll implement a g
 
 Update the `app.module.ts` to implement our global authentication guard:
 
-```tsx
+```tsx { title="app.module.ts" hl_lines=["24-27"] }
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
@@ -843,7 +841,7 @@ import { JwtAuthGuard } from "./auth/guards/jwt-auth.guard";
     AppService,
     {
       provide: APP_GUARD, // Globally apply the JwtAuthGuard
-      useClass: JwtAuthGuard, // <--
+      useClass: JwtAuthGuard,
     },
   ],
 })
@@ -860,7 +858,7 @@ The `@Public()` decorator leverages NestJS's metadata system. By using `SetMetad
 
 Create a new decorator under `src/auth/decorators/public.decorator.ts`
 
-```tsx
+```tsx { title="public.decorator.ts" }
 import { SetMetadata } from "@nestjs/common";
 
 export const IS_PUBLIC_KEY = "isPublic";
@@ -869,7 +867,7 @@ export const Public = () => SetMetadata(IS_PUBLIC_KEY, true);
 
 Back to our authentication guard `jwt-auth.guard.ts` file, update it using the following code:
 
-```tsx
+```tsx { title="jwt-auth.guard.ts" }
 import { ExecutionContext, Injectable } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import { AuthGuard } from "@nestjs/passport";
@@ -877,7 +875,6 @@ import { IS_PUBLIC_KEY } from "../decorators/public.decorator";
 
 @Injectable()
 export class JwtAuthGuard extends AuthGuard("jwt") {
-  // <--
   constructor(private reflector: Reflector) {
     super();
   }
@@ -896,7 +893,6 @@ export class JwtAuthGuard extends AuthGuard("jwt") {
     // Otherwise, enforce the default JWT authentication
     return super.canActivate(context);
   }
-  // <--
 }
 ```
 
@@ -904,7 +900,7 @@ Within the `canActivate` method of our `JwtAuthGuard`, we now utilize the `Refle
 
 Now moving to our AuthController `auth.controller.ts`, add the public decorators before the controller methods for sign-up and sign-in.
 
-```tsx
+```tsx { title="auth.controller.ts" hl_lines=[9,17]}
 import { CreateUserDto } from "../users/dto/create-user.dto";
 import { Public } from "./decorators/public.decorator";
 
@@ -913,7 +909,7 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post("signup")
-  @Public() //<--
+  @Public()
   async signUp(@Body() signupDto: CreateUserDto): Promise<User | null> {
     const user = await this.authService.signUp(signupDto);
 
@@ -921,7 +917,7 @@ export class AuthController {
   }
 
   @Post("signin")
-  @Public() //<--
+  @Public()
   async signIn(@Body() signInDTO: SignInDTO) {
     return await this.authService.signIn(signInDTO);
   }
@@ -938,9 +934,7 @@ With our authentication guard in place, we can now create our first protected AP
 
 Assuming you have a `UsersModule` and a corresponding `UsersController` (as established in previous steps), we'll now update this controller to implement the profile endpoint. This endpoint will leverage the `findOne` function we previously defined in the `UsersService` to fetch user details.
 
-`users.controller.ts`
-
-```tsx
+```tsx { title="users.controller.ts" }
 import { Controller, Get, Req } from "@nestjs/common";
 import { UsersService } from "./users.service";
 import { User } from "./entities/user.entity";
