@@ -14,6 +14,7 @@ tags:
   - development
   - tutorial
   - javascript
+  - typescript
 categories:
   - development
 hiddenFromHomePage: false
