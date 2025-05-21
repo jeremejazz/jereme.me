@@ -128,7 +128,7 @@ externalIcon = true
     title = ""
     # subtitle shown in home page
 
-    subtitle = "Hello World! (and Beyond)."
+    subtitle = "Hello World (and Beyond)!"
     # whether to use typeit animation for subtitle
 
     typeit = true
