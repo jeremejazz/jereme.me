@@ -11,7 +11,7 @@ author:
   avatar:
 description:
 keywords:
-license:
+license: <a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
 comment: false
 weight: 0
 tags:
@@ -131,3 +131,172 @@ For optimal results and to avoid unnecessary file generation, it's highly recomm
 After running the `gdal2tiles.py` command, you will find a `map/` directory containing subdirectories for each zoom level, and within those, individual image tiles. We’ll be using these tiles in our web mapping application, such as Leaflet, by pointing the map’s tile layer to the `map/` directory.
 
 {{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819556/jereme.me/custom-image-map-leaflet/gdal2tiles-output-folder.png" alt="Output Folder" caption="Example output of tiled images" >}}
+
+## Creating the Web Application with Vite and Leaflet
+
+Now that we have our image tiles, let's build a simple web application to display them using Vite and Leaflet. Vite provides a fast development experience with features like hot module replacement and a local development server.
+
+### Initialize the Project with Vite
+
+First, navigate to your desired projects folder in the terminal and create a new Vite project. We'll use the `vanilla` template for a basic setup. You can name your project anything you like; here, we'll use `my-leaflet-app`:
+
+```bash
+npm create vite@latest my-leaflet-app -- --template vanilla
+```
+
+This command will create a new directory named `my-leaflet-app` (or whatever you specified). Follow the on-screen instructions, which will typically guide you to:
+
+1.  Change into the new project directory:
+
+    ```bash
+    cd my-leaflet-app
+    ```
+
+2.  Install the project dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3.  Start the development server:
+    This will open your application in a browser, and it will automatically reload whenever you make changes to your code.
+    ```bash
+        npm run dev
+    ```
+
+#### Install Required Packages
+
+Next, we need to install the core libraries for our map application:
+
+- **`leaflet`**: The popular open-source JavaScript library for interactive maps.
+- **`leaflet-rastercoords`**: A useful utility for projecting pixel coordinates from our image to Leaflet's map coordinates.
+
+Install them using npm:
+
+```bash
+npm i -S leaflet leaflet-rastercoords
+```
+
+#### Creating the Map
+
+Now that our project is set up and dependencies are installed, let's clean up the default Vite code and start building our map.
+
+1. **Clean up `src/main.js` and `src/style.css`**: Remove all existing content from these two files.
+2. **Add Styles to `src/style.css`**: Add the following CSS to style our web page and the map container:
+
+```css
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #505050;
+  display: block;
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#app {
+  max-width: 768px;
+  border: 1px solid #eee;
+  width: 100%;
+  height: 550px;
+}
+```
+
+       We've defined a `div` with the ID `app` where our map will be rendered.
+
+1. **Initialize the Map in `src/main.js`**: Now, let's add the JavaScript code to `src/main.js` to create and display our Leaflet map.
+
+```jsx
+import "leaflet/dist/leaflet.css";
+import "./style.css";
+import * as L from "leaflet";
+import "leaflet-rastercoords";
+
+// Note for Markers:
+// Since Leaflet's default marker icons don't work properly with package bundlers like Vite,
+// we need to explicitly import and re-create them.
+import marker from "leaflet/dist/images/marker-icon.png";
+import marker2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
+
+function init() {
+  const container = document.getElementById("app");
+
+  if (!container) throw new Error('There is no div with the id: "app" ');
+
+  const height = 1024;
+  const width = 1024;
+
+  const imageDimensions = [width, height];
+
+  const map = L.map(container, {
+    center: L.latLng(0, 0),
+    noWrap: true,
+    crs: L.CRS.Simple,
+  });
+
+  L.tileLayer("/map/{z}/{x}/{y}.png", {
+    noWrap: true,
+    maxZoom: 2,
+  }).addTo(map);
+
+  // Initialize Leaflet.RasterCoords with the map and image dimensions
+  const rc = new L.RasterCoords(map, imageDimensions);
+
+  map.setView(rc.unproject([width, height]), 1);
+
+  // Re-create Leaflet's default icon for markers (due to bundler issues)
+  const icon = L.icon({
+    iconUrl: marker,
+    iconRetinaUrl: marker2x,
+    shadowUrl: markerShadow,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
+  // Example of adding a marker at specific pixel coordinates
+  // L.marker(rc.unproject([611, 433]), { icon }).addTo(map);
+}
+
+init();
+```
+
+#### Copying the Tiles to the Public Folder
+
+For our Vite development server to serve the generated map tiles, we need to copy the `map/` folder (created in the previous `gdal2tiles.py` step) into the `public/` directory of your Vite project.
+
+If your local development server (`npm run dev`) is still running, you should now be able to see your `treasure-map.jpg` image displayed as a zoomable map in your browser!
+
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747821388/jereme.me/custom-image-map-leaflet/example-web-app.png" alt="Example leaflet web app" caption="Webpage after loading the tiled images">}}
+
+#### Projecting Coordinates with `leaflet-rastercoords`
+
+You'll notice that we've included `leaflet-rastercoords` in our project. While Leaflet itself has built-in functions for projecting and unprojecting coordinates, `leaflet-rastercoords` offers convenience when working with image overlays. It simplifies the process of converting pixel coordinates from your image into Leaflet's map coordinates, eliminating the need to manually calculate zoom levels and automatically setting maximum boundaries so you don’t scroll away from the edge of the image.
+
+With this, you can easily work with the familiar pixel coordinates from your image (e.g., obtained from a photo editing software like GIMP or Photoshop) and convert them to map locations.
+
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/getting-pixel-coordinates-with-gimp.png" alt="Getting Coordinates with GIMP" caption="Hovering the mouse pointer over an area in the image displays the coordinates at the bottom in GIMP">}}
+
+For example, if you want to place a marker at pixel coordinates X: 611, Y: 433 on your original `treasure-map.jpg` image, you can do so directly using `rc.unproject()`:
+
+```js
+L.marker(rc.unproject([611, 433]), { icon }).addTo(map);
+```
+
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/example-web-app-leaflet-marker.png" alt="Example Leaflet Web App with Marker" caption="After applying the pixel coordinates, marker should now appear.">}}
+
+## Conclusion
+
+You have successfully created a custom zoomable map in Leaflet using your own images! This setup provides a solid foundation for building more interactive features on your image-based map. Feel free to experiment by using different images, adding more markers, or exploring other Leaflet functionalities to enhance your custom map application.
+
+{{< admonition "References"  >}}
+
+[Zoomable images with Leaflet](https://build-failed.blogspot.com/2012/11/zoomable-image-with-leaflet.html) - I used this as basis for my earlier project for an [earlier project](https://github.com/jeremejazz/olivarezmaps) back in 2013. [Maptiler](https://www.maptiler.com/) was used on that project instead of `gdal2tiles.py`.
+
+{{< /admonition >}}
+
+{{< admonition type=quote title="Credits" open=false >}}
+Cover Image by [Pexels](https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212)
+
+{{< /admonition >}}
