@@ -1,6 +1,6 @@
 ---
 title: Creating a Custom Map from Images in Leaflet
-subtitle:
+subtitle: Turn images into awesome zoomable applications
 date: 2025-05-21T14:26:21+08:00
 slug: custom-image-map-leaflet
 draft: false
@@ -9,8 +9,14 @@ author:
   link:
   email:
   avatar:
-description:
+description: In this tutorial, we’ll walk through how to create a custom map using a large image in Leaflet. Useful when working with non-geographical maps.
 keywords:
+  - leaflet
+  - javascript
+  - tutorial
+  - custom maps
+  - geospatial
+  - gdal2tiles
 license: <a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
 comment: false
 weight: 0

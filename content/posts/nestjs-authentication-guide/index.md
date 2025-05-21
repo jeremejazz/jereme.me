@@ -6,7 +6,14 @@ slug: nest-js-authentication-guide
 draft: false
 authors: [Jereme]
 description: A step-by-step implementation of an authentication system in NestJS. Here we'll be implementing sign in, sign up, and JWT authentication guards as well.
-keywords: NestJS, tutorial, authentication, node.js
+keywords:
+  - NestJS,
+  - tutorial,
+  - authentication,
+  - guide
+  - node.js
+  - typescript
+  - best practices
 license: <a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
 comment: false
 weight: 0
