@@ -65,7 +65,7 @@ Before we begin, make sure you have the following tools installed:
 ### Installing GDAL
 
 If you don’t have GDAL installed yet, the recommended method (which we’ll use in this tutorial) is via **Anaconda** or **Miniconda**. This approach is beginner-friendly and includes the required Python bindings out of the box.
-{{< admonition info >}}
+{{< admonition tip >}}
 I would recommend checking out this [step-by-step GDAL installation guide](https://gist.github.com/jeremejazz/02ea7626ec12a39a789f44db4a9ec49c) for installing GDAL with Anaconda
 {{< /admonition >}}
 While there are other installation methods available (e.g., via Homebrew, apt, or pip), using Anaconda ensures fewer compatibility issues.
@@ -74,7 +74,9 @@ While there are other installation methods available (e.g., via Homebrew, apt, o
 
 #### Getting the Sample Image
 
-For this tutorial, we'll use a sample image named [treasure-map.jpg](https://github.com/jeremejazz/leaflet-raster-to-tiles-example/blob/main/images/treasure-map.jpg). You can substitute this with your own image, keeping in mind the recommendations regarding image dimensions discussed later.
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747823095/jereme.me/custom-image-map-leaflet/treasure-map_l9oo8u.jpg" alt="Treasure Map" caption="Image by [Prawny](https://pixabay.com/users/prawny-162579/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1904523) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1904523)" linked=false >}}
+
+For this tutorial, we'll use a sample image named [treasure-map.jpg](https://github.com/jeremejazz/leaflet-raster-to-tiles-example/blob/main/images/treasure-map.jpg). You can simply just right click the image above then save it to your project folder. You can also substitute this with your own image, keeping in mind the recommendations regarding image dimensions discussed later.
 
 #### Tiling with `gdal2tiles.py`
 
@@ -96,6 +98,10 @@ Let's break down each parameter:
 - `-p raster`: This parameter simply indicates that our input file is a raster image.
 - `-z 0-2`: This specifies the zoom range for tile generation. We are generating tiles from zoom level 0 (the most zoomed-out view) up to zoom level 2 (more zoomed-in). Generating more zoom levels will create a larger number of tile files, but it allows for greater detail as the user zooms in.
 - `-w leaflet`: This parameter specifies the desired web viewer. While `gdal2tiles.py` doesn't strictly generate a full-fledged web viewer for Leaflet (you'll still need to write some HTML/JavaScript for that), setting it to `leaflet` prevents the generation of files for other map web viewers that you might not need. You can also set this to `none` if you prefer to avoid generating any viewer-specific files.
+
+{{< admonition tip>}}
+For a complete list of options, refer to the official [gdal2tiles CLI documentation](https://gdal.org/en/stable/programs/gdal2tiles.html).
+{{< /admonition >}}
 
 {{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/gdal2tiles-tiling-example.png" alt="Tiling with gdal2tiles.py" caption="Tiling with gdal2tiles.py" >}}
 
@@ -288,13 +294,17 @@ L.marker(rc.unproject([611, 433]), { icon }).addTo(map);
 
 You have successfully created a custom zoomable map in Leaflet using your own images! This setup provides a solid foundation for building more interactive features on your image-based map. Feel free to experiment by using different images, adding more markers, or exploring other Leaflet functionalities to enhance your custom map application.
 
+{{< admonition type="info" title="Source Code" closed=false >}}
+You can find the complete source code for this project at the Github Repository: [Leaflet Raster to Tiles Example](https://github.com/jeremejazz/leaflet-raster-to-tiles-example)
+{{< /admonition >}}
+
 {{< admonition "References"  >}}
 
 [Zoomable images with Leaflet](https://build-failed.blogspot.com/2012/11/zoomable-image-with-leaflet.html) - I used this as basis for my earlier project for an [earlier project](https://github.com/jeremejazz/olivarezmaps) back in 2013. [Maptiler](https://www.maptiler.com/) was used on that project instead of `gdal2tiles.py`.
 
 {{< /admonition >}}
 
-{{< admonition type=quote title="Credits" open=false >}}
+{{< admonition type=quote title="Credits" closed=true >}}
 Cover Image by [Pexels](https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212)
 
 {{< /admonition >}}
