@@ -65,7 +65,7 @@ Before we begin, make sure you have the following tools installed:
 ### Installing GDAL
 
 If you don’t have GDAL installed yet, the recommended method (which we’ll use in this tutorial) is via **Anaconda** or **Miniconda**. This approach is beginner-friendly and includes the required Python bindings out of the box.
-{{< admonition tip >}}
+{{< admonition info >}}
 I would recommend checking out this [step-by-step GDAL installation guide](https://gist.github.com/jeremejazz/02ea7626ec12a39a789f44db4a9ec49c) for installing GDAL with Anaconda
 {{< /admonition >}}
 While there are other installation methods available (e.g., via Homebrew, apt, or pip), using Anaconda ensures fewer compatibility issues.
@@ -99,7 +99,7 @@ Let's break down each parameter:
 - `-z 0-2`: This specifies the zoom range for tile generation. We are generating tiles from zoom level 0 (the most zoomed-out view) up to zoom level 2 (more zoomed-in). Generating more zoom levels will create a larger number of tile files, but it allows for greater detail as the user zooms in.
 - `-w leaflet`: This parameter specifies the desired web viewer. While `gdal2tiles.py` doesn't strictly generate a full-fledged web viewer for Leaflet (you'll still need to write some HTML/JavaScript for that), setting it to `leaflet` prevents the generation of files for other map web viewers that you might not need. You can also set this to `none` if you prefer to avoid generating any viewer-specific files.
 
-{{< admonition tip>}}
+{{< admonition info >}}
 For a complete list of options, refer to the official [gdal2tiles CLI documentation](https://gdal.org/en/stable/programs/gdal2tiles.html).
 {{< /admonition >}}
 
