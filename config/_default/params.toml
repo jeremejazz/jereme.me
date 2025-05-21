@@ -249,6 +249,8 @@ externalIcon = true
     auto = false
 
   [page.code]
+    # disable editing on code
+    edit = false
     # the maximum number of lines of displayed code by default
     # 默认展开显示的代码行数
     maxShownLines = 100
@@ -261,6 +263,7 @@ externalIcon = true
     # whether to display the header in the code block
     # 是否显示代码块标题
     header = true
+
   # Table config
   # 表格配置
   [page.table]
