@@ -20,7 +20,7 @@ tags:
   - tutorials,
   - development
 categories:
-  - development tutorials
+  - tutorials
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false

@@ -4,7 +4,12 @@ date: 2023-04-08
 draft: false
 tags: tutorial
 authors: [Jereme]
-
+categories:
+  - tutorials
+tags:
+  - raspberry pi
+  - tutorials
+  - music
 featuredImage: "cover.jpg"
 ---
 
