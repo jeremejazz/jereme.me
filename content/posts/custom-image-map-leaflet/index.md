@@ -25,7 +25,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary:
+summary: In this tutorial, we’ll walk through how to create a custom map using a large image in Leaflet. This technique is useful when working with non-geographical maps or images that you want to make interactive, zoomable, and possibly annotated.
 resources:
   - name: featured-image
     src: images/featured-image.jpg
@@ -42,15 +42,13 @@ repost:
 # See details front matter: https://fixit.lruihao.cn/documentation/content-management/introduction/#front-matter
 ---
 
-<!--more-->
-
 In this tutorial, we’ll walk through how to create a custom map using a large image in [Leaflet](https://leafletjs.com/), a lightweight JavaScript library for building interactive maps in web applications.
 
 This technique is useful when working with non-geographical maps or images that you want to make interactive, zoomable, and possibly annotated.
 
 ## Why Use Custom Maps?
 
-There are several scenarios where using a custom image as a map makes sense:
+Here are some use cases where custom maps from image are applicable:
 
 - **Indoor Maps**: This is a common use case—think of malls, airports, or exhibition halls where a visual indoor layout helps visitors navigate.
 - **Video Game Maps**: Many games come with expansive in-game worlds. Custom maps allow for interactive player guides. For example, [The Forest Map](https://theforestmap.com/) provides an interactive map for players of _The Forest_ game.
