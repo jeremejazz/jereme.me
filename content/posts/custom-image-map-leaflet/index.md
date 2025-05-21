@@ -3,7 +3,7 @@ title: Creating a Custom Map from Images in Leaflet
 subtitle:
 date: 2025-05-21T14:26:21+08:00
 slug: custom-image-map-leaflet
-draft: true
+draft: false
 author:
   name: Jereme
   link:
@@ -60,9 +60,9 @@ Before we begin, make sure you have the following tools installed:
 
 - **Geospatial Data Abstraction Library (GDAL)** – a powerful library for reading and processing raster and vector geospatial data.
 - **Python 3** (with GDAL Python bindings)
-- **npm** – for setting up and running our web application.
+- **[npm](https://nodejs.org)** – for setting up and running our web application.
 
-### Installing GDAL
+### Installing GDAL and Python
 
 If you don’t have GDAL installed yet, the recommended method (which we’ll use in this tutorial) is via **Anaconda** or **Miniconda**. This approach is beginner-friendly and includes the required Python bindings out of the box.
 {{< admonition info >}}
@@ -122,9 +122,9 @@ The table below illustrates the relationship between zoom level and the size of 
 
 Since our `treasure-map.jpg` is 1024x1024, the maximum recommended zoom level is 2. Going beyond this ideal zoom level would not add further detail but might simply stretch or pixelate the image, affecting its quality.
 
-This can be calculated based on the size of a leaflet tile which is 256x256 and has each square size increasing based on the power of 2
+This can be calculated based on the size of a leaflet tile which is 256px and has each square size increasing based on the power of 2.
 
-```text
+```text {title="pseudocode"}
 ceiling( log(imagesize / tilesize) / log(2) )
 ```
 
@@ -165,7 +165,7 @@ This command will create a new directory named `my-leaflet-app` (or whatever you
 3.  Start the development server:
     This will open your application in a browser, and it will automatically reload whenever you make changes to your code.
     ```bash
-        npm run dev
+    npm run dev
     ```
 
 #### Install Required Packages
@@ -188,7 +188,7 @@ Now that our project is set up and dependencies are installed, let's clean up th
 1. **Clean up `src/main.js` and `src/style.css`**: Remove all existing content from these two files.
 2. **Add Styles to `src/style.css`**: Add the following CSS to style our web page and the map container:
 
-```css
+```css { title="style.css" }
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #505050;
@@ -210,7 +210,7 @@ body {
 
 1. **Initialize the Map in `src/main.js`**: Now, let's add the JavaScript code to `src/main.js` to create and display our Leaflet map.
 
-```jsx
+```js { title="main.js" }
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import * as L from "leaflet";
@@ -274,25 +274,57 @@ If your local development server (`npm run dev`) is still running, you should no
 
 {{< image src="https://res.cloudinary.com/jereme/image/upload/v1747821388/jereme.me/custom-image-map-leaflet/example-web-app.png" alt="Example leaflet web app" caption="Webpage after loading the tiled images">}}
 
-#### Projecting Coordinates with `leaflet-rastercoords`
+#### Projecting Coordinates with `leaflet-rastercoords` and `L.CRS.Simple`
 
-You'll notice that we've included `leaflet-rastercoords` in our project. While Leaflet itself has built-in functions for projecting and unprojecting coordinates, `leaflet-rastercoords` offers convenience when working with image overlays. It simplifies the process of converting pixel coordinates from your image into Leaflet's map coordinates, eliminating the need to manually calculate zoom levels and automatically setting maximum boundaries so you don’t scroll away from the edge of the image.
+In our main.js, you might have noticed the following lines when initializing the map:
 
-With this, you can easily work with the familiar pixel coordinates from your image (e.g., obtained from a photo editing software like GIMP or Photoshop) and convert them to map locations.
+```js { title="main.js" hl_lines=[4,9,10]}
+const map = L.map(container, {
+  center: L.latLng(0, 0),
+  noWrap: true,
+  crs: L.CRS.Simple,
+});
+
+// ...
+
+const rc = new L.RasterCoords(map, imageDimensions);
+map.setView(rc.unproject([width, height]), 1);
+```
+
+Here's why `leaflet-rastercoords` and `CRS.Simple` are essential for working with custom image maps:
+
+##### Understanding Coordinate Reference Systems (CRS)
+
+Typically, web maps use a geographic coordinate system (like EPSG:3857, also known as Web Mercator) to represent real-world locations. However, for our custom image map, we're not dealing with geographic coordinates (latitude and longitude). Instead, we're working directly with the **pixel coordinates** of our image. This is where `CRS.Simple` comes in. It's a special, non-projected coordinate reference system provided by Leaflet that treats pixel coordinates as its primary unit.
+
+`CRS.Simple`'s origin starts at the top left corner of the map (0,0) and the X and Y coordinates increases as you move to the right and down respectively. This setup aligns with how pixel coordinates are typically referenced in most photo editing softwares.
+
+{{< admonition info>}}
+For more in-depth guide and examples, check out the Leaflet's official post regarding [non-geographical maps](https://leafletjs.com/examples/crs-simple/crs-simple.html)
+{{< /admonition >}}
+
+##### The Role of `leaflet-rastercoords`
+
+While `L.CRS.Simple` provides the foundation, `leaflet-rastercoords` significantly simplifies the process of integrating our image with Leaflet's map functions. This utility library makes it easy to convert between your image's raw pixel coordinates.
+This library also automatically handles the map boundaries so that cannot scroll endlessly outside the bounds of your image, as it sets the pan limits.
+
+This means you can easily work with the familiar pixel coordinates from your image (e.g., obtained directly from a photo editing software like GIMP or Photoshop) and convert them to map locations for adding markers, polygons, or other interactive elements.
 
 {{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/getting-pixel-coordinates-with-gimp.png" alt="Getting Coordinates with GIMP" caption="Hovering the mouse pointer over an area in the image displays the coordinates at the bottom in GIMP">}}
 
-For example, if you want to place a marker at pixel coordinates X: 611, Y: 433 on your original `treasure-map.jpg` image, you can do so directly using `rc.unproject()`:
+For example, if you want to place a marker at pixel coordinates X: 611, Y: 433 on our sample image `treasure-map.jpg`, you can do so by using `rc.unproject()` to set the coordinates:
 
 ```js
 L.marker(rc.unproject([611, 433]), { icon }).addTo(map);
 ```
 
+After adding this line and refreshing your browser (or if Vite automatically reloads), you should see a marker appear and the coordinate based the Y and X coordinates.
+
 {{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/example-web-app-leaflet-marker.png" alt="Example Leaflet Web App with Marker" caption="After applying the pixel coordinates, marker should now appear.">}}
 
 ## Conclusion
 
-You have successfully created a custom zoomable map in Leaflet using your own images! This setup provides a solid foundation for building more interactive features on your image-based map. Feel free to experiment by using different images, adding more markers, or exploring other Leaflet functionalities to enhance your custom map application.
+In this tutorial we have created a custom zoomable map in Leaflet from an existing image. This setup provides a foundation for building more custom image-based map. Feel free to experiment by using different images, adding more layers such as markers and shapes while exploring other leaflet functionalities as well.
 
 {{< admonition type="info" title="Source Code" closed=false >}}
 You can find the complete source code for this project at the Github Repository: [Leaflet Raster to Tiles Example](https://github.com/jeremejazz/leaflet-raster-to-tiles-example)
