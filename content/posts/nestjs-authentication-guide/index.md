@@ -974,7 +974,7 @@ In this guide, we implemented a basic authentication system using NestJS and Mik
 
 Feel free to expand on this by adding features such as role-based access control, refresh tokens, or integration with external identity providers.
 {{< admonition type=info title="Source Code" open=true >}}
-You can find the complete source code for this project at the [Github Repository](https://github.com/jeremejazz/nestjs-auth-example)
+You can find the complete source code for this project at the Github Repository: [NestJS Auth Example](https://github.com/jeremejazz/nestjs-auth-example)
 {{< /admonition >}}
 
 {{< admonition type=quote title="Credits" open=false >}}
