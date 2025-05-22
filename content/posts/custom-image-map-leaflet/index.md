@@ -80,7 +80,7 @@ While there are other installation methods available (e.g., via Homebrew, apt, o
 
 #### Getting the Sample Image
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747823095/jereme.me/custom-image-map-leaflet/treasure-map_l9oo8u.jpg" alt="Treasure Map" caption="Image by [Prawny](https://pixabay.com/users/prawny-162579/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1904523) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1904523)" linked=false >}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747823095/jereme.me/custom-image-map-leaflet/treasure-map_l9oo8u.jpg" alt="Treasure Map" caption="Image by [Prawny](https://pixabay.com/users/prawny-162579/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1904523) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1904523)" linked=false loading="lazy" >}}
 
 For this tutorial, we'll use a sample image named [treasure-map.jpg](https://github.com/jeremejazz/leaflet-raster-to-tiles-example/blob/main/images/treasure-map.jpg). You can simply just right click the image above then save it to your project folder. You can also substitute this with your own image, keeping in mind the recommendations regarding image dimensions discussed later.
 
@@ -109,7 +109,7 @@ Let's break down each parameter:
 For a complete list of options, refer to the official [gdal2tiles CLI documentation](https://gdal.org/en/stable/programs/gdal2tiles.html).
 {{< /admonition >}}
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/gdal2tiles-tiling-example.png" alt="Tiling with gdal2tiles.py" caption="Tiling with gdal2tiles.py" >}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/gdal2tiles-tiling-example.png" alt="Tiling with gdal2tiles.py" caption="Tiling with gdal2tiles.py" loading="lazy" >}}
 
 #### Understanding Zoom Levels and Image Dimensions
 
@@ -140,7 +140,7 @@ For optimal results and to avoid unnecessary file generation, it's highly recomm
 
 After running the `gdal2tiles.py` command, you will find a `map/` directory containing subdirectories for each zoom level, and within those, individual image tiles. We’ll be using these tiles in our web mapping application, such as Leaflet, by pointing the map’s tile layer to the `map/` directory.
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819556/jereme.me/custom-image-map-leaflet/gdal2tiles-output-folder.png" alt="Output Folder" caption="Example output of tiled images" >}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819556/jereme.me/custom-image-map-leaflet/gdal2tiles-output-folder.png" alt="Output Folder" caption="Example output of tiled images" loading="lazy">}}
 
 ## Creating the Web Application with Vite and Leaflet
 
@@ -278,7 +278,7 @@ For our Vite development server to serve the generated map tiles, we need to cop
 
 If your local development server (`npm run dev`) is still running, you should now be able to see your `treasure-map.jpg` image displayed as a zoomable map in your browser!
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747821388/jereme.me/custom-image-map-leaflet/example-web-app.png" alt="Example leaflet web app" caption="Webpage after loading the tiled images">}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747821388/jereme.me/custom-image-map-leaflet/example-web-app.png" alt="Example leaflet web app" caption="Webpage after loading the tiled images" loading="lazy">}}
 
 #### Projecting Coordinates with `leaflet-rastercoords` and `L.CRS.Simple`
 
@@ -316,7 +316,7 @@ This library also automatically handles the map boundaries so that cannot scroll
 
 This means you can easily work with the familiar pixel coordinates from your image (e.g., obtained directly from a photo editing software like GIMP or Photoshop) and convert them to map locations for adding markers, polygons, or other interactive elements.
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/getting-pixel-coordinates-with-gimp.png" alt="Getting Coordinates with GIMP" caption="Hovering the mouse pointer over an area in the image displays the coordinates at the bottom in GIMP">}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/getting-pixel-coordinates-with-gimp.png" alt="Getting Coordinates with GIMP" caption="Hovering the mouse pointer over an area in the image displays the coordinates at the bottom in GIMP" loading="lazy">}}
 
 For example, if you want to place a marker at pixel coordinates X: 611, Y: 433 on our sample image `treasure-map.jpg`, you can do so by using `rc.unproject()` to set the coordinates:
 
@@ -326,7 +326,7 @@ L.marker(rc.unproject([611, 433]), { icon }).addTo(map);
 
 After adding this line and refreshing your browser (or if Vite automatically reloads), you should see a marker appear and the coordinate based the Y and X coordinates.
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/example-web-app-leaflet-marker.png" alt="Example Leaflet Web App with Marker" caption="After applying the pixel coordinates, marker should now appear.">}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/example-web-app-leaflet-marker.png" alt="Example Leaflet Web App with Marker" caption="After applying the pixel coordinates, marker should now appear." loading="lazy">}}
 
 ## Conclusion
 
