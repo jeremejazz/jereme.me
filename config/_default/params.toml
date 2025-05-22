@@ -43,7 +43,9 @@ externalIcon = true
   email = ""
   link = "/posts"
   avatar = "/images/avatar2.jpg"
-
+[customPartials]
+  footer = ["custom/footer.html"]
+  
 # back to top with progress percent
 [backToTop]
   enable = true
