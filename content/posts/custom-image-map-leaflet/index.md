@@ -332,7 +332,7 @@ After adding this line and refreshing your browser (or if Vite automatically rel
 
 In this tutorial we have created a custom zoomable map in Leaflet from an existing image. This setup provides a foundation for building more custom image-based map. Feel free to experiment by using different images, adding more layers such as markers and shapes while exploring other leaflet functionalities as well.
 
-{{< admonition type="info" title="Source Code" closed=false >}}
+{{< admonition type="info" title="Source Code" open=true >}}
 You can find the complete source code for this project at the Github Repository: [Leaflet Raster to Tiles Example](https://github.com/jeremejazz/leaflet-raster-to-tiles-example)
 {{< /admonition >}}
 
@@ -342,7 +342,7 @@ You can find the complete source code for this project at the Github Repository:
 
 {{< /admonition >}}
 
-{{< admonition type=quote title="Credits" closed=true >}}
+{{< admonition type=quote title="Credits" open=false >}}
 Cover Image by [Pexels](https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212)
 
 {{< /admonition >}}
