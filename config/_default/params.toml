@@ -44,8 +44,10 @@ externalIcon = true
   link = "/posts"
   avatar = "/images/avatar2.jpg"
 [customPartials]
+  head = ["custom/head.html"]
   footer = ["custom/footer.html"]
-  
+  aside = ["custom/aside.html"]
+  postContentAfter = ["custom/post-content-after.html"]
 # back to top with progress percent
 [backToTop]
   enable = true
