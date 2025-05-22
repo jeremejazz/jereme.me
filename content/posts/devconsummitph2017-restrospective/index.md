@@ -16,7 +16,7 @@ toc: false
 tags:
   - blog
   - events
-  - development
+  - meetup
 repost:
   enable: false
   url:
