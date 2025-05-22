@@ -254,7 +254,7 @@ externalIcon = true
 
   [page.code]
     # disable editing on code
-    edit = false
+    edit = true
     # the maximum number of lines of displayed code by default
     # 默认展开显示的代码行数
     maxShownLines = 100
