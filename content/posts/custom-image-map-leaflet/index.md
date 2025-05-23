@@ -134,10 +134,6 @@ This can be calculated based on the size of a leaflet tile which is 256px and ha
 ceiling( log(imagesize / tilesize) / log(2) )
 ```
 
-{{< admonition tip >}}
-For optimal results and to avoid unnecessary file generation, it's highly recommended to use images with equal dimensions that are powers of 2 (e.g., 256x256, 512x512, 1024x1024, 2048x2048, etc.). This ensures that your image aligns perfectly with the tile grid at various zoom levels.
-{{< /admonition >}}
-
 After running the `gdal2tiles.py` command, you will find a `map/` directory containing subdirectories for each zoom level, and within those, individual image tiles. We’ll be using these tiles in our web mapping application, such as Leaflet, by pointing the map’s tile layer to the `map/` directory.
 
 {{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819556/jereme.me/custom-image-map-leaflet/gdal2tiles-output-folder.png" alt="Output Folder" caption="Example output of tiled images" loading="lazy">}}
