@@ -262,12 +262,16 @@ externalIcon = true
     # 是否显示代码行号
     lineNos = true
     # whether to enable line wrapping in the code block
-    # 是否开启代码换行
+  # 是否开启代码换行
     wrap = false
     # whether to display the header in the code block
     # 是否显示代码块标题
     header = true
-
+  [page.comment]
+    enable = true
+    [page.comment.disqus]
+      enable = true
+      shortname = "jereme-me"
   # Table config
   # 表格配置
   [page.table]
@@ -369,7 +373,7 @@ externalIcon = true
   Devto = "jereme"
   # Douban = ""
   # Dribbble = ""
-  # Email = "xxxx@xxxx.com"
+  Email = "me@jereme.me"
   # Facebook = "xxxx"
   # Fivehundredpx = ""
   # Flickr = ""
