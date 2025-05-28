@@ -27,6 +27,8 @@ tags:
   - development
 categories:
   - tutorials
+collections:
+  - map development
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
