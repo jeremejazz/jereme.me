@@ -23,7 +23,7 @@ weight: 0
 tags:
   - javascript
   - leaflet
-  - tutorials,
+  - tutorials
   - development
 categories:
   - tutorials
