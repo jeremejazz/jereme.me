@@ -23,14 +23,14 @@
 #   url = "/tags/"
 #   title = ""
 #   weight = 2
-# [[main]]
-#   identifier = "categories"
-#   pre = ""
-#   post = ""
-#   name = "Categories"
-#   url = "/categories/"
-#   title = ""
-#   weight = 3
+[[main]]
+  identifier = "categories"
+  pre = ""
+  post = ""
+  name = "Categories"
+  url = "/categories/"
+  title = ""
+  weight = 3
 [[main]]
   identifier = "contact"
   pre = ""
