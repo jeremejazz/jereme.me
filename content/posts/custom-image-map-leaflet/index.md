@@ -23,10 +23,13 @@ weight: 0
 tags:
   - javascript
   - leaflet
-  - tutorials,
+  - tutorials
   - development
+  - map
 categories:
   - tutorials
+collections:
+  - map development
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
@@ -131,6 +134,7 @@ Since our `treasure-map.jpg` is 1024x1024, the maximum recommended zoom level is
 This can be calculated based on the size of a leaflet tile which is 256px and has each square size increasing based on the power of 2.
 
 ```text {title="pseudocode"}
+imagesize = max(height, width)
 ceiling( log(imagesize / tilesize) / log(2) )
 ```
 

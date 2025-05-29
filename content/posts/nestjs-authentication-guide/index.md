@@ -19,7 +19,7 @@ comment: true
 weight: 0
 tags:
   - development
-  - tutorial
+  - tutorials
   - javascript
   - typescript
 categories:
