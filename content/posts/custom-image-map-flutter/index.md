@@ -181,7 +181,7 @@ class RasterCoordsDemo extends StatelessWidget {
 For now, we'll be using  [OpenStreetMap](https://www.openstreetmap.org/) as our placeholder just to check if the application is running. You can start the application on any platform, though I'd recommend using Android as the target platform to be consistent with this guide.
 
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1748490263/jereme.me/custom-image-map-flutter/initial-map-emulator.png" alt="Preview of App in Android Emulator" caption="Preview of App in Android Emulator" linked=true loading="lazy"  >}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1748505293/jereme.me/custom-image-map-flutter/basic-map-preview.png" alt="Preview of App in Android Emulator" caption="Preview of App in Android Emulator" linked=true loading="lazy"  >}}
 
 > [!NOTE]
 > If you encounter any issues relating to network connections, please refer to the Flutter documentation on [Networking](https://docs.flutter.dev/data-and-backend/networking).
