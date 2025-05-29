@@ -7,15 +7,13 @@ draft: false
 authors: [Jereme]
 description: ""
 
-tags: []
-categories: []
-posts: []
 
 hiddenFromHomePage: true
 hiddenFromSearch: true
-
-featuredImage: ""
-featuredImagePreview: ""
+hiddenFromFeed: true
+hiddenFromRelated: true
+sitemap:
+  disable: true
 
 ---
 

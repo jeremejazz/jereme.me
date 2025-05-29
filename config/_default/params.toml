@@ -270,7 +270,7 @@ externalIcon = true
   [page.comment]
     enable = true
     [page.comment.disqus]
-      enable = true
+      enable = false
       shortname = "jereme-me"
   # Table config
   # 表格配置
