@@ -13,10 +13,12 @@ posts: []
 
 hiddenFromHomePage: true
 hiddenFromSearch: true
-
+hiddenFromFeed: true
+hiddenFromRelated: true
 featuredImage: ""
 featuredImagePreview: ""
-
+sitemap:
+  disable: true
 ---
 
 <!--more-->
