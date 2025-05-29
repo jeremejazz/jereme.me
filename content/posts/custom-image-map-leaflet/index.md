@@ -25,6 +25,7 @@ tags:
   - leaflet
   - tutorials
   - development
+  - map
 categories:
   - tutorials
 collections:
