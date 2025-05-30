@@ -1,6 +1,7 @@
 ---
 title: "From Wordpress to Static HTML"
 date: 2018-07-07T16:06:42+08:00
+slug: wordpress-to-static-html
 draft: false
 categories:
   - blog
