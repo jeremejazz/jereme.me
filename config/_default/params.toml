@@ -272,6 +272,22 @@ externalIcon = true
     [page.comment.disqus]
       enable = false
       shortname = "jereme-me"
+    [params.page.comment.giscus]
+      enable = true
+      repo = "jeremejazz/jereme.me"
+      repoId = "R_kgDOGwkIag"
+      category = "General"
+      categoryId = "DIC_kwDOGwkIas4Cqy8l"
+      mapping = "title"
+      origin = "https://giscus.app" # FixIt 0.3.7 | NEW Or set it to your self-hosted domain
+      strict = "1" # FixIt 0.2.18 | NEW
+      term = ""
+      reactionsEnabled = "1"
+      emitMetadata = "0"
+      inputPosition = "top" # ["top", "bottom"]
+      lightTheme = "light"
+      darkTheme = "dark"
+      lazyLoad = true      
   # Table config
   # 表格配置
   [page.table]
