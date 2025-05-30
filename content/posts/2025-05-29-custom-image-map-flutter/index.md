@@ -344,7 +344,7 @@ When running the marker should now be visible on the coordinates we selected.
  
 ## Conclusion
 
-In this guide, we have created a custom non-geographical map in Flutter using an existing image. From here you'll be able to create cross-platform applications that uses custom image-based maps. Feel free to explore the API of `flutter_map` and `flutter_map_rastercoords`  and also try building for other platforms as well. 
+In this guide, we have created a custom non-geographical map in Flutter using an existing image. From here you'll be able to create cross-platform applications that uses custom image-based maps. Try to explore the API of `flutter_map` and `flutter_map_rastercoords`  and also try building for other platforms as well. 
 
 >[!Note]
 > The sample code used in this tutorial is available at the Github Repository: [Flutter Map Rastercoords Demo](https://github.com/jeremejazz/fluttermap_rastercoords_demo)

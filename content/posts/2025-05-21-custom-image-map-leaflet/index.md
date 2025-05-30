@@ -13,7 +13,7 @@ description: In this tutorial, we’ll walk through how to create a custom map u
 keywords:
   - leaflet
   - javascript
-  - tutorial
+  - tutorials
   - custom maps
   - geospatial
   - gdal2tiles

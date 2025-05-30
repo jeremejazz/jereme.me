@@ -1,6 +1,7 @@
 ---
 title: "From Wordpress to Static HTML"
 date: 2018-07-07T16:06:42+08:00
+slug: wordpress-to-static-html
 draft: false
 categories:
   - blog
@@ -8,13 +9,18 @@ tags:
   - development
   - blogging
   - cms
-
+author:
+  name: Jereme
+  link:
+  email:
+  avatar:
 resources:
   - name: featured-image
-    src: featured.jpg
+    src: images/wordpress-sea.jpg
   - name: featured-image-preview
-    src: featured-preview.jpg
-
+    src: images/featured-preview.jpg
+related:
+  enable: false
 toc:
   enable: true
 ---
@@ -31,11 +37,11 @@ After some time though I have noticed the emergence of static websites. Thanks t
 
 Static generators, as the name suggests, are programs that automates the building of static websites based on the configurations given. The workflow of these types of statically created websites are different than traditional content management systems yet the still provides a lot of advantages.
 
-{{< figure src="/images/2018/content_management/traditional.png" alt="Backend Management" >}}
+{{< figure src="images/traditional.png" alt="Backend Management" >}}
 
 As for the traditional content management systems like Wordpress or Joomla the user accesses a part of the website that allows the user to log in to an administrator dashboard where content and other site settings is managed. Whereas for static pages, content is done through files usually without databases. After configuration and content has been made, the generator is executed to automate the process of making the website.
 
-{{< figure src="/images/2018/content_management/staticgenerator.png" alt="Static Generator" >}}
+{{< figure src="images/staticgenerator.png" alt="Static Generator" >}}
 
 Some static site generators offer simple configurtion that allows the user to change the title and theme to creating blogs contents though file organization. There are lots of applications that provides this [staticgen.com](https://staticgen.com) provides a good list and summary of these.
 
