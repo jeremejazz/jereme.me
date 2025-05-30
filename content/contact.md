@@ -37,17 +37,19 @@ style:
     <p class="hidden">
       <label> Field for non-humans: <input name="honey-field" placeholder="info" /> </label>
     </p>
-    <input name="name" type="text" class="feedback-input" placeholder="Name" />
+    <input name="name" type="text" class="feedback-input" placeholder="Name" required />
     <input
       name="email"
       type="email"
       class="feedback-input"
       placeholder="Email"
+      required
     />
     <textarea
       name="message"
       class="feedback-input"
       placeholder="Message"
+      required
     ></textarea>
     <input type="submit" value="SUBMIT" />
   </form>
