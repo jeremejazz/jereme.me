@@ -19,7 +19,8 @@ resources:
     src: images/wordpress-sea.jpg
   - name: featured-image-preview
     src: images/featured-preview.jpg
-
+related:
+  enable: false
 toc:
   enable: true
 ---
