@@ -93,7 +93,7 @@ externalIcon = true
   [header.title]
     # URL of the LOGO
     # LOGO 的 URL
-    logo = "/images/console-logo.png"
+    logo = "/images/console-logo-light.png"
     # title name
     # 标题名称
     name = "Jereme Causing"
