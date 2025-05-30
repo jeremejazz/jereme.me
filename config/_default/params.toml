@@ -272,7 +272,7 @@ externalIcon = true
     [page.comment.disqus]
       enable = false
       shortname = "jereme-me"
-    [params.page.comment.giscus]
+    [page.comment.giscus]
       enable = true
       repo = "jeremejazz/jereme.me"
       repoId = "R_kgDOGwkIag"
