@@ -9,7 +9,11 @@ tags:
   - development
   - blogging
   - cms
-
+author:
+  name: Jereme
+  link:
+  email:
+  avatar:
 resources:
   - name: featured-image
     src: images/wordpress-sea.jpg

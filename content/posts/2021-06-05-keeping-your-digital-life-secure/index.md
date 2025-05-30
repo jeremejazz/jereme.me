@@ -3,15 +3,23 @@
 
 title: "Keeping Your Digital Life Secure"
 subtitle: "Some useful tips on how to stay safe when connected online."
+slug: keeping-your-digital-life-secure
 summary: ""
-authors: []
-tags: ["security", "internet"]
-categories: []
+author:
+  name: Jereme
+  link:
+  email:
+  avatar:
+tags: 
+  - security
+  - internet
+  - blog
+categories:
+  - blog
 date: 2021-06-05T23:35:36+08:00
 lastmod: 2021-06-05T23:35:36+08:00
 featured: false
 draft: false
-ShowToc: true
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
