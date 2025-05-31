@@ -1,8 +1,8 @@
 ---
 title: "Curriculum Vitae"
 subtitle: ""
-date: 2025-05-31T10:01:55+08:00
-lastmod: 2025-05-31T10:01:55+08:00
+date: 2025-05-31T03:52:21.991Z
+lastmod: 2025-05-31T03:52:21.991Z
 draft: false
 description: "Experienced Software Developer with over a decade of expertise in back-end development, API integrations, and microservices"
 keywords:
