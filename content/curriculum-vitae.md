@@ -33,11 +33,11 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 1"
+    style="--timeline-index: 6"
   >
     <div class="fi-timeline-item__content is-top"><b>Arcanys</b></div>
     <div class="fi-timeline-item__content">Web Developer</div>
-    <div class="fi-timeline-item__timestamp">Apr 2023 - Jan 2025</div>
+    <div class="fi-timeline-item__timestamp">2023</div>
     <div class="fi-timeline-item__content">
       <ul>
         <li>Worked mainly as a back-end developer</li>
@@ -53,11 +53,11 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 2"
+    style="--timeline-index: 5"
   >
     <div class="fi-timeline-item__content is-top"><b>UBX</b></div>
     <div class="fi-timeline-item__content">Software Engineer</div>
-    <div class="fi-timeline-item__timestamp">Jul 2021 - Apr 2023</div>
+    <div class="fi-timeline-item__timestamp">2021</div>
     <div class="fi-timeline-item__content">
       <ul>
         <li>
@@ -74,11 +74,11 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 3"
+    style="--timeline-index: 4"
   >
     <div class="fi-timeline-item__content is-top"><b>ADEC Innovations</b></div>
     <div class="fi-timeline-item__content">Systems Developer</div>
-    <div class="fi-timeline-item__timestamp">Feb 2017 - Apr 2021</div>
+    <div class="fi-timeline-item__timestamp">2017</div>
     <div class="fi-timeline-item__content">
       <ul>
         <li>
@@ -96,11 +96,11 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 4"
+    style="--timeline-index: 3"
   >
     <div class="fi-timeline-item__content is-top"><b>LeanDev</b></div>
     <div class="fi-timeline-item__content">Web Developer</div>
-    <div class="fi-timeline-item__timestamp">Feb 2015 - Jan 2016</div>
+    <div class="fi-timeline-item__timestamp">2015</div>
     <div class="fi-timeline-item__content">
       <ul>
         <li>Worked as a full-stack developer.</li>
@@ -115,11 +115,11 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 5"
+    style="--timeline-index: 2"
   >
     <div class="fi-timeline-item__content is-top"><b>Journeytech</b></div>
     <div class="fi-timeline-item__content">Software Developer</div>
-    <div class="fi-timeline-item__timestamp">Mar 2012 - Jan 2015</div>
+    <div class="fi-timeline-item__timestamp">2012</div>
     <div class="fi-timeline-item__content">
       <ul>
         <li>
@@ -141,13 +141,13 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 6"
+    style="--timeline-index: 1"
   >
     <div class="fi-timeline-item__content is-top">
       <b>iResource Consulting</b>
     </div>
     <div class="fi-timeline-item__content">Web/Mobile Developer</div>
-    <div class="fi-timeline-item__timestamp">Nov 2010 - Mar 2012</div>
+    <div class="fi-timeline-item__timestamp">2010</div>
     <div class="fi-timeline-item__content">
       <ul>
         <li>Developed websites using Joomla</li>
@@ -164,8 +164,6 @@ Experienced Software Developer with over a decade of expertise in back-end devel
 
 {{</raw>}}
 
-
-
 ### Education
 
 {{<raw>}}
@@ -174,7 +172,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 1"
+    style="--timeline-index: 2"
     data-type="success"
   > 
     <div class="fi-timeline-item__content is-top"><b>Polytechnic University Of The Philippines - Taguig Campus</b></div>
@@ -192,7 +190,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 2"
+    style="--timeline-index: 1"
     data-type="success"
   >
     <div class="fi-timeline-item__content is-top"><b>Ramon Pascual Institude</b></div>
