@@ -13,4 +13,8 @@
   status = 301
   force = true
 
-
+[[redirects]]
+  from = "/curriculum-vitae"
+  to = "/cv"
+  status = 301
+  force = false
