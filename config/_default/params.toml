@@ -8,7 +8,7 @@ defaultTheme = "auto"
 # site keywords
 
 dateFormat = "2006-01-02"
-keywords = ["Jereme Causing", "Developer"]
+keywords = ["Jereme Causing", "developer", "tutorials", "development", "blog"]
 enablePWA = false
 bundle = false
 
@@ -40,9 +40,10 @@ externalIcon = true
     anonymizeIP = true
 [author]
   name = "Jereme"
-  email = ""
+  email = "me@jereme.me"
   link = "/posts"
   avatar = "/images/avatar2.jpg"
+ 
 [customPartials]
   head = ["custom/head.html"]
   footer = ["custom/footer.html"]
@@ -53,35 +54,29 @@ externalIcon = true
   enable = true
   scrollpercent = true
 
-# Footer config
-# 页面底部信息配置
 [footer]
   enable = true
-  # Custom content (HTML format is supported)
- 
-  custom = ''
-  # whether to show Hugo and theme info
- 
-  hugo = true
-  # Hosted on (HTML format is supported)
- 
-  # <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a>
-  hostedOn = 'netlify'
-  # whether to show copyright info
- 
   copyright = true
-  # whether to show the author
- 
   author = false
-  # site creation time
- 
-  since = 2015
-  # ICP info only in China (HTML format is supported)
- 
+  since = "2015"
+  gov = "Hosted on Netlify"
   icp = ""
-  # license info (HTML format is supported)
- 
-  license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+  license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+  [footer.powered]
+    enable = true
+    hugoLogo = true
+    themeLogo = true
+  [footer.siteTime]
+    enable = false
+    animate = true
+    icon = "fa-solid fa-heartbeat"
+    pre = ""
+    value = ""
+  [footer.order]
+    powered = 0
+    copyright = 0
+    statistics = 0
+    visitor = 0
 
 
 [header]
@@ -96,7 +91,8 @@ externalIcon = true
     logo = "/images/console-logo-light.png"
     # title name
     # 标题名称
-    name = " Hello World!"
+    name = "Hello, World!"
+    pre = ' '
     # you can add extra information before the name (HTML format is supported), such as icons
     # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
     # pre = '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 96c0-35.3 28.7-64 64-64l384 0c35.3 0 64 28.7 64 64l0 256-64 0 0-256L128 96l0 256-64 0L64 96zM0 403.2C0 392.6 8.6 384 19.2 384l601.6 0c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8L76.8 480C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"/></svg>'
@@ -310,12 +306,12 @@ externalIcon = true
   [page.seo]
     # image URL
     # 图片 URL
-    images = []
+    images = ['/images/console-logo-light.png', '/images/console-logo.png']
     # Publisher info
     # 出版者信息
     [page.seo.publisher]
-      name = "xxxx"
-      logoUrl = "/images/avatar.webp"
+      name = "Jereme Causing"
+      logoUrl = "/images/console-logo-light.png"
   # Related content config
   # 相关文章推荐配置
   [page.related]
