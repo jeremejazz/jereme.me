@@ -32,11 +32,11 @@
   title = ""
   weight = 3
 [[main]]
-  identifier = "curriculum-vitae"
+  identifier = "cv"
   pre = ""
   post = ""
   name = "CV"
-  url = "/curriculum-vitae/"
+  url = "/cv/"
   title = "Curriculum Vitae"
   weight = 4 
 [[main]]

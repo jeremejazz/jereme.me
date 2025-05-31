@@ -118,7 +118,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     style="--timeline-index: 2"
   >
     <div class="fi-timeline-item__content is-top"><b>Journeytech</b></div>
-    <div class="fi-timeline-item__content">Software Developer</div>
+    <div class="fi-timeline-item__content">Programmer</div>
     <div class="fi-timeline-item__timestamp">2012</div>
     <div class="fi-timeline-item__content">
       <ul>
@@ -175,9 +175,9 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     style="--timeline-index: 2"
     data-type="success"
   > 
-    <div class="fi-timeline-item__content is-top"><b>Polytechnic University Of The Philippines - Taguig Campus</b></div>
+    <div class="fi-timeline-item__content is-top"><b>Polytechnic University Of The Philippines - Taguig</b></div>
         <div class="fi-timeline-item__content ">
-            Bachelor of Science in Information Technology
+            Bachelor of Science, Information Technology
         </div>
     <div class="fi-timeline-item__timestamp">Class of 2011</div>
     <div class="fi-timeline-item__content">
@@ -198,24 +198,28 @@ Experienced Software Developer with over a decade of expertise in back-end devel
       High School
     </div>
     <div class="fi-timeline-item__timestamp">Class of 2008</div>
-
   </li>
 
-
 </ul>
-
-
 
 {{</raw>}}
 
 
 
-### Skills
+### Technnical Proficiencies
+ 
 
-- **Programming Languages:** TypeScript, JavaScript, Python, Dart
-- **Frameworks:** NestJS, Express.js, Flutter 
-- **Databases:** PostgreSQL, MySQL, MS SQL Server
+|   |   |
+| --- | --- |
+| **Programming Languages** | TypeScript, JavaScript, Python, PHP, Dart  |
+| **Frameworks** | NestJS, Express.js, Flutter  |
+| **Databases** | PostgreSQL, MySQL, MS SQL Server |
 
 
+### Contact
 
+Feel free to reach out using the following links. 
 
+{{< link "mailto:me.jereme.me" "Email" "Send me an email" true "fa-regular fa-envelope" >}}
+{{< link "/contact" "Contact Form" "Leave a message" true "fa-regular fa-message" >}}
+{{< link "https://www.linkedin.com/in/jeremecausing/" "Linkedin" "My Linkedin Profile" true "fa-brands fa-linkedin" >}}
