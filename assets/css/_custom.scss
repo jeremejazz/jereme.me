@@ -7,7 +7,9 @@ div.home-avatar > a,
   -webkit-tap-highlight-color: #0000; /* transparent with short hex with alpha */
 }
  
-
+html{
+  font-size: 18px;
+}
 
 div.contact-form > form { max-width:420px; margin:50px auto; }
 .hidden{ 
@@ -16,7 +18,7 @@ div.contact-form > form { max-width:420px; margin:50px auto; }
 div.contact-form .feedback-input {
    /* font-family: Helvetica, Arial, sans-serif; */
   font-weight:500;
-  font-size: 18px;
+  // font-size: 18px;
   border-radius: 5px;
   line-height: 22px;
 
