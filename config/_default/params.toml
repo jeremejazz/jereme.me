@@ -8,7 +8,7 @@ defaultTheme = "auto"
 # site keywords
 
 dateFormat = "2006-01-02"
-keywords = ["Jereme Causing", "Developer"]
+keywords = ["Jereme Causing", "developer", "tutorials", "development", "blog"]
 enablePWA = false
 bundle = false
 
@@ -40,9 +40,10 @@ externalIcon = true
     anonymizeIP = true
 [author]
   name = "Jereme"
-  email = ""
+  email = "me@jereme.me"
   link = "/posts"
   avatar = "/images/avatar2.jpg"
+ 
 [customPartials]
   head = ["custom/head.html"]
   footer = ["custom/footer.html"]
@@ -53,35 +54,29 @@ externalIcon = true
   enable = true
   scrollpercent = true
 
-# Footer config
-# 页面底部信息配置
 [footer]
   enable = true
-  # Custom content (HTML format is supported)
- 
-  custom = ''
-  # whether to show Hugo and theme info
- 
-  hugo = true
-  # Hosted on (HTML format is supported)
- 
-  # <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a>
-  hostedOn = 'netlify'
-  # whether to show copyright info
- 
   copyright = true
-  # whether to show the author
- 
   author = false
-  # site creation time
- 
-  since = 2015
-  # ICP info only in China (HTML format is supported)
- 
+  since = "2015"
+  gov = "Hosted on Netlify"
   icp = ""
-  # license info (HTML format is supported)
- 
-  license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+  license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+  [footer.powered]
+    enable = true
+    hugoLogo = true
+    themeLogo = true
+  [footer.siteTime]
+    enable = false
+    animate = true
+    icon = "fa-solid fa-heartbeat"
+    pre = ""
+    value = ""
+  [footer.order]
+    powered = 0
+    copyright = 0
+    statistics = 0
+    visitor = 0
 
 
 [header]
@@ -311,12 +306,12 @@ externalIcon = true
   [page.seo]
     # image URL
     # 图片 URL
-    images = []
+    images = ['/images/console-logo-light.png', '/images/console-logo.png']
     # Publisher info
     # 出版者信息
     [page.seo.publisher]
-      name = "xxxx"
-      logoUrl = "/images/avatar.webp"
+      name = "Jereme Causing"
+      logoUrl = "/images/console-logo-light.png"
   # Related content config
   # 相关文章推荐配置
   [page.related]
