@@ -122,7 +122,7 @@ externalIcon = true
     avatarURL = "/images/avatar2.jpg"
 
     # URL the avatar links to
-    avatarMenu = "posts"
+    avatarMenu = "curriculum-vitae"
 
     # title shown in home page (HTML format is supported)
     title = "Jereme Causing"
