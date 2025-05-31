@@ -3,10 +3,14 @@ title: "Curriculum Vitae"
 subtitle: ""
 date: 2025-05-31T10:01:55+08:00
 lastmod: 2025-05-31T10:01:55+08:00
-draft: true
-description: ""
-
-
+draft: false
+description: "Experienced Software Developer with over a decade of expertise in back-end development, API integrations, and microservices"
+keywords:
+  - resume
+  - curriculum vitae
+  - profile
+  - experiences
+  - developer
 toc:
   enable: false
 math:
@@ -29,7 +33,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 6"
+    style="--timeline-index: 1"
   >
     <div class="fi-timeline-item__content is-top"><b>Arcanys</b></div>
     <div class="fi-timeline-item__content">Web Developer</div>
@@ -49,7 +53,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 5"
+    style="--timeline-index: 2"
   >
     <div class="fi-timeline-item__content is-top"><b>UBX</b></div>
     <div class="fi-timeline-item__content">Software Engineer</div>
@@ -70,7 +74,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 4"
+    style="--timeline-index: 3"
   >
     <div class="fi-timeline-item__content is-top"><b>ADEC Innovations</b></div>
     <div class="fi-timeline-item__content">Systems Developer</div>
@@ -92,7 +96,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 3"
+    style="--timeline-index: 4"
   >
     <div class="fi-timeline-item__content is-top"><b>LeanDev</b></div>
     <div class="fi-timeline-item__content">Web Developer</div>
@@ -111,7 +115,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 2"
+    style="--timeline-index: 5"
   >
     <div class="fi-timeline-item__content is-top"><b>Journeytech</b></div>
     <div class="fi-timeline-item__content">Software Developer</div>
@@ -137,7 +141,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 1"
+    style="--timeline-index: 6"
   >
     <div class="fi-timeline-item__content is-top">
       <b>iResource Consulting</b>
@@ -170,7 +174,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
     class="fi-timeline-item"
     data-size="medium"
     data-node="circle"
-    style="--timeline-index: 3"
+    style="--timeline-index: 1"
     data-type="success"
   > 
     <div class="fi-timeline-item__content is-top"><b>Polytechnic University Of The Philippines - Taguig Campus</b></div>
@@ -213,4 +217,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
 - **Programming Languages:** TypeScript, JavaScript, Python, Dart
 - **Frameworks:** NestJS, Express.js, Flutter 
 - **Databases:** PostgreSQL, MySQL, MS SQL Server
+
+
+
 
