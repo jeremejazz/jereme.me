@@ -57,7 +57,7 @@ This technique is useful when working with non-geographical maps or images that 
 
 ## Why Use Custom Maps?
 
-Here are some use cases where custom maps from image are applicable:
+Here are some use cases where custom maps from images are applicable:
 
 - **Indoor Maps**: This is a common use case—think of malls, airports, or exhibition halls where a visual indoor layout helps visitors navigate.
 - **Video Game Maps**: Many games come with expansive in-game worlds. Custom maps allow for interactive player guides. For example, [The Forest Map](https://theforestmap.com/) provides an interactive map for players of _The Forest_ game.
@@ -118,7 +118,7 @@ For a complete list of options, refer to the official [gdal2tiles CLI documentat
 
 The choice of zoom levels is directly related to your image's dimensions. Web map tiles typically have a size of 256x256 pixels. Each subsequent zoom level doubles the resolution of the previous level, effectively quadrupling the number of tiles needed to cover the same area.
 
-The table below illustrates the relationship between zoom level and the size of the area covered by a single tile at that level:
+The table below illustrates the relationship between the zoom level and the size of the area covered by a single tile at that level:
 
 | zoom level | size(px) |
 | ---------- | -------- |
@@ -303,10 +303,10 @@ Here's why `leaflet-rastercoords` and `CRS.Simple` are essential for working wit
 
 Typically, web maps use a geographic coordinate system (like EPSG:3857, also known as Web Mercator) to represent real-world locations. However, for our custom image map, we're not dealing with geographic coordinates (latitude and longitude). Instead, we're working directly with the **pixel coordinates** of our image. This is where `CRS.Simple` comes in. It's a special, non-projected coordinate reference system provided by Leaflet that treats pixel coordinates as its primary unit.
 
-`CRS.Simple`'s origin starts at the top left corner of the map (0,0) and the X and Y coordinates increases as you move to the right and down respectively. This setup aligns with how pixel coordinates are typically referenced in most photo editing softwares.
+`CRS.Simple`'s origin starts at the top left corner of the map (0,0) and the X and Y coordinates increase as you move to the right and down respectively. This setup aligns with how pixel coordinates are typically referenced in most photo editing software.
 
 {{< admonition info>}}
-For more in-depth guide and examples, check out the Leaflet's official post regarding [non-geographical maps](https://leafletjs.com/examples/crs-simple/crs-simple.html)
+For more in-depth guides and examples, check out the Leaflet's official post regarding [non-geographical maps](https://leafletjs.com/examples/crs-simple/crs-simple.html)
 {{< /admonition >}}
 
 ##### The Role of `leaflet-rastercoords`
@@ -330,15 +330,15 @@ After adding this line and refreshing your browser (or if Vite automatically rel
 
 ## Conclusion
 
-In this tutorial we have created a custom zoomable map in Leaflet from an existing image. This setup provides a foundation for building more custom image-based map. Feel free to experiment by using different images, adding more layers such as markers and shapes while exploring other leaflet functionalities as well.
+In this tutorial, we have created a custom zoomable map in Leaflet from an existing image. This setup provides a foundation for building more custom image-based maps. Feel free to experiment by using different images, and adding more layers such as markers and shapes while exploring other leaflet functionalities as well.
 
 {{< admonition type="info" title="Source Code" open=true >}}
-You can find the complete source code for this project at the Github Repository: [Leaflet Raster to Tiles Example](https://github.com/jeremejazz/leaflet-raster-to-tiles-example)
+You can find the complete source code for this project at the GitHub Repository: [Leaflet Raster to Tiles Example](https://github.com/jeremejazz/leaflet-raster-to-tiles-example)
 {{< /admonition >}}
 
 {{< admonition "References"  >}}
 
-[Zoomable images with Leaflet](https://build-failed.blogspot.com/2012/11/zoomable-image-with-leaflet.html) - I used this as basis for my earlier project for an [earlier project](https://github.com/jeremejazz/olivarezmaps) back in 2013. [Maptiler](https://www.maptiler.com/) was used on that project instead of `gdal2tiles.py`.
+[Zoomable images with Leaflet](https://build-failed.blogspot.com/2012/11/zoomable-image-with-leaflet.html) - I used this as the basis for my earlier project for an [earlier project](https://github.com/jeremejazz/olivarezmaps) back in 2013. [Maptiler](https://www.maptiler.com/) was used on that project instead of `gdal2tiles.py`.
 
 {{< /admonition >}}
 
