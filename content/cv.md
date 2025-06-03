@@ -23,7 +23,8 @@ comment: false
 
 ## Jereme Causing
 
-Experienced Software Developer with over a decade of expertise in back-end development, API integrations, and microservices. Skilled in designing scalable solutions, optimizing performance, and ensuring system reliability.  
+Highly experienced Web Developer specializing in back-end development with over 10 years of experience. Adept at solving complex challenges through the design of scalable, high-performance solutions and the optimization of system reliability. My expertise includes enhancing security, streamlining development workflows, backed by strong analytical acumen and a commitment to clear technical documentation.
+ 
 
 ### Professional Experience
 
@@ -46,7 +47,11 @@ Experienced Software Developer with over a decade of expertise in back-end devel
           additional features such as API for payments, transactions, and
           analytics.
         </li>
+        <li>
+        Spearheaded the research, evaluation, and implementation of a new web application chat solution, reducing operational costs by 25% while enhancing user engagement.
+        </li>
       </ul>
+      <p>Technologies: NestJS, PostgreSql, Typescript, Docker, Azure, AWS</p>
     </div>
   </li>
   <li
@@ -68,6 +73,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
           Involved in database design, code structure, and deployment process.
         </li>
       </ul>
+   <p>Technologies: NestJS, PostgreSql, Typescript, Docker,AWS</p>
     </div>
   </li>
   <li
@@ -89,6 +95,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
           processing and georeferencing
         </li>
       </ul>
+    <p>Technologies: Python, NodeJS, PostgreSQL, PostGIS</p>
     </div>
   </li>
 
@@ -109,6 +116,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
         </li>
         <li>Provided dynamic web-pages based on UI provided.</li>
       </ul>
+        <p>Technologies: PHP, NodeJS, CSS</p>
     </div>
   </li>
   <li
@@ -134,6 +142,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
           Developing Android applications based on existing web application
         </li>
       </ul>
+        <p>Technologies: PHP, CSS, JQuery</p>
     </div>
   </li>
 
@@ -157,6 +166,7 @@ Experienced Software Developer with over a decade of expertise in back-end devel
         <li>Development of components for E-commerce site with Drupal</li>
         <li>Internship Nov 2010 - Apr 2011</li>
       </ul>
+  <p>Technologies: PHP, CSS, JQuery, Joomla, Drupal, Android</p>
     </div>
   </li>
 </ul>
