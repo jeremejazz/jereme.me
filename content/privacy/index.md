@@ -23,6 +23,7 @@ math:
   enable: false
 lightgallery: false
 license: ""
+comment: false
 ---
 
 
