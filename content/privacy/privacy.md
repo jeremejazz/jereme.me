@@ -4,7 +4,7 @@ subtitle: "Effective Date: June 9, 2025"
 date: 2025-06-09T10:20:03+08:00
 lastmod: 2025-06-09T10:20:03+08:00
 draft: false
-authors: []
+authors: [Jereme]
 description: "At **jereme.me**, your privacy is important. This Privacy Policy explains how I collect, use, and protect your information when you visit my website."
 
 keywords:
