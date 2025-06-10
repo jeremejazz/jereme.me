@@ -1,5 +1,6 @@
 ---
 title: "Privacy Policy for Campus Maps"
+slug: "privacy-campusmaps"
 subtitle: ""
 date: 2025-03-20
 lastmod: 2025-03-20
