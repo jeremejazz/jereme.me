@@ -18,3 +18,9 @@
   to = "/cv"
   status = 301
   force = false
+
+[[redirects]]
+  from = "/post/*"
+  to = "/posts/:splat"
+  status = 301
+  force = false
