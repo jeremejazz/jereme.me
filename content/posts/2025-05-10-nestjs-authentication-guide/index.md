@@ -1,6 +1,6 @@
 ---
-title: "The Art of NestJS Authentication"
-subtitle: A Step-by-Step Guide for Beginners
+title: "The Art of NestJS Authentication: A Step-by-Step Guide for Beginners"
+subtitle: Build an authentication system with NestJS
 date: 2025-05-10T12:40:29+08:00
 slug: nest-js-authentication-guide
 draft: false
