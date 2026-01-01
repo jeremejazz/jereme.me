@@ -4,7 +4,6 @@ subtitle: Build an authentication system with NestJS
 date: 2025-05-10T12:40:29+08:00
 slug: nest-js-authentication-guide
 draft: false
-authors: [Jereme]
 description: A step-by-step implementation of an authentication system in NestJS. Here we'll be implementing sign in, sign up, and JWT authentication guards as well.
 keywords:
   - NestJS,
@@ -42,6 +41,8 @@ message:
 repost:
   enable: false
   url:
+
+
 # See details front matter: https://fixit.lruihao.cn/documentation/content-management/introduction/#front-matter
 ---
 
@@ -153,9 +154,8 @@ export default defineConfig({
 });
 ```
 
-{{< admonition type=info title="Info" open=false >}}
-Since the `mikro-orm.config.ts` file is also executed directly by the MikroORM CLI (which runs outside the NestJS application context), we need to explicitly call `dotenv.config()` at the top to ensure that our environment variables from the `.env` file are loaded and accessible when the CLI runs migration commands.
-{{< /admonition >}}
+> [!info] Info
+> Since the `mikro-orm.config.ts` file is also executed directly by the MikroORM CLI (which runs outside the NestJS application context), we need to explicitly call `dotenv.config()` at the top to ensure that our environment variables from the `.env` file are loaded and accessible when the CLI runs migration commands.
 
 Remember to update your `.env` file to include the `DATABASE_NAME` variable. This will specify the name of the SQLite database file that MikroORM will use.
 
@@ -342,9 +342,9 @@ Now let's generate a database migration based on our User entity. In your termin
 npm run migration:create -- -n create_users
 ```
 
-{{< admonition type=info title="Info" open=true >}}
-The `-n create_users` flag provides a name (`create_users`) for the migration, which helps in organizing and identifying your migration files.
-{{< /admonition >}}
+> [!info] Info
+> The `-n create_users` flag provides a name (`create_users`) for the migration, which helps in organizing and identifying your migration files.
+
 
 If successful, a new migration script in the `src/migrations` directory should be created with the following code similar to this:
 
@@ -380,11 +380,10 @@ npm run migration:up
 
 If the migration is successful, you should see an `auth.sqlite` file in your project's root directory.
 
-{{< admonition type=tip title="Tip" open=true >}}
 
-To inspect the database, you can use the [SQLite cli tools](https://sqlite.org/cli.html) or the [SQLite browser](https://sqlitebrowser.org/).
+> [!tip] 
+> To inspect the database, you can use the [SQLite cli tools](https://sqlite.org/cli.html) or the [SQLite browser](https://sqlitebrowser.org/).
 
-{{< /admonition >}}
 
 With our `User` entity defined and the database schema created, we're now ready to implement the user registration and login functionalities.
 
@@ -591,7 +590,7 @@ export class AuthController {
 
 You can test this using any tool such as Postman or EchoAPI. It should follow the Sign Up API we defined earlier.
 
-{{< image src="images/signup-request.png" caption="Signup Request using EchoAPI" loading="lazy" >}}
+{{< figure src="images/signup-request.png" caption="Signup Request using EchoAPI" loading="lazy" >}}
 
 ### Sign In
 
@@ -973,18 +972,16 @@ To test this new protected endpoint, you'll need a valid access token. Follow th
 5. In the request headers, add an `Authorization` header with the value `Bearer <your_access_token>` (replace `<your_access_token>` with the token you copied).
    _Alternatively, under auth, you can select Bearer tokens and just paste the access token without needing to add the `Bearer` prefix._
 
-{{< image src="images/test_profile.png" caption="Example testing on profile endpoint" loading="lazy"  >}}
+{{< figure src="images/test_profile.png" caption="Example testing on profile endpoint" loading="lazy"  >}}
 
 ## Conclusion
 
 In this guide, we implemented a basic authentication system using NestJS and MikroORM. We covered setting up the environment, configuring the database, creating a user model, and implementing sign-up, sign-in, and profile endpoints. While the system is simple and doesn't include advanced features like email verification or token refresh, it's a solid foundation for building more complex auth workflows.
 
 Feel free to expand on this by adding features such as role-based access control, refresh tokens, or integration with external identity providers.
-{{< admonition type=info title="Source Code" open=true >}}
-You can find the complete source code for this project at the Github Repository: [NestJS Auth Example](https://github.com/jeremejazz/nestjs-auth-example)
-{{< /admonition >}}
+> [!info] Source Code
+> You can find the complete source code for this project at the Github Repository: [NestJS Auth Example](https://github.com/jeremejazz/nestjs-auth-example)
 
-{{< admonition type=quote title="Credits" open=false >}}
-Cover Photo by [Jason Dent](https://unsplash.com/@jdent?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/black-and-silver-door-knob-3wPJxh-piRw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
-{{< /admonition >}}
+> [!quote] Credits
+> Cover Photo by [Jason Dent](https://unsplash.com/@jdent?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/black-and-silver-door-knob-3wPJxh-piRw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)

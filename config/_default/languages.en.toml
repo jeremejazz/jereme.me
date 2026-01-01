@@ -1,0 +1,25 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Jereme"
+
+[params]
+  displayName = "Jereme Causing"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 Jan 2006"
+  logo = "images/console-logo-light.png"
+  description = "A powerful, lightweight theme for Hugo."
+
+[params.author]
+  name = "Jereme Causing"
+  email = "me@jereme.me"
+  image = "images/avatar2.jpg"
+  headline = ""
+  bio = "Software Developer"
+  links = [
+    { telegram = "https://t.me/jeremecausing" },
+    { github = "https://github.com/jeremejazz" },
+    { linkedin = "https://linkedin.com/in/jeremecausing" },
+    { envelope = "mailto:me@jereme.me" },
+  ]

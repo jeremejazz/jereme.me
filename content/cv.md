@@ -1,8 +1,6 @@
 ---
 title: "Curriculum Vitae"
 subtitle: ""
-date: 2025-05-31T03:52:21.991Z
-lastmod: 2025-05-31T03:52:21.991Z
 draft: false
 description: "Experienced Software Developer with over a decade of expertise in back-end development, API integrations, and microservices"
 keywords:
@@ -15,9 +13,14 @@ toc:
   enable: false
 math:
   enable: false
-lightgallery: false
+
 license: ""
 comment: false
+showAuthor: false
+showDate: false
+showEdit: false
+showReadingTime: false
+showTableOfContents: false
 ---
 
 
@@ -28,7 +31,7 @@ Highly experienced Web Developer specializing in back-end development with over 
 
 ### Professional Experience
 
-{{<raw>}}
+
 <ul class="fi-timeline" data-animation>
   <li
     class="fi-timeline-item"
@@ -172,11 +175,11 @@ Highly experienced Web Developer specializing in back-end development with over 
 </ul>
 
 
-{{</raw>}}
+
 
 ### Education
 
-{{<raw>}}
+
 <ul class="fi-timeline" data-animation>
   <li
     class="fi-timeline-item"
@@ -212,7 +215,7 @@ Highly experienced Web Developer specializing in back-end development with over 
 
 </ul>
 
-{{</raw>}}
+
 
 
 
@@ -230,6 +233,3 @@ Highly experienced Web Developer specializing in back-end development with over 
 
 Feel free to reach out using the following links. 
 
-{{< link "mailto:me.jereme.me" "Email" "Send me an email" true "fa-regular fa-envelope" >}}
-{{< link "/contact" "Contact Form" "Leave a message" true "fa-regular fa-message" >}}
-{{< link "https://www.linkedin.com/in/jeremecausing/" "Linkedin" "My Linkedin Profile" true "fa-brands fa-linkedin" >}}

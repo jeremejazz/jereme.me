@@ -2,24 +2,21 @@
 title: "Privacy Policy for Campus Maps"
 slug: "privacy-campusmaps"
 subtitle: ""
-date: 2025-03-20
-lastmod: 2025-03-20
 draft: false
-authors: [Jereme]
+
 description: ""
 
-tags: []
-categories: []
-posts: []
-
-hiddenFromHomePage: true
-hiddenFromSearch: true
-hiddenFromFeed: true
-hiddenFromRelated: true
-featuredImage: ""
-featuredImagePreview: ""
-sitemap:
-  disable: true
+excludeFromSearch: true
+xml: false
+showDate: false
+showReadingTime: false
+showEdit: false
+showAuthor: false
+showZenMode: false
+sharingLinks: false
+showRelatedContent: false
+showBreadcrumbs: false
+showPagination: false
 ---
 
 <!--more-->

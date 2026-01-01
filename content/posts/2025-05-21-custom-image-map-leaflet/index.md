@@ -74,16 +74,16 @@ Before we begin, make sure you have the following tools installed:
 ### Installing GDAL and Python
 
 If you don’t have GDAL installed yet, the recommended method (which we’ll use in this tutorial) is via **Anaconda** or **Miniconda**. This approach is beginner-friendly and includes the required Python bindings out of the box.
-{{< admonition info >}}
-I would recommend checking out this [step-by-step GDAL installation guide](https://gist.github.com/jeremejazz/02ea7626ec12a39a789f44db4a9ec49c) for installing GDAL with Anaconda
-{{< /admonition >}}
+> [!info]
+> I would recommend checking out this [step-by-step GDAL installation guide](https://gist.github.com/jeremejazz/02ea7626ec12a39a789f44db4a9ec49c) for installing GDAL with Anaconda
+
 While there are other installation methods available (e.g., via Homebrew, apt, or pip), using Anaconda ensures fewer compatibility issues.
 
 ## Tiling The Image
 
 #### Getting the Sample Image
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747823095/jereme.me/custom-image-map-leaflet/treasure-map_l9oo8u.jpg" alt="Treasure Map" caption="Image by [Prawny](https://pixabay.com/users/prawny-162579/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1904523) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1904523)" linked=false loading="lazy" >}}
+{{< figure src="https://res.cloudinary.com/jereme/image/upload/v1747823095/jereme.me/custom-image-map-leaflet/treasure-map_l9oo8u.jpg" alt="Treasure Map" caption="Image by [Prawny](https://pixabay.com/users/prawny-162579/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1904523) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1904523)" linked=false loading="lazy" >}}
 
 For this tutorial, we'll use a sample image named [treasure-map.jpg](https://github.com/jeremejazz/leaflet-raster-to-tiles-example/blob/main/images/treasure-map.jpg). You can simply just right click the image above then save it to your project folder. You can also substitute this with your own image, keeping in mind the recommendations regarding image dimensions discussed later.
 
@@ -108,11 +108,10 @@ Let's break down each parameter:
 - `-z 0-2`: This specifies the zoom range for tile generation. We are generating tiles from zoom level 0 (the most zoomed-out view) up to zoom level 2 (more zoomed-in). Generating more zoom levels will create a larger number of tile files, but it allows for greater detail as the user zooms in.
 - `-w leaflet`: This parameter specifies the desired web viewer. While `gdal2tiles.py` doesn't strictly generate a full-fledged web viewer for Leaflet (you'll still need to write some HTML/JavaScript for that), setting it to `leaflet` prevents the generation of files for other map web viewers that you might not need. You can also set this to `none` if you prefer to avoid generating any viewer-specific files.
 
-{{< admonition info >}}
-For a complete list of options, refer to the official [gdal2tiles CLI documentation](https://gdal.org/en/stable/programs/gdal2tiles.html).
-{{< /admonition >}}
+> [!info]
+> For a complete list of options, refer to the official [gdal2tiles CLI documentation](https://gdal.org/en/stable/programs/gdal2tiles.html).
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/gdal2tiles-tiling-example.png" alt="Tiling with gdal2tiles.py" caption="Tiling with gdal2tiles.py" loading="lazy" >}}
+![Tiling with gdal2tiles.py](https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/gdal2tiles-tiling-example.png "Tiling with gdal2tiles.py")
 
 #### Understanding Zoom Levels and Image Dimensions
 
@@ -140,7 +139,7 @@ ceiling( log(imagesize / tilesize) / log(2) )
 
 After running the `gdal2tiles.py` command, you will find a `map/` directory containing subdirectories for each zoom level, and within those, individual image tiles. We’ll be using these tiles in our web mapping application, such as Leaflet, by pointing the map’s tile layer to the `map/` directory.
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819556/jereme.me/custom-image-map-leaflet/gdal2tiles-output-folder.png" alt="Output Folder" caption="Example output of tiled images" loading="lazy">}}
+{{< figure src="https://res.cloudinary.com/jereme/image/upload/v1747819556/jereme.me/custom-image-map-leaflet/gdal2tiles-output-folder.png" alt="Output Folder" caption="Example output of tiled images" loading="lazy">}}
 
 ## Creating the Web Application with Vite and Leaflet
 
@@ -278,7 +277,7 @@ For our Vite development server to serve the generated map tiles, we need to cop
 
 If your local development server (`npm run dev`) is still running, you should now be able to see your `treasure-map.jpg` image displayed as a zoomable map in your browser!
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747821388/jereme.me/custom-image-map-leaflet/example-web-app.png" alt="Example leaflet web app" caption="Webpage after loading the tiled images" loading="lazy">}}
+![Example leaflet web app](https://res.cloudinary.com/jereme/image/upload/v1747821388/jereme.me/custom-image-map-leaflet/example-web-app.png "Webpage after loading the tiled images")
 
 #### Projecting Coordinates with `leaflet-rastercoords` and `L.CRS.Simple`
 
@@ -305,9 +304,9 @@ Typically, web maps use a geographic coordinate system (like EPSG:3857, also kno
 
 `CRS.Simple`'s origin starts at the top left corner of the map (0,0) and the X and Y coordinates increase as you move to the right and down respectively. This setup aligns with how pixel coordinates are typically referenced in most photo editing software.
 
-{{< admonition info>}}
-For more in-depth guides and examples, check out the Leaflet's official post regarding [non-geographical maps](https://leafletjs.com/examples/crs-simple/crs-simple.html)
-{{< /admonition >}}
+> [!info]
+> For more in-depth guides and examples, check out the Leaflet's official post regarding [non-geographical maps](https://leafletjs.com/examples/crs-simple/crs-simple.html)
+
 
 ##### The Role of `leaflet-rastercoords`
 
@@ -316,7 +315,7 @@ This library also automatically handles the map boundaries so that cannot scroll
 
 This means you can easily work with the familiar pixel coordinates from your image (e.g., obtained directly from a photo editing software like GIMP or Photoshop) and convert them to map locations for adding markers, polygons, or other interactive elements.
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/getting-pixel-coordinates-with-gimp.png" alt="Getting Coordinates with GIMP" caption="Hovering the mouse pointer over an area in the image displays the coordinates at the bottom in GIMP" loading="lazy">}}
+{{< figure src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/getting-pixel-coordinates-with-gimp.png" alt="Getting Coordinates with GIMP" caption="Hovering the mouse pointer over an area in the image displays the coordinates at the bottom in GIMP" loading="lazy">}}
 
 For example, if you want to place a marker at pixel coordinates X: 611, Y: 433 on our sample image `treasure-map.jpg`, you can do so by using `rc.unproject()` to set the coordinates:
 
@@ -326,23 +325,16 @@ L.marker(rc.unproject([611, 433]), { icon }).addTo(map);
 
 After adding this line and refreshing your browser (or if Vite automatically reloads), you should see a marker appear and the coordinate based the Y and X coordinates.
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/example-web-app-leaflet-marker.png" alt="Example Leaflet Web App with Marker" caption="After applying the pixel coordinates, marker should now appear." loading="lazy">}}
+{{< figure src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/example-web-app-leaflet-marker.png" alt="Example Leaflet Web App with Marker" caption="After applying the pixel coordinates, marker should now appear." loading="lazy">}}
 
 ## Conclusion
 
 In this tutorial, we have created a custom zoomable map in Leaflet from an existing image. This setup provides a foundation for building more custom image-based maps. Feel free to experiment by using different images, and adding more layers such as markers and shapes while exploring other leaflet functionalities as well.
 
-{{< admonition type="info" title="Source Code" open=true >}}
-You can find the complete source code for this project at the GitHub Repository: [Leaflet Raster to Tiles Example](https://github.com/jeremejazz/leaflet-raster-to-tiles-example)
-{{< /admonition >}}
+> [!info] Source Code
+> You can find the complete source code for this project at the GitHub Repository: [Leaflet Raster to Tiles Example](https://github.com/jeremejazz/leaflet-raster-to-tiles-example)
 
-{{< admonition "References"  >}}
 
-[Zoomable images with Leaflet](https://build-failed.blogspot.com/2012/11/zoomable-image-with-leaflet.html) - I used this as the basis for my earlier project for an [earlier project](https://github.com/jeremejazz/olivarezmaps) back in 2013. [Maptiler](https://www.maptiler.com/) was used on that project instead of `gdal2tiles.py`.
-
-{{< /admonition >}}
-
-{{< admonition type=quote title="Credits" open=false >}}
-Cover Image by [Pexels](https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212)
-
-{{< /admonition >}}
+> [!quote] References
+> [Zoomable images with Leaflet](https://build-failed.blogspot.com/2012/11/zoomable-image-with-leaflet.html) - I used this as the basis for my earlier project for an [earlier project](https://github.com/jeremejazz/olivarezmaps) back in 2013. [Maptiler](https://www.maptiler.com/) was used on that project instead of `gdal2tiles.py`.
+> Cover Image by [Pexels](https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212)

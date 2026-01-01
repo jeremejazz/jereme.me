@@ -4,26 +4,21 @@ subtitle: "Effective Date: June 9, 2025"
 date: 2025-06-09T10:20:03+08:00
 lastmod: 2025-06-09T10:20:03+08:00
 draft: false
-authors: [Jereme]
+
 description: "At **jereme.me**, your privacy is important. This Privacy Policy explains how I collect, use, and protect your information when you visit my website."
 
-keywords:
-  - privacy
-  - policy
 
-hiddenFromHomePage: true
-hiddenFromSearch: true
-
-featuredImage: ""
-featuredImagePreview: ""
-
-toc:
-  enable: false
-math:
-  enable: false
-lightgallery: false
-license: ""
-comment: false
+excludeFromSearch: true
+xml: false
+showDate: false
+showReadingTime: false
+showEdit: false
+showAuthor: false
+showZenMode: false
+sharingLinks: false
+showRelatedContent: false
+showBreadcrumbs: false
+showPagination: false
 ---
 
 

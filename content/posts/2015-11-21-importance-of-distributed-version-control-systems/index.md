@@ -17,12 +17,13 @@ categories:
   - blog
 license: <a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
 comment: true
-featuredImage: images/branching-git.png
-# featuredImagePreview: images/branching-git.png
+resources:
+  - name: featured-image
+    src: images/branching-git.png
 tags:
   - development
   - git
- 
+
 ---
 
 These days, the use of Distributed Version Control Systems (DVCS) has become a standard in most large products. It is an automated to save a lot of tasks, and resources such as disk space.

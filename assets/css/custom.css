@@ -1,0 +1,44 @@
+
+div.contact-form > form { max-width:420px; margin:50px auto; }
+
+div.contact-form .feedback-input {
+   /* font-family: Helvetica, Arial, sans-serif; */
+  font-weight:500;
+
+  border-radius: 5px;
+  line-height: 22px;
+
+  border:2px solid #2acacf;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+div.contact-form .feedback-input:focus { border:2px solid #099cff; }
+
+div.contact-form textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+div.contact-form [type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#05618b;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+
+div.contact-form [type="submit"]:hover { background:#0970c5; }

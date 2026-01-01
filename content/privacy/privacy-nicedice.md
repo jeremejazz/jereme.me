@@ -1,20 +1,20 @@
 ---
 title: "Privacy Policy for Nice Dice"
 subtitle: ""
-date: 2025-03-06T14:20:22+08:00
-lastmod: 2025-03-06T14:20:22+08:00
 draft: false
-authors: [Jereme]
 description: ""
 
-
-hiddenFromHomePage: true
-hiddenFromSearch: true
-hiddenFromFeed: true
-hiddenFromRelated: true
-sitemap:
-  disable: true
-
+excludeFromSearch: true
+xml: false
+showDate: false
+showReadingTime: false
+showEdit: false
+showAuthor: false
+showZenMode: false
+sharingLinks: false
+showRelatedContent: false
+showBreadcrumbs: false
+showPagination: false
 ---
 
 <!--more-->
