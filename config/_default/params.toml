@@ -58,7 +58,7 @@ smartTOCHideUnfocusedChildren = false
   showDateOnlyInArticle = false
   showDateUpdated = false
   showAuthor = true
-  showAuthorBottom = false
+  showAuthorBottom = true
   showHero = true
   heroStyle = "big" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background
@@ -103,23 +103,23 @@ smartTOCHideUnfocusedChildren = false
 
 [taxonomy]
   showTermCount = true
-  showHero = true
+  showHero = false
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
   showViews = false
   showLikes = false
-  showTableOfContents = true
-  cardView = false
+  showTableOfContents = false
+  cardView = true
 
 [term]
-  showHero = true
+  showHero = false
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showViews = false
   showLikes = false
-  showTableOfContents = true
-  groupByYear = false
-  cardView = true
+  showTableOfContents = false
+  groupByYear = true
+  cardView = false
   cardViewScreenWidth = false
   
 [firebase]
