@@ -94,7 +94,7 @@ externalIcon = true
     logo = "/images/console-logo-light.png"
     # title name
     # 标题名称
-    name = "Hello, World!"
+    name = "Jereme"
     pre = ' '
     # you can add extra information before the name (HTML format is supported), such as icons
     # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
@@ -131,10 +131,10 @@ externalIcon = true
     title = "Jereme Causing"
     # subtitle shown in home page
 
-    subtitle = "Software Developer"
+    subtitle = "Software Developer | using JavaScript, Python, PostgreSQL"
     # whether to use typeit animation for subtitle
 
-    typeit = true
+    typeit = false
 
     # whether to show social links
     social = true
@@ -172,7 +172,7 @@ externalIcon = true
   rss = 10
 
 [page]
-  collectionList = true
+  collectionList = false
   # FixIt 0.3.0 | NEW whether to enable collection navigation at the end of the post
   collectionNavigation = true
   # whether to hide a page from home page
@@ -320,6 +320,8 @@ externalIcon = true
   [page.related]
     enable = true
     count = 2
+    position = ["footer"]
+    
 
 [readingProgress]
   enable = true

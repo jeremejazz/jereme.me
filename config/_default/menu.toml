@@ -9,7 +9,7 @@
   # you can add extra information after the name (HTML format is supported), such as icons
   # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
   post = ""
-  name = "Posts"
+  name = "Blog"
   url = "/posts/"
   # title will be shown when you hover on this menu link.
   # 将鼠标悬停在此菜单链接上时将显示标题。
@@ -95,3 +95,13 @@
 #   url = "https://github.com/HEIGE-PCloud/DoIt"
 #   title = "GitHub"
 #   weight = 9
+
+
+# [[footer]]
+#   identifier = "contact"
+#   pre = ""
+#   post = ""
+#   name = "Contacts"
+#   url = "/contact/"
+#   title = ""
+#   weight = 5
