@@ -4,11 +4,7 @@ subtitle: Build a non-geographical map application from images generated with gd
 date: 2025-05-29T14:10:09+08:00
 slug: custom-image-map-flutter
 draft: false
-author:
-  name: Jereme
-  link:
-  email:
-  avatar:
+authors: [Jereme]
 description:
 keywords:
  - tutorials
@@ -78,7 +74,7 @@ This tutorial assumes basic familiarity with `gdal2tiles` and Flutter, but begin
 
 ## Creating the App
 ### Step 1: Download the Sample image
-{{< figure src="https://res.cloudinary.com/jereme/image/upload/v1748402916/jereme.me/custom-image-map-flutter/hubble-gas-cocoon-preview.jpg" alt="NASA Space Cocoon" linked=false caption="Preview of sample image. Download the full size here [here](https://github.com/jeremejazz/fluttermap_rastercoords_demo/blob/main/images/hubble-gas-cocoon.jpg)" linked=false loading="lazy" >}}
+{{< figure src="https://res.cloudinary.com/jereme/image/upload/v1748402916/jereme.me/custom-image-map-flutter/hubble-gas-cocoon-preview.jpg" alt="NASA Space Cocoon" linked=false caption="Preview of sample image. Download the full size here [here](https://github.com/jeremejazz/fluttermap_rastercoords_demo/blob/main/images/hubble-gas-cocoon.jpg)" linked=false loading="lazy" nozoom="true" >}}
 
 
 For this tutorial, we will be using a sample image which can be downloaded [here](https://github.com/jeremejazz/fluttermap_rastercoords_demo/blob/main/images/hubble-gas-cocoon.jpg). Please the image in a folder for processing. This high-resolution image of space serves as a good example of a large, non-geographical image suitable for custom mapping.
@@ -100,8 +96,9 @@ Using this computation, we should get a result of `5`. We can now use the zoom l
 ```sh
 gdal2tiles.py --xyz -p raster -z 0-5 -w none hubble_gas_cocoon.jpg map_tiles/
 ```
-Here is a sample demonstration on how the command is executed: 
-[![asciicast](https://asciinema.org/a/EwWqshuOutpuci3b0qGfAekzM.svg)](https://asciinema.org/a/EwWqshuOutpuci3b0qGfAekzM)
+Here is a sample demonstration on how the command is executed:
+
+{{< figure src="https://asciinema.org/a/EwWqshuOutpuci3b0qGfAekzM.svg" alt="NASA Space Cocoon" loading="lazy" nozoom="true" href="https://asciinema.org/a/EwWqshuOutpuci3b0qGfAekzM" >}}
 
 ### Step 3: Create a new Flutter App
 
