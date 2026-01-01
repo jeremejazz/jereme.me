@@ -346,9 +346,8 @@ In this guide, we have created a custom non-geographical map in Flutter using an
 >[!Note]
 > The sample code used in this tutorial is available at the Github Repository: [Flutter Map Rastercoords Demo](https://github.com/jeremejazz/fluttermap_rastercoords_demo)
 
->[!Credits]+
->Cover Image by [Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2742113) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2742113)
-> 
-> Sample Image by [NASA Hubble Telescope](https://www.flickr.com/photos/nasahubble/)
+>[!quote] Credits
+> - Cover Image by [Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2742113) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2742113)
+> - Sample Image by [NASA Hubble Telescope](https://www.flickr.com/photos/nasahubble/)
 
 
