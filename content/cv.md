@@ -9,18 +9,16 @@ keywords:
   - profile
   - experiences
   - developer
-toc:
-  enable: false
-math:
-  enable: false
 
-license: ""
+
 comment: false
-showAuthor: false
+showHero: false
 showDate: false
 showEdit: false
+showAuthor: false
 showReadingTime: false
-showTableOfContents: false
+showRelatedContent: false
+sharingLinks: false
 ---
 
 
