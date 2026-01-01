@@ -23,7 +23,7 @@ comment: false
 
 ## Jereme Causing
 
-Highly experienced Web Developer specializing in back-end development with over 10 years of experience. Adept at solving complex challenges through the design of scalable, high-performance solutions and the optimization of system reliability. My expertise includes enhancing security, streamlining development workflows, backed by strong analytical acumen and a commitment to clear technical documentation.
+Experienced Software Developer specializing in back-end development with 12+ years of experience in delivering scalable, high-performance solutions. Proficient across modern stacks, with deep expertise in optimizing system reliability and a strong commitment to secure and clean code.
  
 
 ### Professional Experience
@@ -36,12 +36,35 @@ Highly experienced Web Developer specializing in back-end development with over 
     data-node="circle"
     style="--timeline-index: 6"
   >
+    <div class="fi-timeline-item__content is-top"><b>CoDev</b></div>
+    <div class="fi-timeline-item__content">Senior Fullstack Platform Engineer</div>
+    <div class="fi-timeline-item__timestamp">2025</div>
+    <div class="fi-timeline-item__content">
+      <ul>
+        <li>Engineered a significant refactor of core platform components, modernizing the API architecture to guarantee high-performance data delivery</li>
+        <li>
+          Collaborated with the mobile development team in providing updates to existing API while also implementing code refactor and documentation.
+        </li>
+        <li>
+Resolved critical back-end production issues, improving platform stability and reducing system errors.          </li>
+      </ul>
+      <p>Technologies: Express.js, React.js, PostgreSQL, Heroku</p>
+    </div>
+  </li>
+  <li
+    class="fi-timeline-item"
+    data-size="medium"
+    data-node="circle"
+    style="--timeline-index: 6"
+  >
     <div class="fi-timeline-item__content is-top"><b>Arcanys</b></div>
     <div class="fi-timeline-item__content">Web Developer</div>
     <div class="fi-timeline-item__timestamp">2023</div>
     <div class="fi-timeline-item__content">
       <ul>
-        <li>Worked mainly as a back-end developer</li>
+        <li>
+        Working as a Back-end developer for Node.js and Python
+        </li>
         <li>
           Implemented 3rd party API integrations and provide support to
           additional features such as API for payments, transactions, and
