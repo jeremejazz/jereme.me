@@ -34,7 +34,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary: In this tutorial, we’ll walk through how to create a custom map using a large image in Leaflet. This technique is useful when working with non-geographical maps or images that you want to make interactive, zoomable, and possibly annotated.
+summary: Create a custom map in Leaflet using non-geographical maps images.
 resources:
   - name: featured-image
     src: images/featured-image.jpg

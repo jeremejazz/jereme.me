@@ -27,7 +27,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary: A step-by-step implementation of an authentication system in NestJS. Here we'll be implementing sign in, sign up, and JWT authentication guards as well.
+summary: A step-by-step implementation of an authentication system in NestJS.
 resources:
   - name: featured-image
     src: images/featured-image.jpg

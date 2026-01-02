@@ -9,6 +9,8 @@ keywords:
   - experiences
   - developer
 
+excludeFromSearch: true
+xml: false
 comment: false
 showHero: false
 showDate: false

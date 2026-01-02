@@ -1,14 +1,10 @@
 ---
 title: The Importance of Distributed Version Control Systems
 date: 2015-11-21 00:00:00
+summary: "The use of Distributed Version Control Systems (DVCS) has become a standard in most large products."
 slug: importance-of-distributed-version-control-systems
 draft: false
 lastmod: 2025-05-30
-author:
-  name: Jereme
-  link:
-  email:
-  avatar:
 keywords:
  - git
  - vcs
@@ -28,10 +24,9 @@ tags:
 
 These days, the use of Distributed Version Control Systems (DVCS) has become a standard in most large products. It is an automated to save a lot of tasks, and resources such as disk space.
 
-<!--more-->
->[!UPDATES]
-> 2025-05-30: minor formatting
-> 2022-01-30: Update resources for git*
+> [!UPDATES]+
+> - 2025-05-30: minor formatting
+> - 2022-01-30: Update resources for git*
 
 ## What is DVCS?
 
@@ -45,7 +40,7 @@ Here are a few common reasons why every programmer or teams should be using dist
 
 ### Backup
 
-{{< figure src="images/file-copies-300x188.png" align="center"  >}}
+{{< figure src="images/file-copies-300x188.png"   >}}
 Most DVCS has this feature called commit. When the developer commits his/her code, it creates a snapshot of the changes made to that project and is stored on the local workstation. Like a time machine, you can view your past revisions, or get some code you have erased in the past. Not only that, you can push your changes on a centralized server like Github, and whenever someone pulls those changes, they too can have a copy of the revisions you did alone with your latest code.
 
 ### Collaboration and Merging

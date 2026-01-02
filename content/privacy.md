@@ -1,16 +1,14 @@
 ---
 title: "Privacy Policy"
 subtitle: "Effective Date: June 9, 2025"
-date: 2025-06-09T10:20:03+08:00
-lastmod: 2025-06-09T10:20:03+08:00
+date: 2011-06-09T10:20:03+08:00
 draft: false
 
 description: "At **jereme.me**, your privacy is important. This Privacy Policy explains how I collect, use, and protect your information when you visit my website."
 
-showHero: false
-excludeFromSearch: true
-xml: false
+showHero: false 
 showDate: false
+xml: true
 showReadingTime: false
 showEdit: false
 showAuthor: false

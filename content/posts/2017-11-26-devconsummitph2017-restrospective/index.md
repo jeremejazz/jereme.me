@@ -2,6 +2,7 @@
 title: "Devcon Summit PH 2017: A Retrospective"
 date: 2017-11-26T13:53:13+08:00
 slug: devconsummitph2017-restrospective
+summary: "A 2-day summit held by DevCon last November 18, 2017"
 draft: false
 authors: [Jereme]
 resources:
@@ -26,8 +27,6 @@ repost:
 
 Devcon, a non-profit organization that aids developers, held it's 2-day summit last November 18, 2017 at SM Aura, BGC, Taguig.
 The theme is "Changing the Game" which refers to the main topics the event is divided into four groups, namely Blockchain, Devops, AI, and Cybersecurity. These fields are known to be the current game changers and offers new career paths.
-
-<!--more-->
 
 ## Blockchains
 

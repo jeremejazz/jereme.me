@@ -19,6 +19,7 @@ lightgallery: false
 license: ""
 comment: false
 
+xml: false
 showHero: false
 showZenMode: false
 showDate: false

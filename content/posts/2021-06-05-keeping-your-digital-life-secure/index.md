@@ -4,7 +4,7 @@
 title: "Keeping Your Digital Life Secure"
 subtitle: "Some useful tips on how to stay safe when connected online."
 slug: keeping-your-digital-life-secure
-summary: ""
+summary: "Tips in protecting your online privacy as well as keeping your online life secure."
 author:
   name: Jereme
   link:
