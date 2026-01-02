@@ -164,6 +164,11 @@ smartTOCHideUnfocusedChildren = false
   # feedId = ""
   # userId = ""
 
+[image]
+  # cache remote images for better optimisations
+  # HUGO_PARAMS_IMAGE_CACHEREMOTE HUGO_PARAMS_IMAGE_OPTIMISE = true on production
+  cacheRemote = false
+  optimise = false
 
 # title = "Jerem Causing"
 # version = "0.3.X"
