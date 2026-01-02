@@ -10,7 +10,7 @@ defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = true
 
 
-
+enableLightGallery = true # recommended disableImageZoom = true
 enableSearch = true
 enableCodeCopy = true
 
@@ -19,6 +19,7 @@ replyByEmail = false
 mainSections = ["posts"]
 # robots = ""
 
+disableImageZoom = true # set this to true if lightgallery will be implemented
 disableImageOptimization = false
 disableTextInHeader = false
 # backgroundImageWidth = 1200
