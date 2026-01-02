@@ -10,7 +10,7 @@ defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = true
 
 
-
+enableLightGallery = true # recommended disableImageZoom = true
 enableSearch = true
 enableCodeCopy = true
 
@@ -19,6 +19,7 @@ replyByEmail = false
 mainSections = ["posts"]
 # robots = ""
 
+disableImageZoom = true # set this to true if lightgallery will be implemented
 disableImageOptimization = false
 disableTextInHeader = false
 # backgroundImageWidth = 1200
@@ -163,6 +164,11 @@ smartTOCHideUnfocusedChildren = false
   # feedId = ""
   # userId = ""
 
+[image]
+  # cache remote images for better optimisations
+  # HUGO_PARAMS_IMAGE_CACHEREMOTE HUGO_PARAMS_IMAGE_OPTIMISE = true on production
+  cacheRemote = false
+  optimise = false
 
 # title = "Jerem Causing"
 # version = "0.3.X"

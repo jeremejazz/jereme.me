@@ -972,7 +972,7 @@ To test this new protected endpoint, you'll need a valid access token. Follow th
 5. In the request headers, add an `Authorization` header with the value `Bearer <your_access_token>` (replace `<your_access_token>` with the token you copied).
    _Alternatively, under auth, you can select Bearer tokens and just paste the access token without needing to add the `Bearer` prefix._
 
-{{< figure src="images/test_profile.png" caption="Example testing on profile endpoint" loading="lazy"  >}}
+{{< image src="images/test_profile.png" caption="Example testing on profile endpoint" loading="lazy"  >}}
 
 ## Conclusion
 
