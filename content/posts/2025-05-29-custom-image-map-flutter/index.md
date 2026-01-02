@@ -104,7 +104,7 @@ cd my_map_project
 
 Open the `pubspec.yaml` file and add the following dependencies:
 
-```yaml { title="pubspec.yaml" hl_lines=["5-7"] }
+```yaml { title="pubspec.yaml" hl_lines=["5-7"] lineNos=true }
 dependencies:
   flutter:
     sdk: flutter
@@ -126,7 +126,7 @@ Here we added the following packages to our project.
 
 We'll be creating the basic app along with a map. 
 
-```dart { title="main.dart" }
+```dart { title="main.dart" lineNos=true }
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -212,7 +212,7 @@ Similar to [leaflet-rastercoords](https://github.com/commenthol/leaflet-rasterco
 Run `flutter pub get` again to download the new package.
 
 Then proceed with the `main.dart` changes:
-```dart { title="main.dart" hl_lines=[3,"15-16","27-34",38] }
+```dart { title="main.dart" hl_lines=[3,"15-16","27-34",38] lineNos=true }
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_rastercoords/flutter_map_rastercoords.dart';
@@ -276,7 +276,7 @@ When running, you should now be able to view the application on the emulator.
 
 ### Step 8: Keeping the Map in Place
 So you might have noticed that you are able to drag outside the image. To prevent this from happening. Let's add some constraints to the `MapOptions`:
-```dart { title="main.dart" hl_lines=["8-10"] }
+```dart { title="main.dart" hl_lines=["8-10"] lineNos=true }
 	  options: MapOptions(
 		crs: CrsSimple(),
 		initialZoom: 1,

@@ -194,7 +194,7 @@ Now that our project is set up and dependencies are installed, let's clean up th
 1. **Clean up `src/main.js` and `src/style.css`**: Remove all existing content from these two files.
 2. **Add Styles to `src/style.css`**: Add the following CSS to style our web page and the map container:
 
-```css { title="style.css" }
+```css { title="style.css" lineNos=true }
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #505050;
@@ -216,7 +216,7 @@ body {
 
 1. **Initialize the Map in `src/main.js`**: Now, let's add the JavaScript code to `src/main.js` to create and display our Leaflet map.
 
-```js { title="main.js" }
+```js { title="main.js" lineNos=true }
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import * as L from "leaflet";
@@ -285,7 +285,7 @@ If your local development server (`npm run dev`) is still running, you should no
 
 In our main.js, you might have noticed the following lines when initializing the map:
 
-```js { title="main.js" hl_lines=[4,9,10]}
+```js { title="main.js" hl_lines=[4,9,10] lineNos=true }
 const map = L.map(container, {
   center: L.latLng(0, 0),
   noWrap: true,

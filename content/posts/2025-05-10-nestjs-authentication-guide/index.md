@@ -76,7 +76,7 @@ npm i -S @nestjs/config class-transformer class-validator
 
 Next, we'll update the `AppModule` file (`src/app.module.ts`) to initialize the `ConfigModule`. This will make our environment variables accessible throughout the entire application.
 
-```tsx { title=app.module.ts hl_lines=[4,"8-10"] }
+```tsx { title=app.module.ts hl_lines=[4,"8-10"] lineNos=true}
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
@@ -96,7 +96,7 @@ export class AppModule {}
 
 Then, we'll modify the `src/main.ts file`, the entry point of our application. Here, we'll register the ValidationPipe globally.
 
-```tsx { title=main.ts hl_lines=[6,7]}
+```tsx { title=main.ts hl_lines=[6,7] lineNos=true}
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 
@@ -138,7 +138,7 @@ npm i -D @mikro-orm/cli
 
 In the root directory, create a file named `mikro-orm.config.ts`. This file serves as the central configuration for our MikroORM setup, used both by the MikroORM CLI for migrations and by our application to connect to the database.
 
-```tsx {title=mikro-orm.config.ts}
+```tsx {title=mikro-orm.config.ts lineNos=true}
 import { defineConfig } from "@mikro-orm/sqlite";
 import * as dotenv from "dotenv";
 dotenv.config();
@@ -166,7 +166,7 @@ DATABASE_NAME=auth.sqlite
 
 In the `app.module.ts` file, we import and configure the `MikroOrmModule` using the `forRoot()` static method. This method takes our `mikroOrmConfig` as an argument, establishing the database connection and making the MikroORM services available throughout our NestJS application.
 
-```tsx { hl_lines=[6,13] title="app.module.ts" }
+```tsx { hl_lines=[6,13] title="app.module.ts" lineNos=true}
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
@@ -302,7 +302,7 @@ If successful, the following directories should be created under `src`
 
 We'll begin by defining our `User` data model. In NestJS with MikroORM, entities represent the structure of our database tables. To organize our entity files, create an `entities` folder under the `src/users` directory, and then create a file named `user.entity.ts` within this folder.
 
-```tsx {title="user.entity.ts"}
+```tsx {title="user.entity.ts" lineNos=true}
 import { BeforeCreate, Entity, PrimaryKey, Property } from "@mikro-orm/core";
 
 @Entity()
@@ -348,7 +348,7 @@ npm run migration:create -- -n create_users
 
 If successful, a new migration script in the `src/migrations` directory should be created with the following code similar to this:
 
-```tsx {title="Migration20250404051249_create_users.ts"}
+```tsx {title="Migration20250404051249_create_users.ts" lineNos=true}
 import { Migration } from "@mikro-orm/migrations";
 
 export class Migration20250404051249_create_users extends Migration {
@@ -366,7 +366,7 @@ export class Migration20250404051249_create_users extends Migration {
 
 Optionally, you can override the `down` method in case you need to revert your migration
 
-```tsx
+```tsx 
   override async down(): Promise<void> {
     this.addSql('DROP table `user`');
   }
@@ -397,7 +397,7 @@ In NestJS, Data Transfer Objects (DTOs) play a crucial role in defining the stru
 
 Create a file in `src/users/dto/create-user.dto.ts` and enter the following:
 
-```tsx { title="create-user.dto.ts" }
+```tsx { title="create-user.dto.ts" lineNos=true}
 import { IsNotEmpty, IsString, MinLength } from "class-validator";
 
 export class CreateUserDto {
@@ -422,7 +422,7 @@ We’ll need to update the `users` module so that it interacts with the database
 
 In our `users.module.ts` , import the MikroOrm module we created earlier in our App Module. To enable our `UsersService` to interact with the `User` entity in the database, we need to import the `MikroOrmModule` and use its `forFeature()` static method
 
-```tsx { hl_lines=[5,10] title="users.module.ts" }
+```tsx { hl_lines=[5,10] title="users.module.ts" lineNos=true}
 import { Module } from "@nestjs/common";
 import { UsersService } from "./users.service";
 import { UsersController } from "./users.controller";
@@ -442,7 +442,7 @@ This should allow us to inject the User Repository into our `UsersService` provi
 
 In `users.service.ts`, copy the following content:
 
-```tsx { title="users.service.ts" }
+```tsx { title="users.service.ts" lineNos=true }
 import { InjectRepository } from "@mikro-orm/nestjs";
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { User } from "./entities/user.entity";
@@ -490,7 +490,7 @@ We’ll be needing these methods later when we implement the authentication. Not
 
 Before we use our `UsersService` in our `auth` module, we’ll need to import the `UsersModule` module first. Update the `src/auth/auth.module.ts` file, then import `UsersModule`:
 
-```tsx {hl_lines=[4,9] title="auth.module.ts" }
+```tsx {hl_lines=[4,9] title="auth.module.ts" lineNos=true }
 import { Module } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { AuthController } from "./auth.controller";
@@ -506,7 +506,7 @@ export class AuthModule {}
 
 We then create our service. Under `src/auth/auth.service.ts` , inject the `UsersService` using NestJS's dependency injection mechanism. We then add the `signUp` method.
 
-```tsx { title = "auth.service.ts" hl_lines=[19]}
+```tsx { title = "auth.service.ts" hl_lines=[19] lineNos=true }
 import { BadRequestException, Injectable } from "@nestjs/common";
 import { CreateUserDto } from "../users/dto/create-user.dto";
 import { User } from "../users/entities/user.entity";
@@ -548,7 +548,7 @@ npm i -S bcrypt
 
 Back in our `auth.service.ts` file, add the hashPassword function.
 
-```tsx { hl_lines=[3] title="auth.service.ts" }
+```tsx { hl_lines=[3] title="auth.service.ts" lineNos=true }
 ...
 import { User } from '../users/entities/user.entity';
 import * as bcrypt from 'bcrypt';
@@ -568,7 +568,7 @@ export class AuthService {
 
 Now that our `AuthService` contains the `signUp` method, we’ll need to call this from the `AuthController`. We’ll also add the `CreateUserDto` for validation and data extraction from the request body.
 
-```tsx { title="auth.controller.ts" hl_lines=[2,"11-16"]}
+```tsx { title="auth.controller.ts" hl_lines=[2,"11-16"] lineNos=true }
 import { Body, Controller, Post } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { User } from "src/users/entities/user.entity";
@@ -596,7 +596,7 @@ You can test this using any tool such as Postman or EchoAPI. It should follow th
 
 For our User Sign in API, we first need to define a Data Transfer Object (DTO) to specify the expected request body for the login credentials. Create a file `src/auth/dto/signin.dto.ts` with the following content:
 
-```tsx { title="signin.dto.ts" }
+```tsx { title="signin.dto.ts" lineNos=true }
 import { IsEmail, IsNotEmpty, IsString } from "class-validator";
 
 export class SignInDTO {
@@ -612,7 +612,7 @@ export class SignInDTO {
 
 Next, we need to update our `auth.service.ts` file by adding the following code inside our `AuthService` class while implementing the SignInDto
 
-```tsx
+```tsx { title="auth.service.ts" lineNos=true }
 // ...
 // imports go here
 
@@ -649,7 +649,7 @@ The `comparePassword` method utilizes the `bcrypt.compare` function to securely 
 
 Then, in our `AuthController`, we create a new `POST` route at `/auth/signin`. This route takes the `SignInDTO` as the request body and calls the `signIn` method of our `AuthService`. The result, which includes the user information and the `accessToken`, is then returned to the client.
 
-```tsx { title="auth.controller.ts" hl_lines=["6-9"]}
+```tsx { title="auth.controller.ts" hl_lines=["6-9"] lineNos=true}
 @Controller("auth")
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
@@ -676,7 +676,7 @@ npm i -S @nestjs/jwt
 
 Next, we import and initialize the `JwtModule` in our `auth.module.ts`. We use `registerAsync` to configure the module asynchronously, allowing us to inject the `ConfigService` to retrieve our JWT secret from the environment variables. This ensures that our JWT signing key is not hardcoded.
 
-```tsx { title="auth.module.ts" hl_lines=["12-20"]}
+```tsx { title="auth.module.ts" hl_lines=["12-20"] lineNos=true}
 import { Module } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { AuthController } from "./auth.controller";
@@ -713,7 +713,7 @@ With the `JwtModule` configured, we can now inject the `JwtService` into our `Au
 
 In the `auth.service.ts` file, update the following :
 
-```tsx { title="auth.service.ts" hl_lines=[1, 7, 30, "32-35"] }
+```tsx { title="auth.service.ts" hl_lines=[1, 7, 30, "32-35"] lineNos=true }
 import { JwtService } from "@nestjs/jwt";
 
 @Injectable()
@@ -778,7 +778,7 @@ We will be leveraging [Passport.js](http://www.passportjs.org/), a well-establis
 
 We’ll then have to create a strategy first. This is needed in order to configure our authentication scheme.
 
-```tsx { title="jwt.strategy.ts" }
+```tsx { title="jwt.strategy.ts" lineNos=true }
 import { ExtractJwt, Strategy } from "passport-jwt";
 import { PassportStrategy } from "@nestjs/passport";
 import { Injectable } from "@nestjs/common";
@@ -806,7 +806,7 @@ Save this under `src/auth/strategies/jwt.strategy.ts`
 
 Next create the authentication guard: `src/auth/guards/jwt-auth.guard.ts`
 
-```tsx { title="jwt-auth.guard.ts" }
+```tsx { title="jwt-auth.guard.ts" lineNos=true }
 import { ExecutionContext, Injectable } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import { AuthGuard } from "@nestjs/passport";
@@ -822,7 +822,7 @@ To establish a robust security baseline for our application, we'll implement a g
 
 Update the `app.module.ts` to implement our global authentication guard:
 
-```tsx { title="app.module.ts" hl_lines=["24-27"] }
+```tsx { title="app.module.ts" hl_lines=["24-27"] lineNos=true }
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
@@ -865,7 +865,7 @@ The `@Public()` decorator leverages NestJS's metadata system. By using `SetMetad
 
 Create a new decorator under `src/auth/decorators/public.decorator.ts`
 
-```tsx { title="public.decorator.ts" }
+```tsx { title="public.decorator.ts" lineNos=true }
 import { SetMetadata } from "@nestjs/common";
 
 export const IS_PUBLIC_KEY = "isPublic";
@@ -874,7 +874,7 @@ export const Public = () => SetMetadata(IS_PUBLIC_KEY, true);
 
 Back to our authentication guard `jwt-auth.guard.ts` file, update it using the following code:
 
-```tsx { title="jwt-auth.guard.ts" }
+```tsx { title="jwt-auth.guard.ts" lineNos=true }
 import { ExecutionContext, Injectable } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import { AuthGuard } from "@nestjs/passport";
@@ -907,7 +907,7 @@ Within the `canActivate` method of our `JwtAuthGuard`, we now utilize the `Refle
 
 Now moving to our AuthController `auth.controller.ts`, add the public decorators before the controller methods for sign-up and sign-in.
 
-```tsx { title="auth.controller.ts" hl_lines=[9,17]}
+```tsx { title="auth.controller.ts" hl_lines=[9,17] lineNos=true}
 import { CreateUserDto } from "../users/dto/create-user.dto";
 import { Public } from "./decorators/public.decorator";
 
@@ -941,7 +941,7 @@ With our authentication guard in place, we can now create our first protected AP
 
 Assuming you have a `UsersModule` and a corresponding `UsersController` (as established in previous steps), we'll now update this controller to implement the profile endpoint. This endpoint will leverage the `findOne` function we previously defined in the `UsersService` to fetch user details.
 
-```tsx { title="users.controller.ts" }
+```tsx { title="users.controller.ts" lineNos=true }
 import { Controller, Get, Req } from "@nestjs/common";
 import { UsersService } from "./users.service";
 import { User } from "./entities/user.entity";
