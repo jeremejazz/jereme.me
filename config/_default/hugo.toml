@@ -1,18 +1,58 @@
+title = "Jereme Causing"
 baseURL = "https://jereme.me"
 
+theme = "blowfish"
 defaultContentLanguage = "en"
 
-languageCode = "en"
-title = "Jereme Causing"
+enableRobotsTXT = false
 
-# Change the default theme to be use when building the site with Hugo
-theme = "FixIt"
-weight = 1
-# language code
-# language name
-languageName = "English"
-# whether to include Chinese/Japanese/Korean
-hasCJKLanguage = false
-# copyright description used only for seo schema
-copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+summaryLength = 30
 
+buildDrafts = false
+buildFuture = false
+
+enableEmoji = true
+googleAnalytics = "G-2XZX6QDD30"
+
+[imaging]
+  anchor = 'Center'
+
+
+[related]
+  threshold = 0
+  toLower = false
+
+    [[related.indices]]
+        name = "tags"
+        weight = 100
+
+    [[related.indices]]
+        name = "categories"
+        weight = 100
+
+    [[related.indices]]
+        name = "series"
+        weight = 50
+
+    [[related.indices]]
+        name = "authors"
+        weight = 20
+
+    [[related.indices]]
+        name = "date"
+        weight = 10
+
+    [[related.indices]]
+      applyFilter = false
+      name = 'fragmentrefs'
+      type = 'fragments'
+      weight = 10
+
+[sitemap]
+  changefreq = 'always'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+ 

@@ -1,0 +1,26 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Jereme"
+
+[params]
+  displayName = "Jereme Causing"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "Jan 2 2006"
+  logo = "images/console-logo-light.png"
+  description = "A Software Developer's Blog"
+
+[params.author]
+  name = "Jereme Causing"
+  email = "me@jereme.me"
+  image = "images/avatar2.jpg"
+  headline = ""
+  bio = "Software Developer"
+  links = [
+    { github = "https://github.com/jeremejazz" },
+    { telegram = "https://t.me/jeremecausing" },
+    { linkedin = "https://linkedin.com/in/jeremecausing" },
+    { envelope = "mailto:me@jereme.me" },
+    { rss = "https://jereme.me/index.xml" },
+  ]

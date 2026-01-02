@@ -1,0 +1,66 @@
+# Menu config
+# 菜单配置
+
+[[main]]
+  identifier = "posts"
+  # you can add extra information before the name (HTML format is supported), such as icons
+  # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+  pre = ""
+  # you can add extra information after the name (HTML format is supported), such as icons
+  # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+  post = ""
+  name = "Blog"
+  url = "/posts/"
+  # title will be shown when you hover on this menu link.
+  # 将鼠标悬停在此菜单链接上时将显示标题。
+  title = ""
+  weight = 1
+
+[[main]]
+  identifier = "cv"
+  pre = ""
+  post = ""
+  name = "CV"
+  url = "/cv/"
+  title = "Curriculum Vitae"
+  weight = 4 
+[[main]]
+  identifier = "contact"
+  pre = ""
+  post = ""
+  name = "Contact"
+  url = "/contact/"
+  title = ""
+  weight = 5
+
+
+# -- Footer Menu --
+# The footer menu is displayed at the bottom of the page, just before
+# the copyright notice. Configure as per the main menu above.
+
+ [[footer]]
+   name = "Privacy"
+   pageRef = "privacy"
+   weight = 10
+
+ [[footer]]
+   name = "Tags"
+   pageRef = "tags"
+   weight = 20   
+
+
+ [[footer]]
+   name = "Categories"
+   pageRef = "categories"
+   weight = 30   
+
+
+ [[footer]]
+   name = "Contact"
+   pageRef = "contact"
+   weight = 40
+
+ [[footer]]
+   name = "RSS"
+   url = "/index.xml"
+   weight = 50

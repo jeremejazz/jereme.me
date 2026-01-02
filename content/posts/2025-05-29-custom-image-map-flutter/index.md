@@ -4,36 +4,18 @@ subtitle: Build a non-geographical map application from images generated with gd
 date: 2025-05-29T14:10:09+08:00
 slug: custom-image-map-flutter
 draft: false
-author:
-  name: Jereme
-  link:
-  email:
-  avatar:
-description:
-keywords:
- - tutorials
+description: Build a non-geographical map application from images generated with gdal2tiles and Flutter
+tags:
  - flutter
- - dart
  - map
  - leaflet
- - development
- - cross platform
 license: <a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
 comment: true
-weight: 0
-tags:
-  - tutorials
-  - flutter
-  - development 
-  - map
 collections:
   - map development
 categories:
   - tutorials
-hiddenFromHomePage: false
-hiddenFromSearch: false
-hiddenFromRelated: false
-hiddenFromFeed: false
+  - map development
 summary:
 resources:
   - name: featured-image
@@ -78,7 +60,7 @@ This tutorial assumes basic familiarity with `gdal2tiles` and Flutter, but begin
 
 ## Creating the App
 ### Step 1: Download the Sample image
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1748402916/jereme.me/custom-image-map-flutter/hubble-gas-cocoon-preview.jpg" alt="NASA Space Cocoon" linked=false caption="Preview of sample image. Download the full size here [here](https://github.com/jeremejazz/fluttermap_rastercoords_demo/blob/main/images/hubble-gas-cocoon.jpg)" linked=false loading="lazy" >}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1748402916/jereme.me/custom-image-map-flutter/hubble-gas-cocoon-preview.jpg" alt="NASA Space Cocoon" linked=false caption="Preview of sample image. Download the full size here [here](https://github.com/jeremejazz/fluttermap_rastercoords_demo/blob/main/images/hubble-gas-cocoon.jpg)" linked=false loading="lazy" nozoom="true" >}}
 
 
 For this tutorial, we will be using a sample image which can be downloaded [here](https://github.com/jeremejazz/fluttermap_rastercoords_demo/blob/main/images/hubble-gas-cocoon.jpg). Please the image in a folder for processing. This high-resolution image of space serves as a good example of a large, non-geographical image suitable for custom mapping.
@@ -100,7 +82,8 @@ Using this computation, we should get a result of `5`. We can now use the zoom l
 ```sh
 gdal2tiles.py --xyz -p raster -z 0-5 -w none hubble_gas_cocoon.jpg map_tiles/
 ```
-Here is a sample demonstration on how the command is executed: 
+Here is a sample demonstration on how the command is executed:
+
 [![asciicast](https://asciinema.org/a/EwWqshuOutpuci3b0qGfAekzM.svg)](https://asciinema.org/a/EwWqshuOutpuci3b0qGfAekzM)
 
 ### Step 3: Create a new Flutter App
@@ -121,7 +104,7 @@ cd my_map_project
 
 Open the `pubspec.yaml` file and add the following dependencies:
 
-```yaml { title="pubspec.yaml" hl_lines=["5-7"] }
+```yaml { title="pubspec.yaml" hl_lines=["5-7"] lineNos=true }
 dependencies:
   flutter:
     sdk: flutter
@@ -143,7 +126,7 @@ Here we added the following packages to our project.
 
 We'll be creating the basic app along with a map. 
 
-```dart { title="main.dart" }
+```dart { title="main.dart" lineNos=true }
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -229,7 +212,7 @@ Similar to [leaflet-rastercoords](https://github.com/commenthol/leaflet-rasterco
 Run `flutter pub get` again to download the new package.
 
 Then proceed with the `main.dart` changes:
-```dart { title="main.dart" hl_lines=[3,"15-16","27-34",38] }
+```dart { title="main.dart" hl_lines=[3,"15-16","27-34",38] lineNos=true }
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_rastercoords/flutter_map_rastercoords.dart';
@@ -293,7 +276,7 @@ When running, you should now be able to view the application on the emulator.
 
 ### Step 8: Keeping the Map in Place
 So you might have noticed that you are able to drag outside the image. To prevent this from happening. Let's add some constraints to the `MapOptions`:
-```dart { title="main.dart" hl_lines=["8-10"] }
+```dart { title="main.dart" hl_lines=["8-10"] lineNos=true }
 	  options: MapOptions(
 		crs: CrsSimple(),
 		initialZoom: 1,
@@ -319,7 +302,7 @@ First, open the original image using any Photo editor. Use the cursor or info to
 #### Creating the Marker
 For adding markers, append a marker layer right below the `TileLayer`, which is in the `children` property of our `FlutterMap` widget.
 
-```dart { title="main.dart" hl_lines=["5-15"] }
+```dart { title="main.dart" hl_lines=["5-15"] lineNos=true }
       children: [
         TileLayer(
           urlTemplate: 'http://10.0.2.2:8080/map_tiles/{z}/{x}/{y}.png',
@@ -349,9 +332,8 @@ In this guide, we have created a custom non-geographical map in Flutter using an
 >[!Note]
 > The sample code used in this tutorial is available at the Github Repository: [Flutter Map Rastercoords Demo](https://github.com/jeremejazz/fluttermap_rastercoords_demo)
 
->[!Credits]+
->Cover Image by [Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2742113) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2742113)
-> 
-> Sample Image by [NASA Hubble Telescope](https://www.flickr.com/photos/nasahubble/)
+>[!quote] Credits
+> - Cover Image by [Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2742113) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2742113)
+> - Sample Image by [NASA Hubble Telescope](https://www.flickr.com/photos/nasahubble/)
 
 

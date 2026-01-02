@@ -1,0 +1,64 @@
+{{- /*  
+  Image Shortcode
+  Thanks to @Lruihao from Fixit
+  https://github.com/hugo-fixit/FixIt/blob/main/layouts/_shortcodes/image.html
+
+
+  image shortcode is an alternative to figure shortcode. image shortcode can take full advantage of the dependent library of lightgallery.
+
+The complete usage of local resource references is supported.
+
+The image shortcode has the following named parameters:
+- src [required] (first positional parameter) URL of the image to be displayed.
+- alt [optional] (second positional parameter) Alternate text for the image if the image cannot be displayed, default value is the value of src parameter. Markdown or HTML format is supported.
+- caption [optional] (third positional parameter) Image caption. Markdown or HTML format is supported.
+- title [optional] Image title that will be shown when hovering on the image.
+- class [optional] class attribute of the HTML figure tag.
+- height [optional] height attribute of the image.
+- width [optional] width attribute of the image.
+- linked [optional] Whether the image needs to be hyperlinked, default value is true.
+- rel [optional] Additional rel attributes of the HTML a tag, if linked parameter is set to true.
+- loading [optional] Additional loading attribute of the HTML a tag, optional values: eager, lazy, default value is lazy.
+- optimise [optional]  Whether to optimise the image, override the site configuration.
+- cacheRemote [optional] Whether to cache the remote image, override the site configuration.
+
+*/ -}}
+
+
+{{- $options := cond .IsNamedParams (.Get "src") (.Get 0) | dict "Src" -}}
+{{- $options = cond .IsNamedParams (.Get "alt") (.Get 1) | .Page.RenderString | dict "Alt" | merge $options -}}
+{{- $caption := cond .IsNamedParams (.Get "caption") (.Get 2) | .Page.RenderString -}}
+{{- $options = dict "Caption" $caption | merge $options -}}
+{{- $options = dict "Resources" .Page.Resources | merge $options -}}
+{{- $optim := slice 
+  (dict "Process" "resize 800x webp q75" "descriptor" "800w")
+  (dict "Process" "resize 1200x webp q75" "descriptor" "1200w")
+  (dict "Process" "resize 1600x webp q75" "descriptor" "1600w")
+-}}
+{{- $options = dict "OptimConfig" $optim | merge $options -}}
+
+{{- if .IsNamedParams -}}
+  {{- $options = dict "Title" (.Get "title") | merge $options -}}
+  {{- $options = dict "Height" (.Get "height") | merge $options -}}
+  {{- $options = dict "Width" (.Get "width") | merge $options -}}
+  {{- $options = .Get "linked" | ne false | dict "Linked" | merge $options -}}
+  {{- $options = dict "Rel" (.Get "rel") | merge $options -}}
+  {{- $options = dict "Loading" (.Get "loading" | default "lazy") | merge $options -}}
+  {{- with (.Get "optimise") -}}{{- $options = dict "Optimise" . | merge $options -}}{{- end -}}
+  {{- with (.Get "cacheRemote") -}}{{- $options = dict "CacheRemote" . | merge $options -}}{{- end -}}
+{{- else -}}
+  {{- $options = cond $caption true false | dict "Linked" | merge $options -}}
+{{- end -}}
+
+{{- $options = dict "Responsive" true | merge $options -}}
+
+{{- with $caption -}}
+  <figure{{ with cond $.IsNamedParams ($.Get "class") "" }} class="{{ . }}"{{ end }}>
+    {{- partial "plugin/image.html" $options -}}
+    <figcaption class="image-caption">
+      {{- . | safeHTML -}}
+    </figcaption>
+  </figure>
+{{- else -}}
+  {{- partial "plugin/image.html" $options -}}
+{{- end -}}

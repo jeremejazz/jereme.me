@@ -3,6 +3,7 @@ title: "From Wordpress to Static HTML"
 date: 2018-07-07T16:06:42+08:00
 slug: wordpress-to-static-html
 draft: false
+summary: "A cost effective alternative to content management systems"
 categories:
   - blog
 tags:
@@ -26,8 +27,6 @@ toc:
 ---
 
 For years, Wordpress has become the best choice in publishing a self-hosted blog. From its user friendly content management to the available plugins and themes where most of even come for free. Perhaps Wordpress has also become the defacto application for blogging especially to whose who prefer simple yet powerful features. One of the main reasons of using Wordpress and other content management is to make editing dynamic.
-
-<!--more-->
 
 For years, I have been using wordpress for my personal website and the application just gets better on every update. Since it is written in PHP, it is not that expensive to find a good hosting website that cost less on websites like Hostinger and Hostgator. Hosting your own website allows you to maximize the customization and even gives more extensibility.
 

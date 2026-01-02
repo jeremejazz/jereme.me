@@ -34,7 +34,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary: In this tutorial, we’ll walk through how to create a custom map using a large image in Leaflet. This technique is useful when working with non-geographical maps or images that you want to make interactive, zoomable, and possibly annotated.
+summary: Create a custom map in Leaflet using non-geographical maps images.
 resources:
   - name: featured-image
     src: images/featured-image.jpg
@@ -74,9 +74,9 @@ Before we begin, make sure you have the following tools installed:
 ### Installing GDAL and Python
 
 If you don’t have GDAL installed yet, the recommended method (which we’ll use in this tutorial) is via **Anaconda** or **Miniconda**. This approach is beginner-friendly and includes the required Python bindings out of the box.
-{{< admonition info >}}
-I would recommend checking out this [step-by-step GDAL installation guide](https://gist.github.com/jeremejazz/02ea7626ec12a39a789f44db4a9ec49c) for installing GDAL with Anaconda
-{{< /admonition >}}
+> [!info]
+> I would recommend checking out this [step-by-step GDAL installation guide](https://gist.github.com/jeremejazz/02ea7626ec12a39a789f44db4a9ec49c) for installing GDAL with Anaconda
+
 While there are other installation methods available (e.g., via Homebrew, apt, or pip), using Anaconda ensures fewer compatibility issues.
 
 ## Tiling The Image
@@ -108,11 +108,11 @@ Let's break down each parameter:
 - `-z 0-2`: This specifies the zoom range for tile generation. We are generating tiles from zoom level 0 (the most zoomed-out view) up to zoom level 2 (more zoomed-in). Generating more zoom levels will create a larger number of tile files, but it allows for greater detail as the user zooms in.
 - `-w leaflet`: This parameter specifies the desired web viewer. While `gdal2tiles.py` doesn't strictly generate a full-fledged web viewer for Leaflet (you'll still need to write some HTML/JavaScript for that), setting it to `leaflet` prevents the generation of files for other map web viewers that you might not need. You can also set this to `none` if you prefer to avoid generating any viewer-specific files.
 
-{{< admonition info >}}
-For a complete list of options, refer to the official [gdal2tiles CLI documentation](https://gdal.org/en/stable/programs/gdal2tiles.html).
-{{< /admonition >}}
+> [!info]
+> For a complete list of options, refer to the official [gdal2tiles CLI documentation](https://gdal.org/en/stable/programs/gdal2tiles.html).
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/gdal2tiles-tiling-example.png" alt="Tiling with gdal2tiles.py" caption="Tiling with gdal2tiles.py" loading="lazy" >}}
+
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747819557/jereme.me/custom-image-map-leaflet/gdal2tiles-tiling-example.png" caption="Tiling with gdal2tiles.py" >}}
 
 #### Understanding Zoom Levels and Image Dimensions
 
@@ -194,7 +194,7 @@ Now that our project is set up and dependencies are installed, let's clean up th
 1. **Clean up `src/main.js` and `src/style.css`**: Remove all existing content from these two files.
 2. **Add Styles to `src/style.css`**: Add the following CSS to style our web page and the map container:
 
-```css { title="style.css" }
+```css { title="style.css" lineNos=true }
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #505050;
@@ -216,7 +216,7 @@ body {
 
 1. **Initialize the Map in `src/main.js`**: Now, let's add the JavaScript code to `src/main.js` to create and display our Leaflet map.
 
-```js { title="main.js" }
+```js { title="main.js" lineNos=true }
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import * as L from "leaflet";
@@ -278,13 +278,14 @@ For our Vite development server to serve the generated map tiles, we need to cop
 
 If your local development server (`npm run dev`) is still running, you should now be able to see your `treasure-map.jpg` image displayed as a zoomable map in your browser!
 
-{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747821388/jereme.me/custom-image-map-leaflet/example-web-app.png" alt="Example leaflet web app" caption="Webpage after loading the tiled images" loading="lazy">}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1747821388/jereme.me/custom-image-map-leaflet/example-web-app.png" caption="Webpage after loading the tiled images" alt="Example leaflet web app" >}}
+
 
 #### Projecting Coordinates with `leaflet-rastercoords` and `L.CRS.Simple`
 
 In our main.js, you might have noticed the following lines when initializing the map:
 
-```js { title="main.js" hl_lines=[4,9,10]}
+```js { title="main.js" hl_lines=[4,9,10] lineNos=true }
 const map = L.map(container, {
   center: L.latLng(0, 0),
   noWrap: true,
@@ -305,9 +306,9 @@ Typically, web maps use a geographic coordinate system (like EPSG:3857, also kno
 
 `CRS.Simple`'s origin starts at the top left corner of the map (0,0) and the X and Y coordinates increase as you move to the right and down respectively. This setup aligns with how pixel coordinates are typically referenced in most photo editing software.
 
-{{< admonition info>}}
-For more in-depth guides and examples, check out the Leaflet's official post regarding [non-geographical maps](https://leafletjs.com/examples/crs-simple/crs-simple.html)
-{{< /admonition >}}
+> [!info]
+> For more in-depth guides and examples, check out the Leaflet's official post regarding [non-geographical maps](https://leafletjs.com/examples/crs-simple/crs-simple.html)
+
 
 ##### The Role of `leaflet-rastercoords`
 
@@ -332,17 +333,10 @@ After adding this line and refreshing your browser (or if Vite automatically rel
 
 In this tutorial, we have created a custom zoomable map in Leaflet from an existing image. This setup provides a foundation for building more custom image-based maps. Feel free to experiment by using different images, and adding more layers such as markers and shapes while exploring other leaflet functionalities as well.
 
-{{< admonition type="info" title="Source Code" open=true >}}
-You can find the complete source code for this project at the GitHub Repository: [Leaflet Raster to Tiles Example](https://github.com/jeremejazz/leaflet-raster-to-tiles-example)
-{{< /admonition >}}
+> [!info] Source Code
+> You can find the complete source code for this project at the GitHub Repository: [Leaflet Raster to Tiles Example](https://github.com/jeremejazz/leaflet-raster-to-tiles-example)
 
-{{< admonition "References"  >}}
 
-[Zoomable images with Leaflet](https://build-failed.blogspot.com/2012/11/zoomable-image-with-leaflet.html) - I used this as the basis for my earlier project for an [earlier project](https://github.com/jeremejazz/olivarezmaps) back in 2013. [Maptiler](https://www.maptiler.com/) was used on that project instead of `gdal2tiles.py`.
-
-{{< /admonition >}}
-
-{{< admonition type=quote title="Credits" open=false >}}
-Cover Image by [Pexels](https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212)
-
-{{< /admonition >}}
+> [!quote] References
+> [Zoomable images with Leaflet](https://build-failed.blogspot.com/2012/11/zoomable-image-with-leaflet.html) - I used this as the basis for my earlier project for an [earlier project](https://github.com/jeremejazz/olivarezmaps) back in 2013. [Maptiler](https://www.maptiler.com/) was used on that project instead of `gdal2tiles.py`.
+> Cover Image by [Pexels](https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1867212)
