@@ -1,6 +1,5 @@
 ---
-title: "Curriculum Vitae"
-subtitle: ""
+title: "Jereme Causing - Curriculum Vitae"
 draft: false
 description: "Experienced Software Developer with over a decade of expertise in back-end development, API integrations, and microservices"
 keywords:
@@ -9,7 +8,6 @@ keywords:
   - profile
   - experiences
   - developer
-
 
 comment: false
 showHero: false
@@ -20,10 +18,8 @@ showReadingTime: false
 showRelatedContent: false
 sharingLinks: false
 showPagination: false
+
 ---
-
-
-## Jereme Causing
 
 Highly experienced Web Developer specializing in back-end development with over 10 years of experience. Adept at solving complex challenges through the design of scalable, high-performance solutions and the optimization of system reliability. My expertise includes enhancing security, streamlining development workflows, backed by strong analytical acumen and a commitment to clear technical documentation.
  
