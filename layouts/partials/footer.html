@@ -71,10 +71,8 @@
   {{ end }}
 
     {{ if .Site.Params.enableLightGallery | default false }}
-
     <script >
       document.addEventListener('DOMContentLoaded', function() {
-
         const blogContainer = document.querySelector('.article-content');
         if (blogContainer) {
           lightGallery(blogContainer, {
