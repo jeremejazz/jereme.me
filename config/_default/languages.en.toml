@@ -1,10 +1,9 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Jereme"
 
 [params]
-  displayName = "Jereme Causing"
+  displayName = "Jereme"
   isoCode = "en"
   rtl = false
   dateFormat = "Jan 2 2006"
