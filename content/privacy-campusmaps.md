@@ -2,7 +2,7 @@
 title: "Privacy Policy for Campus Maps"
 slug: "privacy-campusmaps"
 subtitle: ""
-draft: false
+draft: true
 
 description: ""
 

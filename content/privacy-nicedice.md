@@ -1,7 +1,7 @@
 ---
 title: "Privacy Policy for Nice Dice"
 subtitle: ""
-draft: false
+draft: true
 description: ""
 
 excludeFromSearch: true

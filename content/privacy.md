@@ -7,9 +7,9 @@ draft: false
 
 description: "At **jereme.me**, your privacy is important. This Privacy Policy explains how I collect, use, and protect your information when you visit my website."
 
-
-# excludeFromSearch: true
-xml: true
+showHero: false
+excludeFromSearch: true
+xml: false
 showDate: false
 showReadingTime: false
 showEdit: false

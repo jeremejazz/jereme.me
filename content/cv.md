@@ -19,6 +19,7 @@ showAuthor: false
 showReadingTime: false
 showRelatedContent: false
 sharingLinks: false
+showPagination: false
 ---
 
 
@@ -31,6 +32,7 @@ Highly experienced Web Developer specializing in back-end development with over 
 
 
 <ul class="fi-timeline" data-animation>
+<li class="fi-timeline-item" data-size="medium" data-node="circle" style="--timeline-index:6"><div class="fi-timeline-item__content is-top"><b>CoDev</b></div><div class="fi-timeline-item__content">Senior Fullstack Platform Engineer</div><div class="fi-timeline-item__timestamp">2025</div><div class="fi-timeline-item__content"><ul><li>Engineered a significant refactor of core platform components, modernizing the API architecture to guarantee high-performance data delivery</li><li>Collaborated with the mobile development team in providing updates to existing API while also implementing code refactor and documentation.</li><li>Resolved critical back-end production issues, improving platform stability and reducing system errors.</li></ul><p>Technologies: Express.js, React.js, PostgreSQL, Heroku</p></div></li>
   <li
     class="fi-timeline-item"
     data-size="medium"
@@ -222,12 +224,8 @@ Highly experienced Web Developer specializing in back-end development with over 
 
 |   |   |
 | --- | --- |
-| **Programming Languages** | TypeScript, JavaScript, Python, PHP, Dart  |
-| **Frameworks** | NestJS, Express.js, Flutter  |
+| **Programming Languages** | TypeScript, JavaScript, Python, PHP  |
+| **Frameworks** | NestJS, Express.js, Fastify, FastAPI  |
 | **Databases** | PostgreSQL, MySQL, MS SQL Server |
 
-
-### Contact
-
-Feel free to reach out using the following links. 
 
