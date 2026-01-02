@@ -8,7 +8,7 @@
 colorScheme = "noir"
 defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = true
-enableA11y = true
+enableA11y = false
 
 enableLightGallery = true # recommended disableImageZoom = true
 enableSearch = true
@@ -88,7 +88,7 @@ smartTOCHideUnfocusedChildren = false
   layoutBackgroundBlur = true # only used when heroStyle equals background
   layoutBackgroundHeaderSpace = false
   showBreadcrumbs = false
-  showSummary = false
+  showSummary = true
   showViews = false
   showLikes = false
   showTableOfContents = true
