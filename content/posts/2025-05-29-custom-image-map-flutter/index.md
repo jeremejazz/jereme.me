@@ -4,32 +4,18 @@ subtitle: Build a non-geographical map application from images generated with gd
 date: 2025-05-29T14:10:09+08:00
 slug: custom-image-map-flutter
 draft: false
-authors: [Jereme]
-description:
-keywords:
- - tutorials
+description: Build a non-geographical map application from images generated with gdal2tiles and Flutter
+tags:
  - flutter
- - dart
  - map
  - leaflet
- - development
- - cross platform
 license: <a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
 comment: true
-weight: 0
-tags:
-  - tutorials
-  - flutter
-  - development 
-  - map
 collections:
   - map development
 categories:
   - tutorials
-hiddenFromHomePage: false
-hiddenFromSearch: false
-hiddenFromRelated: false
-hiddenFromFeed: false
+  - map development
 summary:
 resources:
   - name: featured-image
@@ -74,7 +60,7 @@ This tutorial assumes basic familiarity with `gdal2tiles` and Flutter, but begin
 
 ## Creating the App
 ### Step 1: Download the Sample image
-{{< figure src="https://res.cloudinary.com/jereme/image/upload/v1748402916/jereme.me/custom-image-map-flutter/hubble-gas-cocoon-preview.jpg" alt="NASA Space Cocoon" linked=false caption="Preview of sample image. Download the full size here [here](https://github.com/jeremejazz/fluttermap_rastercoords_demo/blob/main/images/hubble-gas-cocoon.jpg)" linked=false loading="lazy" nozoom="true" >}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1748402916/jereme.me/custom-image-map-flutter/hubble-gas-cocoon-preview.jpg" alt="NASA Space Cocoon" linked=false caption="Preview of sample image. Download the full size here [here](https://github.com/jeremejazz/fluttermap_rastercoords_demo/blob/main/images/hubble-gas-cocoon.jpg)" linked=false loading="lazy" nozoom="true" >}}
 
 
 For this tutorial, we will be using a sample image which can be downloaded [here](https://github.com/jeremejazz/fluttermap_rastercoords_demo/blob/main/images/hubble-gas-cocoon.jpg). Please the image in a folder for processing. This high-resolution image of space serves as a good example of a large, non-geographical image suitable for custom mapping.
@@ -98,7 +84,7 @@ gdal2tiles.py --xyz -p raster -z 0-5 -w none hubble_gas_cocoon.jpg map_tiles/
 ```
 Here is a sample demonstration on how the command is executed:
 
-{{< figure src="https://asciinema.org/a/EwWqshuOutpuci3b0qGfAekzM.svg" alt="NASA Space Cocoon" loading="lazy" nozoom="true" href="https://asciinema.org/a/EwWqshuOutpuci3b0qGfAekzM" >}}
+[![asciicast](https://asciinema.org/a/EwWqshuOutpuci3b0qGfAekzM.svg)](https://asciinema.org/a/EwWqshuOutpuci3b0qGfAekzM)
 
 ### Step 3: Create a new Flutter App
 
@@ -178,7 +164,7 @@ class RasterCoordsDemo extends StatelessWidget {
 For now, we'll be using  [OpenStreetMap](https://www.openstreetmap.org/) as our placeholder just to check if the application is running. You can start the application on any platform, though I'd recommend using Android as the target platform to be consistent with this guide.
 
 
-{{< figure src="https://res.cloudinary.com/jereme/image/upload/v1748505293/jereme.me/custom-image-map-flutter/basic-map-preview.png" alt="Preview of App in Android Emulator" caption="Preview of App in Android Emulator" linked=true loading="lazy"  >}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1748505293/jereme.me/custom-image-map-flutter/basic-map-preview.png" alt="Preview of App in Android Emulator" caption="Preview of App in Android Emulator" linked=true loading="lazy"  >}}
 
 > [!NOTE]
 > If you encounter any issues relating to network connections, please refer to the Flutter documentation on [Networking](https://docs.flutter.dev/data-and-backend/networking).
@@ -201,7 +187,7 @@ serve -l 8080
 > For `web` target builds, you can also add the `--cors` option to enable [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS) on your local server.
 
 You should be able to open the local server in the browser when you open [http://localhost:8080](http://localhost:8080).
-{{< figure src="https://res.cloudinary.com/jereme/image/upload/v1748491702/jereme.me/custom-image-map-flutter/localhost-browser.png" alt="Opening localhost:8080" caption="Opening localhost:8080" linked=true loading="lazy" >}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1748491702/jereme.me/custom-image-map-flutter/localhost-browser.png" alt="Opening localhost:8080" caption="Opening localhost:8080" linked=true loading="lazy" >}}
  
 ### Step 7: Add our custom Map
 
@@ -280,7 +266,7 @@ When running, you should now be able to view the application on the emulator.
 >[!TIP]
 >To simulate pinch for zooming in and out on the emulator, hold the `Ctrl`  (or `cmd` key on mac ) then drag the mouse on the screen.
 
-{{< figure src="https://res.cloudinary.com/jereme/image/upload/v1748495371/jereme.me/custom-image-map-flutter/custom-map-emulator.png" alt="Viewing the map on the Android emulator" caption="  Viewing the map on the Android emulator" linked=true loading="lazy" >}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1748495371/jereme.me/custom-image-map-flutter/custom-map-emulator.png" alt="Viewing the map on the Android emulator" caption="  Viewing the map on the Android emulator" linked=true loading="lazy" >}}
 
  
 
@@ -311,12 +297,12 @@ With this, you should no longer be able to scroll farther from the image.
 We'll be demonstrating projecting pixel coordinates into map coordinates by adding markers.  We've demonstrated this before by setting the `initialCenter` of our `MapOptions`.
 First, open the original image using any Photo editor. Use the cursor or info tool in your image editor to read the pixel coordinates (x, y) at the point you want to use.
 
-{{< figure src="https://res.cloudinary.com/jereme/image/upload/v1748497100/jereme.me/custom-image-map-flutter/space-cloud-coordinates.png" alt="Getting the Pixel Coordinates" caption="Getting the Pixel Coordinates using GIMP" linked=true loading="lazy" >}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1748497100/jereme.me/custom-image-map-flutter/space-cloud-coordinates.png" alt="Getting the Pixel Coordinates" caption="Getting the Pixel Coordinates using GIMP" linked=true loading="lazy" >}}
 
 #### Creating the Marker
 For adding markers, append a marker layer right below the `TileLayer`, which is in the `children` property of our `FlutterMap` widget.
 
-```dart { title="main.dart" hl_lines=["5-15"] }
+```dart { title="main.dart" hl_lines=["5-15"] lineNos=true }
       children: [
         TileLayer(
           urlTemplate: 'http://10.0.2.2:8080/map_tiles/{z}/{x}/{y}.png',
@@ -337,7 +323,7 @@ For adding markers, append a marker layer right below the `TileLayer`, which is 
 ```
 
 When running the marker should now be visible on the coordinates we selected. 
-{{< figure src="https://res.cloudinary.com/jereme/image/upload/v1748498008/jereme.me/custom-image-map-flutter/marker-on-map.png" alt="Marker on Map" caption="Marker on Map" linked=true loading="lazy" >}}
+{{< image src="https://res.cloudinary.com/jereme/image/upload/v1748498008/jereme.me/custom-image-map-flutter/marker-on-map.png" alt="Marker on Map" caption="Marker on Map" linked=true loading="lazy" >}}
  
 ## Conclusion
 
