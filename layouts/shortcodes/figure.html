@@ -14,7 +14,7 @@
   <figure>
   {{- with $href }}<a href="{{ . }}" {{ with $target }}target="{{ . }}"{{ end }} class="inline-block">{{ end -}}
   {{- if findRE "^https?" $url.Scheme }}
-      <img class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" {{with $loading}} loading="{{.}}" {{end}} />
+      <img class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" {{with $loading}} loading="{{.}}"{{end}} />
   {{- else }}
     {{- $resource := "" }}
     {{- if $.Page.Resources.GetMatch ($url.String) }}
