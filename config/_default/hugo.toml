@@ -12,11 +12,11 @@ buildDrafts = false
 buildFuture = false
 
 enableEmoji = true
+googleAnalytics = "G-2XZX6QDD30"
 
 [imaging]
   anchor = 'Center'
 
-# googleAnalytics = "G-XXXXXXXXX"
 
 [related]
   threshold = 0
