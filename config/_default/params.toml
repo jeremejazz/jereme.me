@@ -8,7 +8,7 @@
 colorScheme = "noir"
 defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = true
-
+enableA11y = true
 
 enableLightGallery = true # recommended disableImageZoom = true
 enableSearch = true
@@ -66,7 +66,7 @@ smartTOCHideUnfocusedChildren = false
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = true
-  editURL = "https://github.com/jeremejazz/jereme.me/tree/main/content"
+  editURL = "https://github.com/jeremejazz/jereme.me/blob/main/content"
   editAppendPath = true
   seriesOpened = false
   showHeadingAnchors = true

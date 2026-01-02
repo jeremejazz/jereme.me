@@ -7,7 +7,7 @@ title = "Jereme"
   displayName = "Jereme Causing"
   isoCode = "en"
   rtl = false
-  dateFormat = "2 Jan 2006"
+  dateFormat = "Jan 2 2006"
   logo = "images/console-logo-light.png"
   description = "A Software Developer's Blog"
 
@@ -18,8 +18,9 @@ title = "Jereme"
   headline = ""
   bio = "Software Developer"
   links = [
-    { telegram = "https://t.me/jeremecausing" },
     { github = "https://github.com/jeremejazz" },
+    { telegram = "https://t.me/jeremecausing" },
     { linkedin = "https://linkedin.com/in/jeremecausing" },
     { envelope = "mailto:me@jereme.me" },
+    { rss = "https://jereme.me/index.xml" },
   ]
