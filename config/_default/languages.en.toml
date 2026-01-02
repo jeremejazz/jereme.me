@@ -9,7 +9,7 @@ title = "Jereme"
   rtl = false
   dateFormat = "2 Jan 2006"
   logo = "images/console-logo-light.png"
-  description = "A powerful, lightweight theme for Hugo."
+  description = "A Software Developer's Blog"
 
 [params.author]
   name = "Jereme Causing"
