@@ -20,13 +20,15 @@ posts: []
 
 In this guide, we will build a robust offline mapping solution for Flutter. Instead of relying on external tile servers (like OpenStreetMap) or loose files, we will bundle our map tiles into a single ZIP file, extract them on the first run, and spin up a lightweight internal HTTP server to feed the tiles to our map.
 
-### The Tech Stack
+## The Tech Stack
 
 - **flutter_map:** The core mapping engine.
 - **flutter_map_rastercoords:** Handles coordinate translation (Pixels <-> LatLng) for custom images.
 - **shelf & shelf_static:** Runs a pure Dart HTTP server inside your app.    
 - **archive:** Handles unzipping the assets.
 - **path_provider:** Finds the correct storage location on the device.
+
+## Steps to Implement 
 
 ### Step 1: Add Dependencies
 
