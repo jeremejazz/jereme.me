@@ -20,6 +20,7 @@ showReadingTime: false
 showRelatedContent: false
 sharingLinks: false
 showPagination: false
+showTableOfContents: false
 
 ---
 

@@ -4,6 +4,8 @@ subtitle: Build a non-geographical map application from images generated with gd
 date: 2025-05-29T14:10:09+08:00
 slug: custom-image-map-flutter
 draft: false
+series: ["Non-Geospatial Maps in Flutter"]
+series_order: 1
 description: Build a non-geographical map application from images generated with gdal2tiles and Flutter
 tags:
  - flutter
