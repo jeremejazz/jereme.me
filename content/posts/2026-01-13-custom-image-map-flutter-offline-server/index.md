@@ -1,6 +1,7 @@
 ---
 title: "Creating a Custom Map from Images in Flutter: Part 2 - Hosting Local Custom Maps"
 subtitle: ""
+slug: custom-image-map-flutter-offline-server
 date: 2026-01-13T21:58:28+08:00
 lastmod: 2026-01-13T21:58:28+08:00
 series: ["Non-Geospatial Maps in Flutter"]
