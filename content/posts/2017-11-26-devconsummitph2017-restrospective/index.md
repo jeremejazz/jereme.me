@@ -4,7 +4,6 @@ date: 2017-11-26T13:53:13+08:00
 slug: devconsummitph2017-restrospective
 summary: "A 2-day summit held by DevCon last November 18, 2017"
 draft: false
-authors: [Jereme]
 resources:
   - name: featured-image
     src: images/featured-image.jpg

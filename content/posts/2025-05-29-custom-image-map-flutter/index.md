@@ -11,6 +11,7 @@ tags:
  - flutter
  - map
  - leaflet
+ - cross-platform development
 license: <a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
 comment: true
 collections:
