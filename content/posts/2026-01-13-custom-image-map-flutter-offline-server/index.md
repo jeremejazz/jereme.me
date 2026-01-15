@@ -7,7 +7,7 @@ lastmod: 2026-01-13T21:58:28+08:00
 series: ["Non-Geospatial Maps in Flutter"]
 series_order: 2
 draft: false
-authors: [Jereme]
+authors: []
 description: "In this guide, we will build a robust offline mapping solution for Flutter"
 summary: "In this guide, we will build a robust offline mapping solution for Flutter"
 
