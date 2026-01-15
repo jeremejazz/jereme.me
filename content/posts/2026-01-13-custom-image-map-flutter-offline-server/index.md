@@ -1,24 +1,28 @@
 ---
-title: "Creating a Custom Map from Images in Flutter: Part 2 - Hosting Local Custom Maps"
+title: "Creating a Custom Map from Images in Flutter: Part 2 - Hosting Custom Maps Offline"
 subtitle: ""
 date: 2026-01-13T21:58:28+08:00
 lastmod: 2026-01-13T21:58:28+08:00
 series: ["Non-Geospatial Maps in Flutter"]
 series_order: 2
 draft: false
-authors: []
-description: "A solution to run custom map tiles offline"
-summary: "A solution to run custom map tiles offline"
+authors: [Jereme]
+description: "In this guide, we will build a robust offline mapping solution for Flutter"
+summary: "In this guide, we will build a robust offline mapping solution for Flutter"
 
-tags: []
-categories: []
+tags: [flutter, map, cross-platform development]
+categories: [tutorials, map development]
 posts: []
 
 
 ---
 
+In the previous topic, we managed to create a custom map from a non-geographical image in `flutter_map`. However, this process relies on a running external static server. 
 
-In this guide, we will build a robust offline mapping solution for Flutter. Instead of relying on external tile servers (like OpenStreetMap) or loose files, we will bundle our map tiles into a single ZIP file, extract them on the first run, and spin up a lightweight internal HTTP server to feed the tiles to our map.
+In this guide, we will build a robust offline mapping solution for Flutter. Instead of relying on external tile servers, we will bundle our map tiles into a single ZIP file, extract them on the first run, and spin up a lightweight internal HTTP server to feed the tiles to our map.
+
+> [!info] 
+> This is a continuation from the previous topic [Creating a Custom Map from Images in Flutter](/posts/custom-image-map-flutter/). This tutorial assums that you have already setup a custom image in  `flutter_map`. If you need to create the project, feel free to check the post.
 
 ## The Tech Stack
 
@@ -38,23 +42,18 @@ Add the following to your `pubspec.yaml`.
 dependencies:
   flutter:
     sdk: flutter
-  # Mapping
-  flutter_map: ^7.0.0
-  flutter_map_rastercoords: ^0.0.3 
+  flutter_map: ^8.1.1
   latlong2: ^0.9.1
-  
-  # Server & Files
-  shelf: ^1.4.1
-  shelf_static: ^1.1.2
-  archive: ^3.6.1
-  path_provider: ^2.1.2
+  flutter_map_rastercoords: ^0.0.1
+  provider: ^6.1.5
+  shelf: ^1.4.2
+  shelf_static: ^1.1.3
+  path_provider: ^2.1.5
+  archive: ^4.0.7
   
 ```
 
 ### Step 2: Prepare Your Assets
-
-> [!info] 
-> As this is a continuation from the previous topic [Creating a Custom Map from Images in Flutter](/posts/custom-image-map-flutter/), you can check the post if you need to know about setting up a custom map from images in `flutter_map`.
 
 1. Generate your map tiles (using tools like `gdal2tiles` or `maptiler`). You should have a structure like `folder/z/x/y.png`.
 2. Zip this folder content into `map.zip`.
@@ -202,7 +201,8 @@ After updating you should be able to run the custom image map locally.
 
 {{< image src="https://res.cloudinary.com/jereme/image/upload/v1768316061/jereme.me/custom-image-map-flutter-offline-server/Pasted_image_20260113221503.png" alt="Marker on Map" caption="Marker on Map" >}}
 
-> [!IMPORTANT]
+> [!IMPORTANT] Important
+> Though we are able to solve the issue about running maps offline, there are some issues you still need to consider before implementing this solution:
 >- **Storage:** Be mindful of the user's storage. If your unzipped map is 500MB, you are taking up that space permanently in the user's storage.
 > - **Cleanup:** In a production app, you might want to add version checking. If you update the app with `tiles_v2.zip`, your `initialize` method should detect the version change, delete the old folder, and unzip the new one.
 
