@@ -31,8 +31,9 @@ sharingLinks: false
 showPagination: false
 ---
 
-
-
+{{< button href="mailto:me@jereme.me" target="_blank"  >}}
+{{< icon "envelope" >}} Send Email
+{{< /button >}}
 
 <div class="contact-form ">
   <form
